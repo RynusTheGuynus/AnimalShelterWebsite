@@ -10,10 +10,11 @@ CREATE TABLE users (
 	first_name varchar(50) NOT NULL,
 	last_name varchar(50) NOT NULL,
 	email_address varchar(50) NOT NULL,
+	phone_number varchar(50) NOT NULL,
 	age int NOT NULL,
 	emerg_first_name varchar(50) NOT NULL,
 	emerg_last_name varchar(50) NOT NULL,
-	emerg_phone int,
+	emerg_phone varchar(50) NOT NULL,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 
@@ -22,6 +23,7 @@ CREATE TABLE adoption (
 	owner_name varchar(50) NOT NULL,
 	owner_address varchar(50) NOT NULL,
 	owner_email varchar(50) NOT NULL,
+	owner_phone_number varchar(50) NOT NULL,
 	adoption_date date NOT NULL,
 	CONSTRAINT PK_adoption PRIMARY KEY (adoption_id)
 );
@@ -36,9 +38,7 @@ CREATE TABLE pet (
 	gender varchar(50) NOT NULL,
 	red_flag boolean NOT NULL,
 	adopted_status boolean NOT NULL,
-	adoption_id int,
-	CONSTRAINT PK_pet PRIMARY KEY (pet_id),
-	CONSTRAINT FK_adopted_id FOREIGN KEY (adoption_id) REFERENCES adoption(adoption_id)
+	CONSTRAINT PK_pet PRIMARY KEY (pet_id)
 );
 
 CREATE TABLE pet_adoption (
