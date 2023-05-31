@@ -28,15 +28,9 @@ public class User {
    private String lastName;
 
    private String emailAddress;
-<<<<<<< HEAD
-   @JsonProperty("phone_number")
-   private String phoneNumber;
-   @JsonProperty("age")
-=======
 
    private String phoneNumber;
 
->>>>>>> main
    private int age;
 
    private String emergFirstName;
@@ -144,14 +138,6 @@ public class User {
       this.emailAddress = emailAddress;
    }
 
-   public String getPhoneNumber() {
-      return phoneNumber;
-   }
-
-   public void setPhoneNumber(String phoneNumber) {
-      this.phoneNumber = phoneNumber;
-   }
-
    public int getAge() {
       return age;
    }
@@ -207,7 +193,6 @@ public class User {
    public void setPhoneNumber(String phoneNumber) {
       this.phoneNumber = phoneNumber;
    }
-
 
    @Override
    public String toString() {
