@@ -1,20 +1,36 @@
 package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class User {
-
+   @JsonProperty("user_id")
    private int id;
+   @JsonProperty("username")
    private String username;
    @JsonIgnore
    private String password;
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+   @JsonProperty("first_name")
+   private String firstName;
+   @JsonProperty("last_name")
+   private String lastName;
+   @JsonProperty("email_address")
+   private String emailAddress;
+   @JsonProperty("age")
+   private int age;
+   @JsonProperty("emerg_first_name")
+   private String emergencyFirstName;
+   @JsonProperty("emerg_last_name")
+   private String emergencyLastName;
+   @JsonProperty("emerg_phone")
+   private String emergencyPhone;
 
    public User() { }
 
@@ -89,6 +105,62 @@ public class User {
    @Override
    public int hashCode() {
       return Objects.hash(id, username, password, activated, authorities);
+   }
+
+   public String getFirstName() {
+      return firstName;
+   }
+
+   public void setFirstName(String firstName) {
+      this.firstName = firstName;
+   }
+
+   public String getLastName() {
+      return lastName;
+   }
+
+   public void setLastName(String lastName) {
+      this.lastName = lastName;
+   }
+
+   public String getEmailAddress() {
+      return emailAddress;
+   }
+
+   public void setEmailAddress(String emailAddress) {
+      this.emailAddress = emailAddress;
+   }
+
+   public int getAge() {
+      return age;
+   }
+
+   public void setAge(int age) {
+      this.age = age;
+   }
+
+   public String getEmergencyFirstName() {
+      return emergencyFirstName;
+   }
+
+   public void setEmergencyFirstName(String emergencyFirstName) {
+      this.emergencyFirstName = emergencyFirstName;
+   }
+
+   public String getEmergencyLastName() {
+      return emergencyLastName;
+   }
+
+   public void setEmergencyLastName(String emergencyLastName) {
+      this.emergencyLastName = emergencyLastName;
+   }
+
+   public String getEmergencyPhone() {
+      return emergencyPhone;
+   }
+
+   public void setEmergencyPhone(String emergencyPhone) {
+      this.emergencyPhone = emergencyPhone;
    }
 
    @Override
