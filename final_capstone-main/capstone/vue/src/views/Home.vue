@@ -1,7 +1,18 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
-    <p>You must be authenticated to see this</p>
+    <div class="header">
+      <div class="nav">
+        <ul>
+          <li>About Us</li>
+          <li>Apply as a Volunteer!</li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </div>
+      <h1>Shelter Name</h1>
+      <p>Home page seen by both anonymous and authenticated users.</p>
+    </div>
   </div>
 </template>
 
