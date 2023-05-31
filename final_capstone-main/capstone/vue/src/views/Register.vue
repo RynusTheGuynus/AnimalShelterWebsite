@@ -171,4 +171,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.form-control {
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+}
+</style>
