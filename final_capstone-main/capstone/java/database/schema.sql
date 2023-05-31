@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users, pets, adoption, pet_adoption;
+DROP TABLE IF EXISTS users, pet, adoption, pet_adoption CASCADE;
 
 CREATE TABLE users (
 	user_id SERIAL,
