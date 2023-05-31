@@ -1,20 +1,43 @@
 package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class User {
+   @JsonIgnore
 
    private int id;
+
    private String username;
-   @JsonIgnore
+
    private String password;
+   @JsonIgnore
+   private String confirmPassword;
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+
+   private String role;
+
+   private String firstName;
+
+   private String lastName;
+
+   private String emailAddress;
+
+   private String phoneNumber;
+
+   private int age;
+
+   private String emergFirstName;
+
+   private String emergLastName;
+
+   private String emergPhone;
 
    public User() { }
 
@@ -89,6 +112,86 @@ public class User {
    @Override
    public int hashCode() {
       return Objects.hash(id, username, password, activated, authorities);
+   }
+
+   public String getFirstName() {
+      return firstName;
+   }
+
+   public void setFirstName(String firstName) {
+      this.firstName = firstName;
+   }
+
+   public String getLastName() {
+      return lastName;
+   }
+
+   public void setLastName(String lastName) {
+      this.lastName = lastName;
+   }
+
+   public String getEmailAddress() {
+      return emailAddress;
+   }
+
+   public void setEmailAddress(String emailAddress) {
+      this.emailAddress = emailAddress;
+   }
+
+   public int getAge() {
+      return age;
+   }
+
+   public void setAge(int age) {
+      this.age = age;
+   }
+
+   public String getEmergFirstName() {
+      return emergFirstName;
+   }
+
+   public void setEmergFirstName(String emergencyFirstName) {
+      this.emergFirstName = emergencyFirstName;
+   }
+
+   public String getEmergLastName() {
+      return emergLastName;
+   }
+
+   public void setEmergLastName(String emergencyLastName) {
+      this.emergLastName = emergencyLastName;
+   }
+
+   public String getEmergPhone() {
+      return emergPhone;
+   }
+
+   public void setEmergPhone(String emergencyPhone) {
+      this.emergPhone = emergencyPhone;
+   }
+
+   public String getRole() {
+      return role;
+   }
+
+   public void setRole(String role) {
+      this.role = role;
+   }
+
+   public String getConfirmPassword() {
+      return confirmPassword;
+   }
+
+   public void setConfirmPassword(String confirmPassword) {
+      this.confirmPassword = confirmPassword;
+   }
+
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
    }
 
    @Override

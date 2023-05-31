@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
 import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
+import Users from '../views/Users.vue'
 import store from '../store/index'
 import PetComponent from '../components/PetComponent.vue'
 
@@ -61,7 +62,15 @@ const router = new Router({
       meta: {
         requiresAuth: false
       }
+    },
+    {
+      path: "/users",
+      name: "users",
+      component: Users,
+      meta: {
+        requiresAuth: false
     }
+  }
   ]
 })
 
