@@ -8,29 +8,36 @@ import java.util.Objects;
 import java.util.Set;
 
 public class User {
-   @JsonProperty("user_id")
-   private int id;
-   @JsonProperty("username")
-   private String username;
    @JsonIgnore
+
+   private int id;
+
+   private String username;
+
    private String password;
+   @JsonIgnore
+   private String confirmPassword;
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
-   @JsonProperty("first_name")
+
+   private String role;
+
    private String firstName;
-   @JsonProperty("last_name")
+
    private String lastName;
-   @JsonProperty("email_address")
+
    private String emailAddress;
-   @JsonProperty("age")
+
+   private String phoneNumber;
+
    private int age;
-   @JsonProperty("emerg_first_name")
-   private String emergencyFirstName;
-   @JsonProperty("emerg_last_name")
-   private String emergencyLastName;
-   @JsonProperty("emerg_phone")
-   private String emergencyPhone;
+
+   private String emergFirstName;
+
+   private String emergLastName;
+
+   private String emergPhone;
 
    public User() { }
 
@@ -139,28 +146,52 @@ public class User {
       this.age = age;
    }
 
-   public String getEmergencyFirstName() {
-      return emergencyFirstName;
+   public String getEmergFirstName() {
+      return emergFirstName;
    }
 
-   public void setEmergencyFirstName(String emergencyFirstName) {
-      this.emergencyFirstName = emergencyFirstName;
+   public void setEmergFirstName(String emergencyFirstName) {
+      this.emergFirstName = emergencyFirstName;
    }
 
-   public String getEmergencyLastName() {
-      return emergencyLastName;
+   public String getEmergLastName() {
+      return emergLastName;
    }
 
-   public void setEmergencyLastName(String emergencyLastName) {
-      this.emergencyLastName = emergencyLastName;
+   public void setEmergLastName(String emergencyLastName) {
+      this.emergLastName = emergencyLastName;
    }
 
-   public String getEmergencyPhone() {
-      return emergencyPhone;
+   public String getEmergPhone() {
+      return emergPhone;
    }
 
-   public void setEmergencyPhone(String emergencyPhone) {
-      this.emergencyPhone = emergencyPhone;
+   public void setEmergPhone(String emergencyPhone) {
+      this.emergPhone = emergencyPhone;
+   }
+
+   public String getRole() {
+      return role;
+   }
+
+   public void setRole(String role) {
+      this.role = role;
+   }
+
+   public String getConfirmPassword() {
+      return confirmPassword;
+   }
+
+   public void setConfirmPassword(String confirmPassword) {
+      this.confirmPassword = confirmPassword;
+   }
+
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
    }
 
    @Override
