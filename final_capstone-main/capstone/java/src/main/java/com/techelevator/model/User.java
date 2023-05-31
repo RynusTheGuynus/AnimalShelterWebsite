@@ -23,6 +23,8 @@ public class User {
    private String lastName;
    @JsonProperty("email_address")
    private String emailAddress;
+   @JsonProperty("phone_number")
+   private String phoneNumber;
    @JsonProperty("age")
    private int age;
    @JsonProperty("emerg_first_name")
@@ -131,6 +133,14 @@ public class User {
       this.emailAddress = emailAddress;
    }
 
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
+   }
+
    public int getAge() {
       return age;
    }
@@ -162,6 +172,7 @@ public class User {
    public void setEmergencyPhone(String emergencyPhone) {
       this.emergencyPhone = emergencyPhone;
    }
+
 
    @Override
    public String toString() {

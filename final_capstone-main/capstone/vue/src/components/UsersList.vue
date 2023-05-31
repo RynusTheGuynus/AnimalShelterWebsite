@@ -3,12 +3,12 @@
             
             <h1 class = "text-center"> Users List</h1>
 
-            <table>
+            <table class = "table table-striped" >
                 <thead>
                     <tr>
-                        <th> User Id</th>
+                        <th> User Role</th>
                         <th> User First Name</th>
-                        <th> User Last</th>
+                        <th> User Last Name</th>
                         <th> User Email</th>
                     </tr>
 
@@ -16,7 +16,7 @@
                 <tbody>
                     <tr v-for="user in Users" v-bind:key="user.id">
                         <td> {{user.id }}</td>
-                        <td> {{user.firstName }}</td>
+                        <td> {{user.username }}</td>
                         <td> {{user.lastName}}</td>    
                         <td> {{user.email}}</td>
                     </tr>
@@ -27,7 +27,7 @@
 
 <script>
 
-import AuthService from '../services/AuthService.js';
+import UserService from '../services/UserService.js';
 
 export default {
     name: 'Users',
@@ -38,7 +38,7 @@ export default {
     },
     methods: {
         getUsers(){
-            AuthService.getUsers().then((response) => {
+            UserService.getUsers().then((response) => {
                 this.users = response.data;   
             });
         }
@@ -53,3 +53,4 @@ export default {
 <style>
 
 </style>
+
