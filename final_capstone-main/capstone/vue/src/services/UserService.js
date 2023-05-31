@@ -6,12 +6,12 @@ const http = axios.create({
 
 export default {
 
-  login(user) {
-    return http.post('/login', user)
+  getUsers() {
+    return http.get('/users');
   },
 
-  register(user) {
-    return http.post('/register', user)
+  get(id) {
+    return http.get(`/users/id/${id}`)
   }
-  
+
 }
