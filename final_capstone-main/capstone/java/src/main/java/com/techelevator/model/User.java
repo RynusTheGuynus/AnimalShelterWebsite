@@ -1,28 +1,56 @@
 package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
 public class User {
-
+   @JsonProperty("user_id")
    private int id;
+   @JsonProperty("username")
    private String username;
    @JsonIgnore
    private String password;
    @JsonIgnore
    private boolean activated;
    private Set<Authority> authorities = new HashSet<>();
+   @JsonProperty("first_name")
+   private String firstName;
+   @JsonProperty("last_name")
+   private String lastName;
+   @JsonProperty("email_address")
+   private String emailAddress;
+   @JsonProperty("phone_number")
+   private String phoneNumber;
+   @JsonProperty("age")
+   private int age;
+   @JsonProperty("emerg_first_name")
+   private String emergencyFirstName;
+   @JsonProperty("emerg_last_name")
+   private String emergencyLastName;
+   @JsonProperty("emerg_phone")
+   private String emergencyPhone;
 
    public User() { }
 
-   public User(int id, String username, String password, String authorities) {
+   public User(int id, String username, String password, String authorities, String firstName,
+               String lastName, String emailAddress, String phoneNumber, int age,
+               String emergencyFirstName, String emergencyLastName, String emergencyPhone) {
       this.id = id;
       this.username = username;
       this.password = password;
       if(authorities != null) this.setAuthorities(authorities);
+      this.firstName = firstName;
+      this.lastName = lastName;
+      this.emailAddress = emailAddress;
+      this.phoneNumber = phoneNumber;
+      this.age = age;
+      this.emergencyFirstName = emergencyFirstName;
+      this.emergencyLastName = emergencyLastName;
+      this.emergencyPhone = emergencyPhone;
       this.activated = true;
    }
 
@@ -64,6 +92,70 @@ public class User {
 
    public void setAuthorities(Set<Authority> authorities) {
       this.authorities = authorities;
+   }
+
+   public String getFirstName() {
+      return firstName;
+   }
+
+   public void setFirstName(String firstName) {
+      this.firstName = firstName;
+   }
+
+   public String getLastName() {
+      return lastName;
+   }
+
+   public void setLastName(String lastName) {
+      this.lastName = lastName;
+   }
+
+   public String getEmailAddress() {
+      return emailAddress;
+   }
+
+   public void setEmailAddress(String emailAddress) {
+      this.emailAddress = emailAddress;
+   }
+
+   public int getAge() {
+      return age;
+   }
+
+   public void setAge(int age) {
+      this.age = age;
+   }
+
+   public String getEmergencyFirstName() {
+      return emergencyFirstName;
+   }
+
+   public void setEmergencyFirstName(String emergencyFirstName) {
+      this.emergencyFirstName = emergencyFirstName;
+   }
+
+   public String getEmergencyLastName() {
+      return emergencyLastName;
+   }
+
+   public void setEmergencyLastName(String emergencyLastName) {
+      this.emergencyLastName = emergencyLastName;
+   }
+
+   public String getEmergencyPhone() {
+      return emergencyPhone;
+   }
+
+   public void setEmergencyPhone(String emergencyPhone) {
+      this.emergencyPhone = emergencyPhone;
+   }
+
+   public String getPhoneNumber() {
+      return phoneNumber;
+   }
+
+   public void setPhoneNumber(String phoneNumber) {
+      this.phoneNumber = phoneNumber;
    }
 
    public void setAuthorities(String authorities) {
