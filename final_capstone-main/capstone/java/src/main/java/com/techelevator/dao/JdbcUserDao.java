@@ -73,27 +73,31 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean create(String username, String password, String role) {
-        String insertUserSql = "insert into users (username,password_hash,role) values (?,?,?)";
+    public boolean create(String username, String password, String role, String firstName, String lastName,
+                          String emailAddress, String phoneNumber, int age, String emergencyFirstName, String emergencyLastName,
+                          String emergencyPhone) {
+        String insertUserSql = "insert into users (username,password_hash,role,first_name,last_name,email_address,phone_number,age,emerg_first_name,emerg_last_name,emerg_phone)" +
+                               "values (?,?,?,?,?,?,?,?,?,?,?)";
         String password_hash = new BCryptPasswordEncoder().encode(password);
         String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
 
-        return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole) == 1;
+        return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, firstName, lastName,
+                                  emailAddress, phoneNumber, age, emergencyFirstName, emergencyLastName, emergencyPhone) == 1;
     }
-    @Override
-    public boolean addPendingUser(User user) {
-        String password = user.getPassword();
-        String role = user.getRole();
-        String addUserSql = "insert into users (username,password_hash,role,first_name,last_name,email_address," +
-                "phone_number,age,emerg_first_name,emerg_last_name,emerg_phone) values (?,?,?,?,?,?,?,?,?,?,?)";
-        String password_hash = new BCryptPasswordEncoder().encode(password);
-        String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
-
-        return jdbcTemplate.update(addUserSql, user.getUsername(), password_hash, ssRole, user.getFirstName(),
-                user.getLastName(), user.getEmailAddress(), user.getPhoneNumber(), user.getAge(), user.getEmergFirstName(),
-                user.getEmergLastName(), user.getEmergPhone()) == 1;
-
-    }
+//    @Override
+//    public boolean addPendingUser(User user) {
+//        String password = user.getPassword();
+//        String role = user.getRole();
+//        String addUserSql = "insert into users (username,password_hash,role,first_name,last_name,email_address," +
+//                "phone_number,age,emerg_first_name,emerg_last_name,emerg_phone) values (?,?,?,?,?,?,?,?,?,?,?)";
+//        String password_hash = new BCryptPasswordEncoder().encode(password);
+//        String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
+//
+//        return jdbcTemplate.update(addUserSql, user.getUsername(), password_hash, ssRole, user.getFirstName(),
+//                user.getLastName(), user.getEmailAddress(), user.getPhoneNumber(), user.getAge(), user.getEmergFirstName(),
+//                user.getEmergLastName(), user.getEmergPhone()) == 1;
+//
+//    }
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
@@ -101,15 +105,23 @@ public class JdbcUserDao implements UserDao {
         user.setUsername(rs.getString("username"));
         user.setPassword(rs.getString("password_hash"));
         user.setAuthorities(Objects.requireNonNull(rs.getString("role")));
-        user.setActivated(true);
         user.setFirstName(rs.getString("first_name"));
         user.setLastName(rs.getString("last_name"));
         user.setEmailAddress(rs.getString("email_address"));
         user.setPhoneNumber(rs.getString("phone_number"));
         user.setAge(rs.getInt("age"));
-        user.setEmergFirstName(rs.getString("emerg_first_name"));
-        user.setEmergLastName(rs.getString("emerg_last_name"));
-        user.setEmergPhone(rs.getString("emerg_phone"));
+        user.setEmergencyFirstName(rs.getString("emerg_first_name"));
+        user.setEmergencyLastName(rs.getString("emerg_last_name"));
+        user.setEmergencyPhone(rs.getString("emerg_phone"));
+        user.setActivated(true);
+//        user.setFirstName(rs.getString("first_name"));
+//        user.setLastName(rs.getString("last_name"));
+//        user.setEmailAddress(rs.getString("email_address"));
+//        user.setPhoneNumber(rs.getString("phone_number"));
+//        user.setAge(rs.getInt("age"));
+//        user.setEmergFirstName(rs.getString("emerg_first_name"));
+//        user.setEmergLastName(rs.getString("emerg_last_name"));
+//        user.setEmergPhone(rs.getString("emerg_phone"));
         return user;
     }
 }

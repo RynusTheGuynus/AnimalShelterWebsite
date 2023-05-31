@@ -2,7 +2,7 @@ package com.techelevator.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Adoption {
 
@@ -36,10 +36,15 @@ public class Adoption {
     private String ownerPhoneNumber;    // a string for the owner's phone number
     @JsonProperty("adoption_date")
     @NotNull
-    private Date adoptionDate;          // the date of the adoption
+    private LocalDate adoptionDate;          // the date of the adoption
 
-    // Constructor
-    public Adoption(String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, Date adoptionDate) {
+    // Constructors
+    // default constructor
+    Adoption(){
+    }
+
+    // adoption constructor using every attribute but the serially-assigned adoptionId
+    public Adoption(String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, LocalDate adoptionDate) {
         this.ownerName = ownerName;
         this.ownerAddress = ownerAddress;
         this.ownerEmail = ownerEmail;
@@ -77,10 +82,10 @@ public class Adoption {
     public void setOwnerPhoneNumber(String ownerPhoneNumber) {
         this.ownerPhoneNumber = ownerPhoneNumber;
     }
-    public Date getAdoptionDate() {
+    public @NotNull LocalDate getAdoptionDate() {
         return adoptionDate;
     }
-    public void setAdoptionDate(Date adoptionDate) {
+    public void setAdoptionDate(@NotNull LocalDate adoptionDate) {
         this.adoptionDate = adoptionDate;
     }
 

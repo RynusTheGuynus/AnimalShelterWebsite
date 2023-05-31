@@ -35,8 +35,12 @@ public class Pet {
     @JsonProperty("adopted_status")
     private boolean adoptedStatus;      // has pet been adopted yet?
 
-    // Constructor
-    // build a pet using every attribute but the serially-assigned petId
+    // Constructors
+    //default constructor
+    Pet(){
+    }
+
+    // pet constructor using every attribute but the serially-assigned petId
     public Pet(String petName, int age, String species, int weight, boolean red_flag, String gender, boolean adoptedStatus) {
         this.petName = petName;
         this.age = age;
