@@ -34,7 +34,7 @@ public class User {
    @JsonProperty("emerg_phone")
    private String emergencyPhone;
    @JsonProperty("first_login")
-   private boolean firstLogin;
+   private boolean firstLogin = true;
 
    public User() { }
 
@@ -54,7 +54,6 @@ public class User {
       this.emergencyLastName = emergencyLastName;
       this.emergencyPhone = emergencyPhone;
       this.activated = true;
-      this.firstLogin = false;
    }
 
    public int getId() {

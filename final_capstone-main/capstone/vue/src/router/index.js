@@ -45,7 +45,7 @@ const router = new Router({
       name: "changePassword",
       component: ChangePassword,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {

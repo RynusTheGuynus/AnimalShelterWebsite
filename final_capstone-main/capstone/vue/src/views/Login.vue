@@ -60,10 +60,11 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            if (response.data.user.firstLogin) {
-              // Prompt user to change their password
-              this.$router.push("/change-password");
+            if (response.data.firstLogin) {
+                // Prompt user to change their password
+                this.$router.push("/change-password");
             } else {
+              // Go back to the home page upon successful login
               this.$router.push("/");
             }
           }

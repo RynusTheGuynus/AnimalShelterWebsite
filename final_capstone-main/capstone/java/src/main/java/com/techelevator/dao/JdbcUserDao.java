@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.techelevator.model.UserNotFoundException;
+import com.techelevator.exception.DaoException;
+import com.techelevator.exception.UserNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.BadSqlGrammarException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -83,6 +87,21 @@ public class JdbcUserDao implements UserDao {
 
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, firstName, lastName,
                                   emailAddress, phoneNumber, age, emergencyFirstName, emergencyLastName, emergencyPhone) == 1;
+    }
+
+    @Override
+    public boolean changePassword(String username, String password) {
+        String insertUserSql = "UPDATE users SET password_hash = ?, first_login = false WHERE username = ?;";
+        try {
+            String password_hash = new BCryptPasswordEncoder().encode(password);
+            return jdbcTemplate.update(insertUserSql, password_hash, username) == 1;
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
     }
 
     private User mapRowToUser(SqlRowSet rs) {
