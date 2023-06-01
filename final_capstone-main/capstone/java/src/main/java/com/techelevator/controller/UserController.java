@@ -45,5 +45,10 @@ public class UserController {
         int userId = userDao.findIdByUsername(username);
             return userId;
     }
+
+    @GetMapping("/users/pending")
+    public List<User> viewPendingApplications() {
+        return userDao.viewPendingApplications();
+    }
 }
 

@@ -19,4 +19,6 @@ public interface UserDao {
                    String emergencyPhone);
 
     boolean changePassword(String username, String password);
+
+    List<User> viewPendingApplications();
 }

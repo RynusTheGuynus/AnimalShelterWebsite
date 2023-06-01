@@ -104,6 +104,20 @@ public class JdbcUserDao implements UserDao {
         }
     }
 
+    @Override
+    public List<User> viewPendingApplications() {
+        List<User> pendingUsers = new ArrayList<>();
+        String sql = "SELECT username, first_name, last_name, email_address, phone_number, " +
+                "age, emerg_first_name, emerg_last_name, emerg_phone FROM users WHERE " +
+                "role = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, "ROLE_PENDING");
+        while (results.next()) {
+            pendingUsers.add(mapRowToUser(results));
+        }
+        return pendingUsers;
+    }
+
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getInt("user_id"));
