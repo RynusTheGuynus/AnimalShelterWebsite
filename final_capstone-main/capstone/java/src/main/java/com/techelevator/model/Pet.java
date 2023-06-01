@@ -34,6 +34,7 @@ public class Pet {
     public boolean redFlag;           // is there a restriction on who should adopt?
     @JsonProperty("adopted_status")
     public boolean adoptedStatus;      // has pet been adopted yet?
+    // optional: public String description      // a String field for introductory text
 
     // Constructors
     //default constructor
@@ -49,6 +50,7 @@ public class Pet {
         this.redFlag = red_flag;
         this.gender = gender;
         this.adoptedStatus = adoptedStatus;
+        // optional: this.description = description;
     }
 
     // Getters and Setters
@@ -100,6 +102,7 @@ public class Pet {
     public void setAdoptedStatus(boolean adoptedStatus) {
         this.adoptedStatus = adoptedStatus;
     }
+    // optional: getter and setter for description
 
     @Override
     public String toString() {
@@ -114,6 +117,7 @@ public class Pet {
                 ", redFlag=" + redFlag +
                 ", adoptedStatus=" + adoptedStatus +
                 '}';
+                // optional description
     }
 
 
