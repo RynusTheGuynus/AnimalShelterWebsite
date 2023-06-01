@@ -46,7 +46,7 @@ public class UserController {
             return userId;
     }
 
-    @GetMapping("/users/pending")
+    @RequestMapping(path = "/users/pending", method = RequestMethod.GET)
     public List<User> viewPendingApplications() {
         return userDao.viewPendingApplications();
     }
