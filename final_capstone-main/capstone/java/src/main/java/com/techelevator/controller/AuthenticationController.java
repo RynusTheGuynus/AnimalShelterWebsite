@@ -74,8 +74,9 @@ public class AuthenticationController {
     }
 
 //    @PreAuthorize("isAuthenticated()")
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/change-password", method = RequestMethod.PUT)
-    public void changePassword(@RequestBody LoginDTO loginDto) {
+    public void changePassword(@Valid @RequestBody LoginDTO loginDto) {
         try {
             User user = userDao.findByUsername(loginDto.getUsername());
             userDao.changePassword(user.getUsername(), loginDto.getPassword());
