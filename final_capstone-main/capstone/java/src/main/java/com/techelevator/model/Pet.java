@@ -21,23 +21,23 @@ public class Pet {
 
     // Data members
     @JsonProperty("pet_id")
-    private int petId;                  // serially assigned by dB
-    private String petName;             // pet's name as a string
+    public int petId;                  // serially assigned by dB
+    public String petName;             // pet's name as a string
     @Min(value=0, message="Age cannot be less than zero.")
-    private int age;                    // pet's known or estimated age in years as an integer
-    private String species;             // pet's species; e.g., dog or cat, as a string
-    private String breed;               // pet's possible breed/mix as a string
+    public int age;                    // pet's known or estimated age in years as an integer
+    public String species;             // pet's species; e.g., dog or cat, as a string
+    public String breed;               // pet's possible breed/mix as a string
     @Min(value=0, message="Weight cannot be less than zero.")
-    private int weight;                 // pet's weight in pounds as an integer
-    private String gender;              // pet's sex as a string
+    public int weight;                 // pet's weight in pounds as an integer
+    public String gender;              // pet's sex as a string
     @JsonProperty("red_flag")
-    private boolean redFlag;           // is there a restriction on who should adopt?
+    public boolean redFlag;           // is there a restriction on who should adopt?
     @JsonProperty("adopted_status")
-    private boolean adoptedStatus;      // has pet been adopted yet?
+    public boolean adoptedStatus;      // has pet been adopted yet?
 
     // Constructors
     //default constructor
-    Pet(){
+    public Pet(){
     }
 
     // pet constructor using every attribute but the serially-assigned petId
@@ -51,12 +51,13 @@ public class Pet {
         this.adoptedStatus = adoptedStatus;
     }
 
-    // Getter
+    // Getters and Setters
     public int getPetId() {
         return petId;
     }
-
-    // Getters and Setters
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
     public String getPetName() {
         return petName;
     }
@@ -114,5 +115,7 @@ public class Pet {
                 ", adoptedStatus=" + adoptedStatus +
                 '}';
     }
-    
+
+
+
 }
