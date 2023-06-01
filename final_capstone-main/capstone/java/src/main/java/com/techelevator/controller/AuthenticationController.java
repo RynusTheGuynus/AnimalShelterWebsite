@@ -47,7 +47,12 @@ public class AuthenticationController {
         String jwt = tokenProvider.createToken(authentication, false);
         
         User user = userDao.findByUsername(loginDto.getUsername());
-        boolean firstLogin = user.isFirstLogin();
+        boolean firstLogin = false;
+
+        if(user.isFirstLogin()) {
+            user.setFirstLogin(false);
+            firstLogin = true;
+        }
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
@@ -73,7 +78,7 @@ public class AuthenticationController {
     public void changePassword(@RequestBody LoginDTO loginDto) {
         try {
             User user = userDao.findByUsername(loginDto.getUsername());
-            userDao.changePassword(user.getUsername(), user.getPassword());
+            userDao.changePassword(user.getUsername(), loginDto.getPassword());
         } catch (UsernameNotFoundException e) {
             throw new DaoException("Could not find user.");
         }
