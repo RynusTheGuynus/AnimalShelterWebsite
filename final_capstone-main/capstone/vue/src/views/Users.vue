@@ -1,35 +1,19 @@
 <template>
-  <div id="users" class="text-center">
+  <div>
     <users-list />
-    
+    <shelter-footer />
   </div>
 </template>
 
 <script>
 import UsersList from '../components/UsersList.vue';
+import ShelterFooter from '../components/ShelterFooter.vue'
 
 export default {
    components: {
-    UsersList
+    UsersList,
+    ShelterFooter
   },
-    data() {
-    return {
-      user: {
-        username: '',
-        password: '',
-        confirmPassword: '',
-        role: 'pending',
-        firstName: '',
-        lastName: '',
-        emailAddress: '',
-        phoneNumber: '',
-        age: 0,
-        emergencyFirstName: '',
-        emergencyLastName: '',
-        emergencyPhone: '',
-      },
-    }
-  }
 };
 </script>
 
