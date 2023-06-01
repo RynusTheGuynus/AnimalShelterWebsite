@@ -10,13 +10,11 @@ export default {
 
 <style>
 #events {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   grid-area: events;
   border: 1px solid black;
   height: 60vh;
   width: 45vw;
-  justify-content: flex-end;
   align-items: right;
 }
 </style>
