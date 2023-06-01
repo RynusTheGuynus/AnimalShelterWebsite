@@ -1,18 +1,13 @@
 <template>
-  <div id="users" class="text-center">
-    <users-list />
-    
+  <div>
+
   </div>
 </template>
 
 <script>
-import UsersList from '../components/UsersList.vue';
-
 export default {
-   components: {
-    UsersList
-  },
-    data() {
+      name: 'usersDetails',
+  data() {
     return {
       user: {
         username: '',
@@ -27,9 +22,12 @@ export default {
         emergencyFirstName: '',
         emergencyLastName: '',
         emergencyPhone: '',
-      },
+      }
     }
   }
-};
+}
 </script>
 
+<style>
+
+</style>
