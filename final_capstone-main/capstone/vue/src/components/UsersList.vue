@@ -14,8 +14,8 @@
                 <tbody>
                     <tr v-for="user in users" v-bind:key="user.id">
                         <td> {{user.role }}</td>
-                        <td> {{user.firstName }}</td>
-                        <td> {{user.lastName}}</td>    
+                        <td> {{user.username }}</td>
+                        <td> {{user.password }}</td>    
                         <td> {{user.emailAddress}}</td>
                         <td> {{user.phoneNumber}}</td>
                     </tr>
@@ -28,11 +28,12 @@
 
 import UserService from '../services/UserService.js';
 
+
 export default {
     name: 'Users',
     data(){
         return {
-            users: []
+            users: [],
         }
     },
     methods: {

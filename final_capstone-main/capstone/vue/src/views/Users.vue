@@ -9,8 +9,26 @@
 import UsersList from '../components/UsersList.vue';
 
 export default {
-  components: {
+   components: {
     UsersList
+  },
+    data() {
+    return {
+      user: {
+        username: '',
+        password: '',
+        confirmPassword: '',
+        role: 'pending',
+        firstName: '',
+        lastName: '',
+        emailAddress: '',
+        phoneNumber: '',
+        age: 0,
+        emergencyFirstName: '',
+        emergencyLastName: '',
+        emergencyPhone: '',
+      },
+    }
   }
 };
 </script>
