@@ -84,7 +84,7 @@
         id="emergFirstName"
         class="form-control"
         placeholder="Contact First Name"
-        v-model="user.emergFirstName"
+        v-model="user.emergencyFirstName"
         required        
       /> <br>
       <label for="emergLastName" class="sr-only">Last Name: </label>
@@ -93,7 +93,7 @@
         id="emergLastName"
         class="form-control"
         placeholder="Contact Last Name"
-        v-model="user.emergLastName"
+        v-model="user.emergencyLastName"
         required        
       /> <br>
       <label for="emergPhone" class="sr-only">Phone Number: </label>
@@ -102,7 +102,7 @@
         id="emergPhone"
         class="form-control"
         placeholder="Contact Phone Number"
-        v-model="user.emergPhone"
+        v-model="user.emergencyPhone"
         required        
       /> <br>
       <router-link :to="{ name: 'login' }">Already a volunteer?</router-link> <br>
