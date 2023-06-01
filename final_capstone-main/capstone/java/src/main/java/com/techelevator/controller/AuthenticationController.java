@@ -71,9 +71,12 @@ public class AuthenticationController {
 //    @PreAuthorize("isAuthenticated()")
     @RequestMapping(value = "/change-password", method = RequestMethod.PUT)
     public void changePassword(@RequestBody LoginDTO loginDto) {
+
+        System.out.println(loginDto);
+
         try {
             User user = userDao.findByUsername(loginDto.getUsername());
-            userDao.changePassword(user.getUsername(), user.getPassword());
+            userDao.changePassword(user.getUsername(), loginDto.getPassword());
         } catch (UsernameNotFoundException e) {
             throw new DaoException("Could not find user.");
         }
