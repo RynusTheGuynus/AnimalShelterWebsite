@@ -48,6 +48,7 @@ export default {
         this.errorMessage = "New password matches current password. Please use a different password.";
         return;
       }
+      this.user.username = this.username;
       this.user.password = this.newPassword;
       authService
         .changePassword(this.user)
