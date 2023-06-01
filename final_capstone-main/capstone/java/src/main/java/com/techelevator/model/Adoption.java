@@ -40,7 +40,7 @@ public class Adoption {
 
     // Constructors
     // default constructor
-    Adoption(){
+    public Adoption(){
     }
 
     // adoption constructor using every attribute but the serially-assigned adoptionId
@@ -52,12 +52,11 @@ public class Adoption {
         this.adoptionDate = adoptionDate;
     }
 
-    // Getter
+    // Getters and Setters
     public int getAdoptionId() {
         return adoptionId;
     }
-
-    // Getters and Setters
+    public void setAdoptionId(int adoptionId) { this.adoptionId = adoptionId; }
     public String getOwnerName() {
         return ownerName;
     }

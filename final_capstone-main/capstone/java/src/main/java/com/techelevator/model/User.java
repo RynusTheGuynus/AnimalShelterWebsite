@@ -8,6 +8,8 @@ import java.util.Objects;
 import java.util.Set;
 
 public class User {
+   @JsonProperty("user_role")
+   private String role;
    @JsonProperty("user_id")
    private int id;
    @JsonProperty("username")
