@@ -1,14 +1,14 @@
 <template>
-  <div>
-    <h1>Users Lists:</h1>
-    <table>
+  <div class="user-list-container">
+    <h1 class="center-text">User List:</h1>
+    <table class="user-table">
       <thead>
         <tr>
-          <th>User Role</th>
-          <th>User First Name</th>
-          <th>User Last Name</th>
-          <th>User Email</th>
-          <th>User Phone Number</th>
+          <th>Role</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
         </tr>
       </thead>
       <tbody>
@@ -49,6 +49,10 @@ export default {
         const role = authorities[0].name;
         const roleParts = role.split('_');
         if (roleParts.length === 2 && roleParts[0] === 'ROLE') {
+            if(roleParts[1] === 'USER') {
+                roleParts[1] = 'Volunteer';
+                return roleParts[1];
+            }
           return roleParts[1];
         }
       }
@@ -61,6 +65,31 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.user-list-container {
+  margin: 20px;
+}
 
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.user-table th {
+  font-weight: bold;
+}
+
+.user-table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.center-text {
+    margin-left: 0px;
+}
 </style>

@@ -39,6 +39,7 @@ CREATE TABLE pet (
 	gender varchar(50) NOT NULL,
 	red_flag boolean NOT NULL,
 	adopted_status boolean NOT NULL,
+	description varchar(140),
 	CONSTRAINT PK_pet PRIMARY KEY (pet_id)
 );
 
