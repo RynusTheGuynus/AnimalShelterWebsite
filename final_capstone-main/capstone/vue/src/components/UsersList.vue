@@ -1,14 +1,14 @@
 <template>
   <div class="user-list-container">
-    <h1 class="center-text">Users Lists:</h1>
+    <h1 class="center-text">User List:</h1>
     <table class="user-table">
       <thead>
         <tr>
-          <th>User Role</th>
-          <th>User First Name</th>
-          <th>User Last Name</th>
-          <th>User Email</th>
-          <th>User Phone Number</th>
+          <th>Role</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
         </tr>
       </thead>
       <tbody>
