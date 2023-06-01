@@ -31,7 +31,7 @@
         v-model="user.password"
         required
       />
-      <router-link :to="{ name: 'register' }">Need an account?</router-link>
+      <router-link :to="{ name: 'register' }">Interested in becoming a volunteer? Apply here!</router-link>
       <button type="submit">Sign in</button>
     </form>
   </div>
@@ -60,7 +60,13 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            this.$router.push("/");
+            if (response.data.firstLogin) {
+                // Prompt user to change their password
+                this.$router.push("/change-password");
+            } else {
+              // Go back to the home page upon successful login
+              this.$router.push("/");
+            }
           }
         })
         .catch(error => {

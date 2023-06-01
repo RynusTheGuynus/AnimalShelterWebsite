@@ -33,6 +33,8 @@ public class User {
    private String emergencyLastName;
    @JsonProperty("emerg_phone")
    private String emergencyPhone;
+   @JsonProperty("first_login")
+   private boolean firstLogin = true;
 
    public User() { }
 
@@ -156,6 +158,14 @@ public class User {
 
    public void setEmergencyPhone(String emergencyPhone) {
       this.emergencyPhone = emergencyPhone;
+   }
+
+   public boolean isFirstLogin() {
+      return firstLogin;
+   }
+
+   public void setFirstLogin(boolean firstLogin) {
+      this.firstLogin = firstLogin;
    }
 
    public void setAuthorities(String authorities) {

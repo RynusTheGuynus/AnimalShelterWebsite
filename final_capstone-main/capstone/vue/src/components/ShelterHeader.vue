@@ -6,7 +6,7 @@
           <li>Home</li>
           <li>About Us</li>
           <li>Pets for Adoption</li>
-          <li>Apply to be a Volunteer!</li>
+          <router-link :to="{name: 'register'}" tag="li">Apply to be a Volunteer!</router-link>
           <li>Volunteer directory</li>
           <li>Update/Add Pets</li>
           <li>View Adopted Pets</li>

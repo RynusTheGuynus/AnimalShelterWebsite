@@ -15,6 +15,7 @@ CREATE TABLE users (
 	emerg_first_name varchar(50) NOT NULL,
 	emerg_last_name varchar(50) NOT NULL,
 	emerg_phone varchar(50) NOT NULL,
+	first_login boolean DEFAULT true,
 	CONSTRAINT PK_user PRIMARY KEY (user_id)
 );
 

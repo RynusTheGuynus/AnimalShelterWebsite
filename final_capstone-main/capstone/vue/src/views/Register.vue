@@ -84,7 +84,7 @@
         id="emergFirstName"
         class="form-control"
         placeholder="Contact First Name"
-        v-model="user.emergFirstName"
+        v-model="user.emergencyFirstName"
         required        
       /> <br>
       <label for="emergLastName" class="sr-only">Last Name: </label>
@@ -93,7 +93,7 @@
         id="emergLastName"
         class="form-control"
         placeholder="Contact Last Name"
-        v-model="user.emergLastName"
+        v-model="user.emergencyLastName"
         required        
       /> <br>
       <label for="emergPhone" class="sr-only">Phone Number: </label>
@@ -102,7 +102,7 @@
         id="emergPhone"
         class="form-control"
         placeholder="Contact Phone Number"
-        v-model="user.emergPhone"
+        v-model="user.emergencyPhone"
         required        
       /> <br>
       <router-link :to="{ name: 'login' }">Already a volunteer?</router-link> <br>
@@ -130,9 +130,9 @@ export default {
         emailAddress: '',
         phoneNumber: '',
         age: 0,
-        emergFirstName: '',
-        emergLastName: '',
-        emergPhone: '',
+        emergencyFirstName: '',
+        emergencyLastName: '',
+        emergencyPhone: '',
       },
       registrationErrors: false,
       registrationErrorMsg: 'There were problems registering this user.',
@@ -171,4 +171,12 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.form-control {
+  margin: 10px;
+}
+
+button {
+  margin: 10px;
+}
+</style>

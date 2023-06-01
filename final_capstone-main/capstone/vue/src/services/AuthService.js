@@ -12,6 +12,10 @@ export default {
 
   register(user) {
     return http.post('/register', user)
+  },
+
+  changePassword(user) {
+    return http.put('/change-password', user);
   }
   
 }

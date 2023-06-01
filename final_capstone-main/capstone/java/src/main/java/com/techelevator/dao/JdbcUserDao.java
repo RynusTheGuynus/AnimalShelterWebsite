@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import com.techelevator.model.UserNotFoundException;
+import com.techelevator.exception.DaoException;
+import com.techelevator.exception.UserNotFoundException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.BadSqlGrammarException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -84,20 +88,21 @@ public class JdbcUserDao implements UserDao {
         return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, firstName, lastName,
                                   emailAddress, phoneNumber, age, emergencyFirstName, emergencyLastName, emergencyPhone) == 1;
     }
-//    @Override
-//    public boolean addPendingUser(User user) {
-//        String password = user.getPassword();
-//        String role = user.getRole();
-//        String addUserSql = "insert into users (username,password_hash,role,first_name,last_name,email_address," +
-//                "phone_number,age,emerg_first_name,emerg_last_name,emerg_phone) values (?,?,?,?,?,?,?,?,?,?,?)";
-//        String password_hash = new BCryptPasswordEncoder().encode(password);
-//        String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
-//
-//        return jdbcTemplate.update(addUserSql, user.getUsername(), password_hash, ssRole, user.getFirstName(),
-//                user.getLastName(), user.getEmailAddress(), user.getPhoneNumber(), user.getAge(), user.getEmergFirstName(),
-//                user.getEmergLastName(), user.getEmergPhone()) == 1;
-//
-//    }
+
+    @Override
+    public boolean changePassword(String username, String password) {
+        String insertUserSql = "UPDATE users SET password_hash = ?, first_login = false WHERE username = ?;";
+        try {
+            String password_hash = new BCryptPasswordEncoder().encode(password);
+            return jdbcTemplate.update(insertUserSql, password_hash, username) == 1;
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+    }
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
@@ -114,14 +119,6 @@ public class JdbcUserDao implements UserDao {
         user.setEmergencyLastName(rs.getString("emerg_last_name"));
         user.setEmergencyPhone(rs.getString("emerg_phone"));
         user.setActivated(true);
-//        user.setFirstName(rs.getString("first_name"));
-//        user.setLastName(rs.getString("last_name"));
-//        user.setEmailAddress(rs.getString("email_address"));
-//        user.setPhoneNumber(rs.getString("phone_number"));
-//        user.setAge(rs.getInt("age"));
-//        user.setEmergFirstName(rs.getString("emerg_first_name"));
-//        user.setEmergLastName(rs.getString("emerg_last_name"));
-//        user.setEmergPhone(rs.getString("emerg_phone"));
         return user;
     }
 }
