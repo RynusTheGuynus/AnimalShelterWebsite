@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about">
       <h1>About Rising Sun</h1>
       <figure>
         <img src="src\components\risingsunaerial.png" alt="aerial photo">

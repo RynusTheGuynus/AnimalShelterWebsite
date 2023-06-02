@@ -1,9 +1,7 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.AdoptionDao;
-import com.techelevator.dao.UserDao;
 import com.techelevator.model.Adoption;
-import com.techelevator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

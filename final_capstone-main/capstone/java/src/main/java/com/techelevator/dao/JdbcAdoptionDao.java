@@ -64,7 +64,7 @@ public class JdbcAdoptionDao implements AdoptionDao {
         adoption.setOwnerAddress(rs.getString("owner_address"));
         adoption.setOwnerEmail(rs.getString("owner_email"));
         adoption.setOwnerPhoneNumber(rs.getString("owner_phone_number"));
-        adoption.setAdoptionDate(rs.getObject("adoption_date", LocalDate.class));
+        adoption.setAdoptionDate(rs.getDate("adoption_date").toLocalDate());
         return adoption;
     }
 
