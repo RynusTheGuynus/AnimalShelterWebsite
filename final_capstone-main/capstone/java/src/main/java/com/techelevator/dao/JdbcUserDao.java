@@ -147,6 +147,20 @@ public class JdbcUserDao implements UserDao {
 
     }
 
+    @Override
+    public boolean promoteToAdmin(User user, int userId) {
+        String sql = "UPDATE users SET role = ? WHERE user_id = ?";
+        try {
+            return jdbcTemplate.update(sql, "ROLE_ADMIN", userId) == 1;
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+    }
+
 
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();

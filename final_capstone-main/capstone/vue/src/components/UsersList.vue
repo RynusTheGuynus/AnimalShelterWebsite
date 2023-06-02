@@ -37,13 +37,18 @@ export default {
   methods: {
     getUsers() {
       UserService.getUsers().then((response) => {
-        this.users = response.data.filter(user => !this.isPending(user));
+        this.users = response.data.filter(user => !this.isPending(user) && !this.isDeclined(user));
       });
     },
     isPending(user) {
         const userRole = this.extractUserRole(user.authorities)
         return userRole === 'PENDING';
     },
+    isDeclined(user) {
+        const userRole = this.extractUserRole(user.authorities)
+        return userRole === 'DECLINED';
+    },
+
     extractUserRole(authorities) {
       if (Array.isArray(authorities) && authorities.length > 0) {
         const role = authorities[0].name;
