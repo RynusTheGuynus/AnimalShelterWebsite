@@ -27,7 +27,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 
 #home {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -42,14 +42,12 @@ export default {
 }
 
 #shelterHead {
-  
-  height: 30vh;
-  width: 95vw;
-  background-size: cover;
+  height: 20vh;
+  width: 95vw;  
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
-  border: 1px solid black;
+  margin-left: 5px;
 }
 
 #shelter {
@@ -65,6 +63,7 @@ export default {
 }
 
 ul {
+  font-size: 12px;
   color: antiquewhite;
   justify-content: left;
 }

@@ -50,6 +50,7 @@ export default {
       }
       this.user.username = this.username;
       this.user.password = this.newPassword;
+   
       authService
         .changePassword(this.user)
         .then((response) => {

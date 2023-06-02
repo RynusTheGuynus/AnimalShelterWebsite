@@ -11,13 +11,11 @@ export default {
 
 <style>
 #pets {
-  display: flex;
-  flex-direction: row;
+  display: grid;
   grid-area: pets;
   border: 1px solid black;
   height: 60vh;
   width: 45vw;
   margin-left: 5px;
-  justify-content: flex-start;
 }
 </style>
