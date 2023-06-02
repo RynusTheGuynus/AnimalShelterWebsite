@@ -13,7 +13,7 @@ const http = axios.create({
           return http.put(`/users/approve/${userId}`, user);
       },
 
-      declineApplication(user) {
-          return http.put(`/users/decline/${user.id}`, user);
+      declineApplication(user, userId) {
+          return http.put(`/users/decline/${userId}`, user);
       }
   }
