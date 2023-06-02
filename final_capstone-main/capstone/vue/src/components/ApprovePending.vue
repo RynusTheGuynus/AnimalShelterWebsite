@@ -1,6 +1,6 @@
 <template>
   <div id="applicationContainer">
-      <h1>Pending Volunteer Applications</h1>
+      <h2>Pending Volunteer Applications</h2>
       <table id="applicationTable">
           <thead>
               <tr id="tableHeader">
@@ -95,13 +95,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #applicationContainer {
     margin: 20px;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
 }
 
 #applicationTable {

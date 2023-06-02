@@ -61,5 +61,10 @@ public class UserController {
     public boolean declineApplication(@RequestBody User user, @PathVariable int id) {
         return userDao.declineVolunteer(user, id);
     }
+
+    @RequestMapping(path = "/admin/promote/{id}", method = RequestMethod.PUT)
+    public boolean promote(@RequestBody User user, @PathVariable int id) {
+        return userDao.promoteToAdmin(user, id);
+    }
 }
 

@@ -25,4 +25,6 @@ public interface UserDao {
     boolean approveVolunteer(User user, int userId);
 
     boolean declineVolunteer(User user, int userId);
+
+    boolean promoteToAdmin(User user, int userId);
 }
