@@ -39,5 +39,12 @@ INSERT INTO pet_adoption (pet_id, adoption_id)
 INSERT INTO pet_adoption (pet_id, adoption_id)
 	VALUES (12, 3);
 
+INSERT INTO pet_image (pet_id, image_name, image_path)
+	VALUES (2, 'gina 1','images/gina/gina1.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+	VALUES (8, 'oliver 1', 'images/oliver/oliver1.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+	VALUES (12, 'ginger 1', 'images/ginger/ginger1.jpg');
+
 
 COMMIT;
