@@ -41,7 +41,7 @@ public class UserController {
             return user;
     }
 
-    @RequestMapping(path = "/users/id/{username}", method = RequestMethod.GET)
+    @RequestMapping(path = "/users/id/username/{username}", method = RequestMethod.GET)
     public int getIdByUsername(@PathVariable String username) {
         int userId = userDao.findIdByUsername(username);
             return userId;
@@ -54,6 +54,11 @@ public class UserController {
 
     @RequestMapping(path = "/users/approve/{id}", method = RequestMethod.PUT)
     public boolean approveApplication(@RequestBody User user, @PathVariable int id) {
+        return userDao.approveVolunteer(user, id);
+    }
+
+    @RequestMapping(path = "/users/decline/{id}", method = RequestMethod.PUT)
+    public boolean declineApplication(@RequestBody User user, @PathVariable int id) {
         return userDao.approveVolunteer(user, id);
     }
 }

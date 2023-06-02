@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div id="applicationContainer">
       <h1>Pending Volunteer Applications</h1>
-      <table>
+      <table id="applicationTable">
           <thead>
-              <tr>
+              <tr id="tableHeader">
                   <th>Username</th>
                   <th>First Name</th>
                   <th>Last Name</th>
@@ -18,7 +18,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="user in pendingApplications" v-bind:key="user.user_id">
+              <tr id="userRows" v-for="user in pendingApplications" v-bind:key="user.user_id">
                   <td>{{ user.username }}</td>
                   <td>{{ user.first_name }}</td>
                   <td>{{ user.last_name }}</td>
@@ -28,8 +28,9 @@
                   <td>{{ user.emerg_first_name }}</td>
                   <td>{{ user.emerg_last_name }}</td>
                   <td>{{ user.emerg_phone }}</td>
-                  <td><button v-on:click="approveUser(user)">Approve</button></td>
-                  <td><button>Decline</button></td>
+                  <td><button v-on:click="approveUser(user.user_id)">Approve</button></td>
+                  <td><button v-on:click="declineApplication(user.user_id)">Decline</button></td>
+                  
               </tr>
           </tbody>
       </table>
@@ -39,6 +40,7 @@
 
 <script>
 import AdminService from '../services/AdminService.js';
+import UserService from '../services/UserService.js';
 export default {
     name: 'ApprovePending',
     data() {
@@ -53,11 +55,37 @@ export default {
                 this.pendingApplications = response.data;
             })
         },
-        approveUser(user) {
-            AdminService.approveApplication(user, user.user_id)
+        approveUser(userId) {
+            const user = UserService.get(userId);
+            AdminService.approveApplication(user, userId)
+            .then((response) => {
+                if (response.status == 200) {
+                    console.log("Success");
+                    this.getPendingApplications();
+                }
+            })
+            .catch(error => {
+                if (error.status == 400) {
+                    console.log("Client error")
+                }
+            })
+            
         },
-        declineApplication() {
-
+        declineApplication(userId) {
+            const user = UserService.get(userId);
+            AdminService.declineApplication(user, userId)
+            .then((response) => {
+                if (response.status == 200) {
+                    console.log("Success");
+                    this.getPendingApplications();
+                }
+            })
+            .catch(error => {
+                if (error.status == 400) {
+                    console.log("Client error")
+                }
+            })
+            
         }
     
     },
@@ -68,5 +96,26 @@ export default {
 </script>
 
 <style>
+#applicationContainer {
+    margin: 20px;
+}
 
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#applicationTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#applicationTable th, #applicationTable td {
+    padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+button {
+    margin: 0px;
+}
 </style>

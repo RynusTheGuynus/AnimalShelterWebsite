@@ -23,4 +23,6 @@ public interface UserDao {
     List<User> viewPendingApplications();
 
     boolean approveVolunteer(User user, int userId);
+
+    boolean declineVolunteer(User user, int userId);
 }
