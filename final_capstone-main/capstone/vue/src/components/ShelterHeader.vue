@@ -5,7 +5,7 @@
         <img src="'shelterheadbanner.png'" alt="banner">
         <ul class="headLeft">
           <router-link :to="{name: 'home'}" tag="li">Home</router-link>
-          <li>About Us</li>
+          <router-link :to="{name: 'about'}" tag="li">About Us</router-link>
           <li>Pets for Adoption</li>
           <router-link :to="{name: 'register'}" tag="li">Apply to be a Volunteer!</router-link>
           <router-link :to="{ name: 'users' }" tag="li">Volunteer directory</router-link>
