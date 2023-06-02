@@ -1,46 +1,51 @@
 <template>
-  <div class="adopted-pet-list-container">
-      <h1 class="adopted-pet-list-heading">
+  <div class="available-pet-list-container">
+      <h1 class="available-pet-list-heading">
           Adopted Pet List Component
       </h1>
       <div 
-      class="adopted-pet"
-      v-for="pet in adoptedPets"
+      class="available-pet"
+      v-for="pet in availablePets"
       v-bind:key="pet"
       >
-        <h2 class="adopted-pet-name">
+        <h2 class="available-pet-name">
             {{ pet.pet_name }}
         </h2>
         <p>
-            {{ pet.owner_name }}
+            {{ pet.species }}
         </p>
         <p>
-            {{ pet.adoption_date }}
+            {{ pet.breed }}
+        </p>
+        <p>
+            {{ pet.age }}
         </p>
       </div>
   </div>
 </template>
 
 <script>
+
 import PetService from '../services/PetService.js';
 
 export default {
-    name: 'AdoptedPetList',
+name: 'AvailablePetList',
     data() {
         return {
-            adoptedPets: [],
+            availablePets: [],
 
         }
     },
     methods: {
-        getAdoptedPets() {
-            PetService.getAdoptedPets()
+        getAvailablePets() {
+            PetService.getAvailablePets()
                 .then((response) => {
-                    this.adoptedPets = response.data.map((pet) => {
+                    this.availablePets = response.data.map((pet) => {
                         return {
                             pet_name: pet.petName,
-                            owner_name: pet.ownerName,
-                            adoption_date: pet.adoptionDate
+                            species: pet.species,
+                            breed: pet.breed,
+                            age: pet.age
                         };
                     });
                 }).catch((error) => {
@@ -56,9 +61,8 @@ export default {
 
     },
     created() {
-        this.getAdoptedPets();
+        this.getAvailablePets();
     }
-
 }
 </script>
 

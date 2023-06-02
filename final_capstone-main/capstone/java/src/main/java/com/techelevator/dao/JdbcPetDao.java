@@ -2,6 +2,8 @@ package com.techelevator.dao;
 
 import com.techelevator.exception.DaoException;
 import com.techelevator.exception.UserNotFoundException;
+import com.techelevator.model.AdoptedPetDTO;
+import com.techelevator.model.AvailablePetDTO;
 import com.techelevator.model.Pet;
 import com.techelevator.model.User;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -14,6 +16,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -52,7 +55,51 @@ public class JdbcPetDao implements PetDao {
         return pets;
     }
 
+    @Override
+    public List<AdoptedPetDTO> getAdoptedPets() {
+        List<AdoptedPetDTO> adoptedPetList = new ArrayList<>();
+        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date " +
+                     "FROM pet AS p " +
+                     "JOIN pet_adoption AS pa ON pa.pet_id = p.pet_id " +
+                     "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
+                     "WHERE pa.adoption_id IS NOT NULL;";
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while(results.next()) {
+                AdoptedPetDTO adoptedPet = mapRowToAdoptedPetDTO(results);
+                adoptedPetList.add(adoptedPet);
+            }
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+        return adoptedPetList;
+    }
 
+    @Override
+    public List<AvailablePetDTO> getAvailablePets() {
+        List<AvailablePetDTO> availablePetList = new ArrayList<>();
+        String sql = "SELECT p.pet_name, p.species, p.breed, p.age " +
+                "FROM pet AS p " +
+                "WHERE p.adopted_status = true;";
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while(results.next()) {
+                AvailablePetDTO availablePet = mapRowToAvailablePetDTO(results);
+                availablePetList.add(availablePet);
+            }
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+        return availablePetList;
+    }
 
     @Override
     public boolean create(String petName, int age, String species, String breed, int weight,
@@ -78,6 +125,23 @@ public class JdbcPetDao implements PetDao {
         pet.setAdoptedStatus(rs.getBoolean("adopted_status"));
         pet.setDescription(rs.getString("description"));
         return pet;
+    }
+
+    private AdoptedPetDTO mapRowToAdoptedPetDTO(SqlRowSet rs) {
+        AdoptedPetDTO adoptedPetDTO = new AdoptedPetDTO();
+        adoptedPetDTO.setPetName(rs.getString("pet_name"));
+        adoptedPetDTO.setOwnerName(rs.getString("owner_name"));
+        adoptedPetDTO.setAdoptionDate(rs.getDate("adoption_date").toLocalDate());
+        return adoptedPetDTO;
+    }
+
+    private AvailablePetDTO mapRowToAvailablePetDTO(SqlRowSet rs) {
+        AvailablePetDTO availablePetDTO = new AvailablePetDTO();
+        availablePetDTO.setPetName(rs.getString("pet_name"));
+        availablePetDTO.setSpecies(rs.getString("species"));
+        availablePetDTO.setBreed(rs.getString("breed"));
+        availablePetDTO.setAge(rs.getInt("age"));
+        return availablePetDTO;
     }
 
 }

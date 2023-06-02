@@ -15,5 +15,9 @@ const http = axios.create({
 
       declineApplication(user, userId) {
           return http.put(`/users/decline/${userId}`, user);
+      },
+
+      promoteToAdmin(user, userId) {
+          return http.put(`/admin/promote/${userId}`, user);
       }
   }

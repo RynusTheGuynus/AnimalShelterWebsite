@@ -1,6 +1,6 @@
 <template>
   <div id="applicationContainer">
-      <h1>Pending Volunteer Applications</h1>
+      <h2>Pending Volunteer Applications</h2>
       <table id="applicationTable">
           <thead>
               <tr id="tableHeader">
@@ -30,7 +30,6 @@
                   <td>{{ user.emerg_phone }}</td>
                   <td><button v-on:click="approveUser(user.user_id)">Approve</button></td>
                   <td><button v-on:click="declineApplication(user.user_id)">Decline</button></td>
-                  
               </tr>
           </tbody>
       </table>
@@ -103,13 +102,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #applicationContainer {
     margin: 20px;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
 }
 
 #applicationTable {
@@ -121,6 +116,10 @@ tbody tr:nth-child(even) {
     padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 button {
