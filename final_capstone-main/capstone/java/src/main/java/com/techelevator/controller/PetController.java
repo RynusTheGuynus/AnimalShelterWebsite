@@ -1,6 +1,11 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.PetDao;
+<<<<<<< HEAD
+=======
+import com.techelevator.dao.UserDao;
+import com.techelevator.model.AdoptedPetDTO;
+>>>>>>> main
 import com.techelevator.model.Pet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,4 +34,8 @@ public class PetController {
         return pet;
     }
 
+    @RequestMapping(path = "/celebrate", method = RequestMethod.GET)
+    public List<AdoptedPetDTO> getAdoptedPets() {
+        return petDao.getAdoptedPets();
+    }
 }
