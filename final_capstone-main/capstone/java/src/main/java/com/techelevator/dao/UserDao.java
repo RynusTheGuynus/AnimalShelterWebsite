@@ -21,4 +21,6 @@ public interface UserDao {
     boolean changePassword(String username, String password);
 
     List<User> viewPendingApplications();
+
+    boolean approveVolunteer(User user, int userId);
 }

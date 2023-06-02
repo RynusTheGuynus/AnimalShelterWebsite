@@ -18,7 +18,7 @@
               </tr>
           </thead>
           <tbody>
-              <tr v-for="user in pendingApplications" v-bind:key="user.username">
+              <tr v-for="user in pendingApplications" v-bind:key="user.user_id">
                   <td>{{ user.username }}</td>
                   <td>{{ user.first_name }}</td>
                   <td>{{ user.last_name }}</td>
@@ -28,7 +28,7 @@
                   <td>{{ user.emerg_first_name }}</td>
                   <td>{{ user.emerg_last_name }}</td>
                   <td>{{ user.emerg_phone }}</td>
-                  <td><button>Approve</button></td>
+                  <td><button v-on:click="approveUser(user)">Approve</button></td>
                   <td><button>Decline</button></td>
               </tr>
           </tbody>
@@ -43,7 +43,7 @@ export default {
     name: 'ApprovePending',
     data() {
         return {
-            pendingApplications: []
+            pendingApplications: [],
         }
     },
     methods: {
@@ -53,8 +53,8 @@ export default {
                 this.pendingApplications = response.data;
             })
         },
-        approveApplication() {
-            AdminService.approveApplication(this.user)
+        approveUser(user) {
+            AdminService.approveApplication(user, user.user_id)
         },
         declineApplication() {
 
