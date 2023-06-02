@@ -7,7 +7,7 @@
           <li>About Us</li>
           <li>Pets for Adoption</li>
           <router-link :to="{name: 'register'}" tag="li">Apply to be a Volunteer!</router-link>
-          <router-link :to="{ name: 'users' }">Volunteer directory</router-link>&nbsp;|&nbsp;
+          <router-link :to="{ name: 'users' }" tag="li">Volunteer directory</router-link>
           <li>Update/Add Pets</li>
           <li>View Adopted Pets</li>
         </ul>
@@ -24,31 +24,30 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 #shelterHead {
-    height: 45vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "headLeft headCenter .";
-    background-image: url('shelterheadbanner.png');
+    background-image: url('shelterheadbanner.png');  
     background-repeat: no-repeat;
-    background-size: 105%;
-    margin-top: 5px;
+    background-size: auto;
+    background-position-y: -10px;
     
 }
 
 .headLeft {
     grid-area: headLeft;
     flex-direction: column;
+    height: 20vh;
     width: 10vw;
     display: flex;
     justify-content: left;
     align-self: flex-start;
     align-items: left;
-    border: 1px solid black;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .headCenter {
@@ -56,8 +55,9 @@ export default {
     flex-direction: column;
     width: 50vw;
     justify-items: center;
-    margin-top: 220px;
-    margin-right: 350px;
+    margin-top: 100px;
+    margin-left: 630px;
+    font-size: 24px;
 
 }
 
@@ -66,10 +66,9 @@ h1, h2 {
   flex-direction: row;
   flex-wrap: nowrap;
   height: 10vh;
-  margin-left: 500px;
+  margin-bottom: 20px;
   justify-content: center;
   color: lightgray;
-  border: 1px solid black;
 }
 
 </style>

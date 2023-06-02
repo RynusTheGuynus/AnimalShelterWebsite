@@ -49,6 +49,7 @@ export default {
         return;
       }
       this.user.password = this.newPassword;
+   
       authService
         .changePassword(this.user)
         .then((response) => {

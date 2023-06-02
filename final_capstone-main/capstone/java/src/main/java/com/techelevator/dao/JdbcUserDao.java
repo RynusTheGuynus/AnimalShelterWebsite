@@ -104,6 +104,35 @@ public class JdbcUserDao implements UserDao {
         }
     }
 
+    @Override
+    public List<User> viewPendingApplications() {
+        List<User> pendingUsers = new ArrayList<>();
+        String sql = "SELECT user_id, username, password_hash, role, first_name, last_name, email_address, phone_number, " +
+                "age, emerg_first_name, emerg_last_name, emerg_phone FROM users WHERE " +
+                "role = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, "ROLE_PENDING");
+        while (results.next()) {
+            User user = mapRowToUser(results);
+            pendingUsers.add(user);
+        }
+        return pendingUsers;
+    }
+
+    @Override
+    public boolean approveVolunteer(User user, int userId) {
+        String sql = "UPDATE users SET role = ? WHERE user_id = ?";
+        try {
+            return jdbcTemplate.update(sql, "ROLE_USER", userId) == 1;
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+    }
+
+
     private User mapRowToUser(SqlRowSet rs) {
         User user = new User();
         user.setId(rs.getInt("user_id"));
