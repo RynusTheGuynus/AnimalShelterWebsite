@@ -13,9 +13,8 @@ export default {
 #pets {
   display: grid;
   grid-area: pets;
-  border: 1px solid black;
+  border: 3px solid #a36c2c;
   height: 60vh;
   width: 45vw;
-  margin-left: 5px;
 }
 </style>

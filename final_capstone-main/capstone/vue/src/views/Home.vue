@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <div>             
-      <shelter-header id='shelterHead' />
+    <div id="grid">             
+      <shelter-header id='shelterHeader' />
       <pet-component id='pets' />
       <event-component id='events' />
-      <shelter-footer id='shelterFoot'/>
+      <shelter-footer id='shelterFooter'/>
     </div>
   </div>
 </template>
@@ -29,7 +29,8 @@ export default {
 
 <style>
 
-#home {
+#grid {
+  background-color: #dc9d4e;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -40,23 +41,42 @@ export default {
   "pets events"
   "shelterFoot shelterFoot"
 }
+#home {
+  background-color: #dc9d4e;
+}
 
-#shelterHead {
+#shelterHeader {
   height: 20vh;
-  width: 95vw;  
+  width: 100vw;  
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
-  margin-left: 5px;
 }
 
-#shelter {
-  border: 1px solid green;
-  justify-content: center;
+#pets {
+  grid-area: pets;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 60vw;
+  height: 75vh;
+  margin-top: 45px;
+  margin-bottom: 5px;
+  margin-right: 5px;
 }
 
-#shelterFoot {
-  height: 10vh;
+#events {
+  grid-area: events;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 40vw;
+  height: 75vh;
+  margin-top: 45px;
+}
+
+#shelterFooter {
+  height: 8vh;
   width: 100vw;
   justify-content: space-evenly;
   grid-area: shelterFoot;

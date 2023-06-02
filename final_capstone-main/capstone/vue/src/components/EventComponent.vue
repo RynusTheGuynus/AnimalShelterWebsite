@@ -12,7 +12,7 @@ export default {
 #events {
   display: grid;
   grid-area: events;
-  border: 1px solid black;
+  border: 3px solid #a36c2c;
   height: 60vh;
   width: 45vw;
   align-items: right;
