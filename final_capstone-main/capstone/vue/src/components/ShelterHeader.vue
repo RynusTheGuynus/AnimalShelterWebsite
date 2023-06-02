@@ -53,8 +53,8 @@ img {
     justify-content: left;
     align-self: flex-start;
     align-items: left;
-    margin-top: 30px;
-    font-size: 16px;
+    margin-top: 5px;
+    font-size: 12px;
 }
 
 .headCenter {

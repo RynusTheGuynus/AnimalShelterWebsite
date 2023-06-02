@@ -4,9 +4,9 @@
 
 <script>
 export default {
-    name: 'pet-component'
-
-}
+    name: "pets"
+  }
+  
 </script>
 
 <style>
