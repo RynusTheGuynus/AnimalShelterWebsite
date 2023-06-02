@@ -13,9 +13,18 @@ public class EmailService {
         this.emailSender = emailSender;
     }
 
-    public void sendEmail(String to, String subject, String text) {
+    public void sendApproveEmail(String to, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("rwilliamson2053@gmail.com");
+        message.setFrom("rsanimalshelter@gmail.com");
+        message.setTo(to);
+        message.setSubject(subject);
+        message.setText(text);
+        this.emailSender.send(message);
+    }
+
+    public void sendDeclineEmail(String to, String subject, String text) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setFrom("rsanimalshelter@gmail.com");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);

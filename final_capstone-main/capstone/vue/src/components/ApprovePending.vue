@@ -41,6 +41,8 @@
 <script>
 import AdminService from '../services/AdminService.js';
 import UserService from '../services/UserService.js';
+import EmailService from '../services/EmailService.js';
+
 export default {
     name: 'ApprovePending',
     data() {
@@ -57,11 +59,15 @@ export default {
         },
         approveUser(userId) {
             const user = UserService.get(userId);
+            const userEmail = user.email_address;
+            
             AdminService.approveApplication(user, userId)
             .then((response) => {
                 if (response.status == 200) {
                     console.log("Success");
                     this.getPendingApplications();
+                    
+                    EmailService.sendApprovedEmail(userEmail);
                 }
             })
             .catch(error => {
@@ -73,11 +79,13 @@ export default {
         },
         declineApplication(userId) {
             const user = UserService.get(userId);
+            const userEmail = user.email_address;
             AdminService.declineApplication(user, userId)
             .then((response) => {
                 if (response.status == 200) {
                     console.log("Success");
                     this.getPendingApplications();
+                    EmailService.sendDeclinedEmail(userEmail);
                 }
             })
             .catch(error => {
