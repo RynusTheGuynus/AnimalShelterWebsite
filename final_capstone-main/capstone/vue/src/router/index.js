@@ -10,6 +10,7 @@ import PetComponent from '../components/PetComponent.vue'
 import ChangePassword from '../components/ChangePassword.vue'
 import Admin from '../views/Admin.vue'
 import Celebrate from '../views/Celebrate.vue'
+import About from '../views/About.vue'
 
 Vue.use(Router)
 
@@ -96,8 +97,16 @@ const router = new Router({
       component: Celebrate,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/about",
+      name: "about",
+      component: About,
+      meta: {
+        requiresAuth: false
+      }
     }
-  },
   ]
 })
 
