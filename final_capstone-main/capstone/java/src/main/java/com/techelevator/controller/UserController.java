@@ -5,6 +5,7 @@ import com.techelevator.model.User;
 import com.techelevator.security.jwt.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.method.P;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -44,6 +45,16 @@ public class UserController {
     public int getIdByUsername(@PathVariable String username) {
         int userId = userDao.findIdByUsername(username);
             return userId;
+    }
+
+    @RequestMapping(path = "/users/pending", method = RequestMethod.GET)
+    public List<User> viewPendingApplications() {
+        return userDao.viewPendingApplications();
+    }
+
+    @RequestMapping(path = "/users/approve/{id}", method = RequestMethod.PUT)
+    public boolean approveApplication(@RequestBody User user, @PathVariable int id) {
+        return userDao.approveVolunteer(user, id);
     }
 }
 

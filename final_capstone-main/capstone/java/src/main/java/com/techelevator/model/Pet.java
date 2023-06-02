@@ -34,7 +34,7 @@ public class Pet {
     public boolean redFlag;           // is there a restriction on who should adopt?
     @JsonProperty("adopted_status")
     public boolean adoptedStatus;      // has pet been adopted yet?
-    // optional: public String description      // a String field for introductory text
+    private String description = "";      // a String field for introductory text
 
     // Constructors
     //default constructor
@@ -42,15 +42,17 @@ public class Pet {
     }
 
     // pet constructor using every attribute but the serially-assigned petId
-    public Pet(String petName, int age, String species, int weight, boolean red_flag, String gender, boolean adoptedStatus) {
+    public Pet(String petName, int age, String species, String breed, int weight, boolean red_flag,
+               String gender, boolean adoptedStatus, String description) {
         this.petName = petName;
         this.age = age;
         this.species = species;
+        this.breed =breed;
         this.weight = weight;
-        this.redFlag = red_flag;
         this.gender = gender;
+        this.redFlag = red_flag;
         this.adoptedStatus = adoptedStatus;
-        // optional: this.description = description;
+        this.description = description;
     }
 
     // Getters and Setters
@@ -84,12 +86,6 @@ public class Pet {
     public void setWeight(int weight) {
         this.weight = weight;
     }
-    public boolean isRed_flag() {
-        return redFlag;
-    }
-    public void setRed_flag(boolean redFlag) {
-        this.redFlag = redFlag;
-    }
     public String getGender() {
         return gender;
     }
@@ -102,7 +98,24 @@ public class Pet {
     public void setAdoptedStatus(boolean adoptedStatus) {
         this.adoptedStatus = adoptedStatus;
     }
-    // optional: getter and setter for description
+    public String getBreed() {
+        return breed;
+    }
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
+    public boolean isRedFlag() {
+        return redFlag;
+    }
+    public void setRedFlag(boolean redFlag) {
+        this.redFlag = redFlag;
+    }
+    public String getDescription() {
+        return description;
+    }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     @Override
     public String toString() {

@@ -12,6 +12,6 @@ public interface AdoptionDao {
 
     Adoption getAdoptionById(int adoptionId);
 
-    boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail, LocalDate adoptionDate);
+    boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, LocalDate adoptionDate);
 
 }

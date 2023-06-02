@@ -47,12 +47,15 @@ public class AuthenticationController {
         String jwt = tokenProvider.createToken(authentication, false);
         
         User user = userDao.findByUsername(loginDto.getUsername());
-        boolean firstLogin = false;
 
-        if(user.isFirstLogin()) {
-            user.setFirstLogin(false);
-            firstLogin = true;
-        }
+        boolean firstLogin = user.isFirstLogin();
+
+////        boolean firstLogin = false;
+//
+//        if(user.isFirstLogin()) {
+//            user.setFirstLogin(false);
+////            firstLogin = true;
+//        }
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
@@ -74,8 +77,9 @@ public class AuthenticationController {
     }
 
 //    @PreAuthorize("isAuthenticated()")
+    @ResponseStatus(HttpStatus.OK)
     @RequestMapping(value = "/change-password", method = RequestMethod.PUT)
-    public void changePassword(@RequestBody LoginDTO loginDto) {
+    public void changePassword(@Valid @RequestBody LoginDTO loginDto) {
         try {
             User user = userDao.findByUsername(loginDto.getUsername());
             userDao.changePassword(user.getUsername(), loginDto.getPassword());

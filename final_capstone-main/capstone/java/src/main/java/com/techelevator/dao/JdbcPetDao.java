@@ -12,11 +12,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Component
 public class JdbcPetDao implements PetDao {
 
     private final JdbcTemplate jdbcTemplate;
@@ -53,12 +55,13 @@ public class JdbcPetDao implements PetDao {
 
 
     @Override
-    public boolean create(String petName, int age, String species, int weight, boolean redFlag, String gender, boolean adoptedStatus) {
-        String insertUserSql = "insert into pet (pet_name, age, species, weight, red_flag, gender, adopted_status)" +
-                "values (?,?,?,?,?,?,?)";
+    public boolean create(String petName, int age, String species, String breed, int weight,
+                          boolean redFlag, String gender, boolean adoptedStatus, String description) {
+        String insertUserSql = "insert into pet (pet_name, age, species, breed, weight, red_flag, gender, adopted_status, description)" +
+                "values (?,?,?,?,?,?,?,?,?)";
 
-        return jdbcTemplate.update(insertUserSql, petName, age, species, weight, redFlag,
-                gender, adoptedStatus) == 1;
+        return jdbcTemplate.update(insertUserSql, petName, age, species, breed, weight, redFlag,
+                gender, adoptedStatus, description) == 1;
     }
 
 
@@ -68,10 +71,12 @@ public class JdbcPetDao implements PetDao {
         pet.setPetName(rs.getString("pet_name"));
         pet.setAge(rs.getInt("age"));
         pet.setSpecies(rs.getString("species"));
+        pet.setBreed(rs.getString("breed"));
         pet.setWeight(rs.getInt("weight"));
-        pet.setRed_flag(rs.getBoolean("red_flag"));
+        pet.setRedFlag(rs.getBoolean("red_flag"));
         pet.setGender(rs.getString("gender"));
         pet.setAdoptedStatus(rs.getBoolean("adopted_status"));
+        pet.setDescription(rs.getString("description"));
         return pet;
     }
 
