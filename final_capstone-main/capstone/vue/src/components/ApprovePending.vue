@@ -30,7 +30,6 @@
                   <td>{{ user.emerg_phone }}</td>
                   <td><button v-on:click="approveUser(user.user_id)">Approve</button></td>
                   <td><button v-on:click="declineApplication(user.user_id)">Decline</button></td>
-                  
               </tr>
           </tbody>
       </table>
@@ -109,6 +108,10 @@ export default {
     padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 button {
