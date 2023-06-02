@@ -32,11 +32,11 @@ export default {
 <style scoped>
 
 div {
-
+    background-color: #dc9d4e;
 }
 
 h2 {
-
+    color: antiquewhite;
 }
 
 #pets {

@@ -3,6 +3,7 @@ package com.techelevator.dao;
 import com.techelevator.exception.DaoException;
 import com.techelevator.exception.UserNotFoundException;
 import com.techelevator.model.AdoptedPetDTO;
+import com.techelevator.model.AvailablePetDTO;
 import com.techelevator.model.Pet;
 import com.techelevator.model.User;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -79,6 +80,28 @@ public class JdbcPetDao implements PetDao {
     }
 
     @Override
+    public List<AvailablePetDTO> getAvailablePets() {
+        List<AvailablePetDTO> availablePetList = new ArrayList<>();
+        String sql = "SELECT p.pet_name, p.species, p.breed, p.age " +
+                "FROM pet AS p " +
+                "WHERE p.adopted_status = true;";
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while(results.next()) {
+                AvailablePetDTO availablePet = mapRowToAvailablePetDTO(results);
+                availablePetList.add(availablePet);
+            }
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+        return availablePetList;
+    }
+
+    @Override
     public boolean create(String petName, int age, String species, String breed, int weight,
                           boolean redFlag, String gender, boolean adoptedStatus, String description) {
         String insertUserSql = "insert into pet (pet_name, age, species, breed, weight, red_flag, gender, adopted_status, description)" +
@@ -110,6 +133,15 @@ public class JdbcPetDao implements PetDao {
         adoptedPetDTO.setOwnerName(rs.getString("owner_name"));
         adoptedPetDTO.setAdoptionDate(rs.getDate("adoption_date").toLocalDate());
         return adoptedPetDTO;
+    }
+
+    private AvailablePetDTO mapRowToAvailablePetDTO(SqlRowSet rs) {
+        AvailablePetDTO availablePetDTO = new AvailablePetDTO();
+        availablePetDTO.setPetName(rs.getString("pet_name"));
+        availablePetDTO.setSpecies(rs.getString("species"));
+        availablePetDTO.setBreed(rs.getString("breed"));
+        availablePetDTO.setAge(rs.getInt("age"));
+        return availablePetDTO;
     }
 
 }
