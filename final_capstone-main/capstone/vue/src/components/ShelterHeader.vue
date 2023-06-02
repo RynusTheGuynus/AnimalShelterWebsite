@@ -2,8 +2,9 @@
   <div>
       <div id='shelterHead'>
         <h1 class="headCenter">Rising Sun Animal Shelter<br>Hours: Tuesday-Saturday, 9-5 Eastern</h1>
+        <img src="'shelterheadbanner.png'" alt="banner">
         <ul class="headLeft">
-          <li>Home</li>
+          <router-link :to="{name: 'home'}" tag="li">Home</router-link>
           <li>About Us</li>
           <li>Pets for Adoption</li>
           <router-link :to="{name: 'register'}" tag="li">Apply to be a Volunteer!</router-link>
@@ -17,8 +18,6 @@
 
 <script>
 
-
-
 export default {
 
 }
@@ -27,27 +26,35 @@ export default {
 <style scoped>
 
 #shelterHead {
+    max-height: 25vh;
+    min-height: 25vh;
+    border: 3px solid #a36c2c;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "headLeft headCenter .";
-    background-image: url('shelterheadbanner.png');  
+    background-image: url('shelterheadbanner.png');
     background-repeat: no-repeat;
-    background-size: auto;
-    background-position-y: -10px;
+    background-size: cover;
+    background-clip: content-box;
     
+}
+
+img {
+  object-fit: cover;
 }
 
 .headLeft {
     grid-area: headLeft;
+    display: flex;
     flex-direction: column;
     height: 20vh;
-    width: 10vw;
-    display: flex;
+    width: 15vw;
     justify-content: left;
     align-self: flex-start;
     align-items: left;
     margin-top: 30px;
+    font-size: 16px;
 }
 
 .headCenter {
@@ -55,9 +62,10 @@ export default {
     flex-direction: column;
     width: 50vw;
     justify-items: center;
-    margin-top: 100px;
-    margin-left: 630px;
+    margin-top: 5vh;
+    margin-left: 30vw;
     font-size: 24px;
+    text-shadow: -1px -1px 0 #dc9d4e, 1px -1px 0 #dc9d4e, -1px 1px 0 #dc9d4e, 1px 1px 0 #898686;
 
 }
 
@@ -70,5 +78,6 @@ h1, h2 {
   justify-content: center;
   color: lightgray;
 }
+
 
 </style>

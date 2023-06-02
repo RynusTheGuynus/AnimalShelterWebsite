@@ -47,11 +47,13 @@ public class JdbcAdoptionDao implements AdoptionDao {
 
 
     @Override
-    public boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail, LocalDate adoptionDate) {
-        String insertUserSql = "insert into adoption (pet_id, owner_name, owner_address, owner_email, adoption_date)" +
-                "values (?,?,?,?,?)";
+    public boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail,
+                          String ownerPhoneNumber, LocalDate adoptionDate) {
+        String insertUserSql = "insert into adoption (pet_id, owner_name, owner_address, owner_email, owner_phone_number, adoption_date)" +
+                "values (?,?,?,?,?,?)";
 
-        return jdbcTemplate.update(insertUserSql, petId, ownerName, ownerAddress, ownerEmail, adoptionDate) == 1;
+        return jdbcTemplate.update(insertUserSql, petId, ownerName, ownerAddress, ownerEmail,
+                                  ownerPhoneNumber, adoptionDate) == 1;
     }
 
 
@@ -61,6 +63,7 @@ public class JdbcAdoptionDao implements AdoptionDao {
         adoption.setOwnerName(rs.getString("owner_name"));
         adoption.setOwnerAddress(rs.getString("owner_address"));
         adoption.setOwnerEmail(rs.getString("owner_email"));
+        adoption.setOwnerPhoneNumber(rs.getString("owner_phone_number"));
         adoption.setAdoptionDate(rs.getObject("adoption_date", LocalDate.class));
         return adoption;
     }

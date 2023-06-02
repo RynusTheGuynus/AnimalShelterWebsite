@@ -9,6 +9,7 @@ public interface PetDao {
 
     Pet getPetById(int petId);
 
-    boolean create(String petName, int age, String species, int weight, boolean red_flag, String gender, boolean adoptedStatus);
+    boolean create(String petName, int age, String species, String breed, int weight,
+                   boolean red_flag, String gender, boolean adoptedStatus, String description);
 }
 
