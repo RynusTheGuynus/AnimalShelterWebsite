@@ -47,12 +47,15 @@ public class AuthenticationController {
         String jwt = tokenProvider.createToken(authentication, false);
         
         User user = userDao.findByUsername(loginDto.getUsername());
-        boolean firstLogin = false;
 
-        if(user.isFirstLogin()) {
-            user.setFirstLogin(false);
-            firstLogin = true;
-        }
+        boolean firstLogin = user.isFirstLogin();
+
+////        boolean firstLogin = false;
+//
+//        if(user.isFirstLogin()) {
+//            user.setFirstLogin(false);
+////            firstLogin = true;
+//        }
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
