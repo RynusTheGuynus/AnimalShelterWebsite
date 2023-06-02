@@ -92,11 +92,11 @@ const router = new Router({
     },
     {
       path: "/celebrate",
-      name: "celebrate",
+      name: "Celebrate",
       component: Celebrate,
       meta: {
         requiresAuth: false
-    }
+      }
   },
   ]
 })
