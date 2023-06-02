@@ -9,6 +9,7 @@ import store from '../store/index'
 import PetComponent from '../components/PetComponent.vue'
 import ChangePassword from '../components/ChangePassword.vue'
 import Admin from '../views/Admin.vue'
+import Celebrate from '../views/Celebrate.vue'
 
 Vue.use(Router)
 
@@ -80,15 +81,23 @@ const router = new Router({
       meta: {
         requiresAuth: false
     }
+    },
+    {
+      path: "/admin",
+      name: "admin",
+      component: Admin,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: "/celebrate",
+      name: "celebrate",
+      component: Celebrate,
+      meta: {
+        requiresAuth: false
+    }
   },
-  {
-    path: "/admin",
-    name: "admin",
-    component: Admin,
-    meta: {
-      requiresAuth: true
-  }
-}
   ]
 })
 
