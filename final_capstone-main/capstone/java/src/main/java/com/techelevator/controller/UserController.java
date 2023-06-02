@@ -59,7 +59,7 @@ public class UserController {
 
     @RequestMapping(path = "/users/decline/{id}", method = RequestMethod.PUT)
     public boolean declineApplication(@RequestBody User user, @PathVariable int id) {
-        return userDao.approveVolunteer(user, id);
+        return userDao.declineVolunteer(user, id);
     }
 }
 
