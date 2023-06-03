@@ -1,6 +1,6 @@
 <template>
   <div id="applicationContainer">
-      <h1>Pending Volunteer Applications</h1>
+      <h2>Pending Volunteer Applications</h2>
       <table id="applicationTable">
           <thead>
               <tr id="tableHeader">
@@ -30,7 +30,6 @@
                   <td>{{ user.emerg_phone }}</td>
                   <td><button v-on:click="approveUser(user.user_id)">Approve</button></td>
                   <td><button v-on:click="declineApplication(user.user_id)">Decline</button></td>
-                  
               </tr>
           </tbody>
       </table>
@@ -41,6 +40,8 @@
 <script>
 import AdminService from '../services/AdminService.js';
 import UserService from '../services/UserService.js';
+import EmailService from '../services/EmailService.js';
+
 export default {
     name: 'ApprovePending',
     data() {
@@ -57,11 +58,15 @@ export default {
         },
         approveUser(userId) {
             const user = UserService.get(userId);
+            const userEmail = user.email_address;
+            
             AdminService.approveApplication(user, userId)
             .then((response) => {
                 if (response.status == 200) {
                     console.log("Success");
                     this.getPendingApplications();
+                    
+                    EmailService.sendApprovedEmail(userEmail);
                 }
             })
             .catch(error => {
@@ -73,11 +78,13 @@ export default {
         },
         declineApplication(userId) {
             const user = UserService.get(userId);
+            const userEmail = user.email_address;
             AdminService.declineApplication(user, userId)
             .then((response) => {
                 if (response.status == 200) {
                     console.log("Success");
                     this.getPendingApplications();
+                    EmailService.sendDeclinedEmail(userEmail);
                 }
             })
             .catch(error => {
@@ -95,13 +102,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 #applicationContainer {
     margin: 20px;
-}
-
-tbody tr:nth-child(even) {
-    background-color: #f2f2f2;
 }
 
 #applicationTable {
@@ -113,6 +116,10 @@ tbody tr:nth-child(even) {
     padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ccc;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
 button {
