@@ -28,4 +28,5 @@ public interface UserDao {
                    String emailAddress, String phoneNumber, int age, String emergencyFirstName, String emergencyLastName,
                    String emergencyPhone);
 
+    boolean promoteToAdmin(User user, int id);
 }
