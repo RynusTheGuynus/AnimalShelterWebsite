@@ -1,9 +1,18 @@
+// "DAO is an abstraction for accessing data, the idea is to separate the technical
+// details of data access from the rest of the application. It can apply to any kind
+// of data.
+//
+// "JDBC is an API for accessing relational databases using Java.
+//
+// "JDBC is more low-level than an ORM, it maps some Java types to SQL types but no
+// more than that, it just takes DDL and DML, executes it, and returns result sets."
+// -- Nathan Hughes, https://stackoverflow.com/questions/7070467/dao-and-jdbc-relation
+
 package com.techelevator.dao;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
 import com.techelevator.exception.DaoException;
 import com.techelevator.exception.UserNotFoundException;
 import org.springframework.dao.DataIntegrityViolationException;
@@ -15,7 +24,6 @@ import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import com.techelevator.model.User;
 
 @Component

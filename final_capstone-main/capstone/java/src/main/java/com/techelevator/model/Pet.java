@@ -34,7 +34,7 @@ public class Pet {
     public boolean redFlag;           // is there a restriction on who should adopt?
     @JsonProperty("adopted_status")
     public boolean adoptedStatus;      // has pet been adopted yet?
-    private String description = "";      // a String field for introductory text
+    private String description = "";      // a String field for introductory text and red flags
 
     // Constructors
     //default constructor
@@ -129,10 +129,7 @@ public class Pet {
                 ", gender='" + gender + '\'' +
                 ", redFlag=" + redFlag +
                 ", adoptedStatus=" + adoptedStatus +
+                ", description='" + description + '\'' +
                 '}';
-                // optional description
     }
-
-
-
 }

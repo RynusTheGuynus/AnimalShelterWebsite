@@ -1,6 +1,21 @@
-package com.techelevator.model;
+// "DTOs or Data Transfer Objects are objects that carry data between processes in order to
+// reduce the number of methods calls. The pattern was first introduced by Martin Fowler i
+// n his book EAA.
+//
+// "Fowler explained that the pattern's main purpose is to reduce roundtrips to the server
+//  by batching up multiple parameters in a single call. This reduces the network overhead
+//  in such remote operations.
+//
+// "Another benefit is the encapsulation of the serialization's logic (the mechanism that
+// translates the object structure and data to a specific format that can be stored and
+// transferred). It provides a single point of change in the serialization nuances. It also
+// decouples the domain models from the presentation layer, allowing both to change independently.
+//
+// "DTOs normally are created as POJOs. They are flat data structures that contain no business
+// logic. They only contain storage, accessors and eventually methods related to serialization
+// or parsing." -- https://www.baeldung.com/java-dto-pattern
 
-import java.time.LocalDate;
+package com.techelevator.model;
 
 public class AvailablePetDTO {
 
