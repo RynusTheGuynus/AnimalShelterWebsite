@@ -58,11 +58,17 @@ public class JdbcPetDao implements PetDao {
     @Override
     public List<AdoptedPetDTO> getAdoptedPets() {
         List<AdoptedPetDTO> adoptedPetList = new ArrayList<>();
-        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date " +
-                     "FROM pet AS p " +
-                     "JOIN pet_adoption AS pa ON pa.pet_id = p.pet_id " +
-                     "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
-                     "WHERE pa.adoption_id IS NOT NULL;";
+        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date, pi.image_path " +
+                "FROM pet AS p " +
+                "JOIN pet_adoption AS pa ON pa.pet_id = p.pet_id " +
+                "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
+                "JOIN pet_image AS pi ON pi.pet_id = p.pet_id " +
+                "WHERE pa.adoption_id IS NOT NULL;";
+//        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date " +
+//                     "FROM pet AS p " +
+//                     "JOIN pet_adoption AS pa ON pa.pet_id = p.pet_id " +
+//                     "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
+//                     "WHERE pa.adoption_id IS NOT NULL;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while(results.next()) {
@@ -132,6 +138,7 @@ public class JdbcPetDao implements PetDao {
         adoptedPetDTO.setPetName(rs.getString("pet_name"));
         adoptedPetDTO.setOwnerName(rs.getString("owner_name"));
         adoptedPetDTO.setAdoptionDate(rs.getDate("adoption_date").toLocalDate());
+        adoptedPetDTO.setImagePath(rs.getString("image_path"));
         return adoptedPetDTO;
     }
 

@@ -2,27 +2,27 @@ BEGIN TRANSACTION;
 
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Sparky', 0, 'dog', 'Terrier mix', 6, 'female', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Gina', 19, 'dog', 'Shepherd/Collie mix', 42, 'female', true, true, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Chester', 0, 'cat', 'Domestic Shorthair', 11, 'male', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Rosie', 2, 'cat', 'Domestic Shorthair', 10, 'female', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Sadie', 2, 'dog', 'Australian Cattle Dog', 23, 'female', true, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Arthur', 3, 'cat', 'Domestic Shorthair', 10, 'male', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Sylvie', 1, 'dog', 'Spitz mix', 25, 'female', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Oliver', 3, 'cat', 'Domestic Shorthair', 12, 'male', false, true, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Oberon', 0, 'dog', 'Pit/Lab mix', 20, 'male', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Lola', 0, 'cat', 'Himalayan mix', 1, 'female', false, true, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Rosebud', 2, 'dog', 'Hound mix', 18, 'female', false, false, ' ');
-INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description))
+INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Ginger', 0, 'dog', 'Chow/Golden mix', 5, 'female', false, true, ' ');
 
 INSERT INTO adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)
@@ -40,11 +40,11 @@ INSERT INTO pet_adoption (pet_id, adoption_id)
 	VALUES (12, 3);
 
 INSERT INTO pet_image (pet_id, image_name, image_path)
-	VALUES (2, 'gina 1','images/gina/gina1.jpg');
+	VALUES (2, 'gina1','@/images/gina1.jpg');
 INSERT INTO pet_image (pet_id, image_name, image_path)
-	VALUES (8, 'oliver 1', 'images/oliver/oliver1.jpg');
+	VALUES (8, 'oliver1', '@/images/oliver1.jpg');
 INSERT INTO pet_image (pet_id, image_name, image_path)
-	VALUES (12, 'ginger 1', 'images/ginger/ginger1.jpg');
+	VALUES (12, 'ginger1', '@/images/ginger1.jpg');
 
 
 COMMIT;

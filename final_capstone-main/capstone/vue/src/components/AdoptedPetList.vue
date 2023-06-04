@@ -17,6 +17,7 @@
         <p>
             {{ pet.adoption_date }}
         </p>
+        <img :src="pet.image_path" alt="Pet Image" /> 
       </div>
   </div>
 </template>
@@ -40,14 +41,14 @@ export default {
                         return {
                             pet_name: pet.petName,
                             owner_name: pet.ownerName,
-                            adoption_date: pet.adoptionDate
+                            adoption_date: pet.adoptionDate,
+                            image_path: pet.imagePath
                         };
                     });
                 }).catch((error) => {
                     console.log(error);
                 });
         }
-
     },
     computed: {
 
