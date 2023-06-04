@@ -1,29 +1,33 @@
+// "DAO is an abstraction for accessing data, the idea is to separate the technical
+// details of data access from the rest of the application. It can apply to any kind
+// of data.
+//
+// "JDBC is an API for accessing relational databases using Java.
+//
+// "JDBC is more low-level than an ORM, it maps some Java types to SQL types but no
+// more than that, it just takes DDL and DML, executes it, and returns result sets."
+// -- Nathan Hughes, https://stackoverflow.com/questions/7070467/dao-and-jdbc-relation
+
 package com.techelevator.dao;
 
 import com.techelevator.exception.DaoException;
-import com.techelevator.exception.UserNotFoundException;
 import com.techelevator.model.AdoptedPetDTO;
 import com.techelevator.model.AvailablePetDTO;
 import com.techelevator.model.Pet;
-import com.techelevator.model.User;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
-
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
+
 
 @Component
 public class JdbcPetDao implements PetDao {
 
+    // Data members
     private final JdbcTemplate jdbcTemplate;
 
     public JdbcPetDao(JdbcTemplate jdbcTemplate) {

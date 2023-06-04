@@ -58,43 +58,59 @@ export default {
         },
         approveUser(userId) {
             const user = UserService.get(userId);
-            const userEmail = user.email_address;
-            
-            AdminService.approveApplication(user, userId)
+
+            UserService.get(userId)  // Retrieve the user object from UserService
             .then((response) => {
-                if (response.status == 200) {
-                    console.log("Success");
-                    this.getPendingApplications();
-                    
-                    EmailService.sendApprovedEmail(userEmail);
-                }
+                 // Assuming the user object is returned in the response
+                const userEmail = response.data.email_address;
+                console.log(user);
+
+                AdminService.approveApplication(user, userId)
+                .then((response) => {
+                    if (response.status == 200) {
+                        console.log("Success");
+                        this.getPendingApplications();
+                        EmailService.sendApprovedEmail(userEmail);
+                    }
+                })
+                .catch(error => {
+                    if (error.status == 400) {
+                        console.log("Client error")
+                    }
+                });
             })
             .catch(error => {
-                if (error.status == 400) {
-                    console.log("Client error")
-                }
-            })
-            
+                console.log("Error retrieving user:", error);
+            });
         },
-        declineApplication(userId) {
+      
+    declineApplication(userId) {
             const user = UserService.get(userId);
-            const userEmail = user.email_address;
-            AdminService.declineApplication(user, userId)
+
+            UserService.get(userId)  // Retrieve the user object from UserService
             .then((response) => {
-                if (response.status == 200) {
-                    console.log("Success");
-                    this.getPendingApplications();
-                    EmailService.sendDeclinedEmail(userEmail);
-                }
+                 // Assuming the user object is returned in the response
+                const userEmail = response.data.email_address;
+                console.log(user);
+
+                AdminService.declineApplication(user, userId)
+                .then((response) => {
+                    if (response.status == 200) {
+                        console.log("Success");
+                        this.getPendingApplications();
+                        EmailService.sendDeclinedEmail(userEmail);
+                    }
+                })
+                .catch(error => {
+                    if (error.status == 400) {
+                        console.log("Client error")
+                    }
+                });
             })
             .catch(error => {
-                if (error.status == 400) {
-                    console.log("Client error")
-                }
-            })
-            
-        }
-    
+                console.log("Error retrieving user:", error);
+            });
+        },
     },
     created() {
         this.getPendingApplications();

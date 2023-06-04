@@ -16,6 +16,10 @@ public class EmailController {
 
     @PostMapping("/messages/approved")
     String sendEmailApproveMessage(@RequestBody String email) {
+
+        email = email.replaceAll("%40","@"); // Gets rid of the encoded garbage
+        email = email.replaceAll("=","");
+
         this.emailService.sendApproveEmail(
                 email,
                 "Rising Sun Animal Shelter: Volunteer Request",
@@ -26,6 +30,11 @@ public class EmailController {
 
     @PostMapping("/messages/declined")
     String sendEmailDeclineMessage(@RequestBody String email) {
+
+        email = email.replaceAll("%40","@"); // Gets rid of the encoded garbage
+        email = email.replaceAll("=","");
+
+
         this.emailService.sendDeclineEmail(
                 email,
                 "Rising Sun Animal Shelter: Volunteer Request",
