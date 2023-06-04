@@ -35,6 +35,12 @@ public class UserController {
             return user;
     }
 
+    @RequestMapping(path = "/users/email/{id}", method = RequestMethod.GET)
+    public User getUsersEmailById(@PathVariable int id) {
+        User user = userDao.getUserEmailById(id);
+        return user;
+    }
+
     @RequestMapping(path = "/users/username/{username}", method = RequestMethod.GET)
     public User getUserByName(@PathVariable String username) {
         User user = userDao.findByUsername(username);
