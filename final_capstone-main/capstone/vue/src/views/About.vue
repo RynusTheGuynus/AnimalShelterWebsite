@@ -3,7 +3,7 @@
     <shelter-header id='shelterHeader' />
       <h1>About Rising Sun</h1>
       <figure>
-        <img src="vue\public\risingsunaerial.png" alt="aerial photo">
+        <img src="@/images/risingsunaerial.png" alt="aerial photo">
         <figcaption>An aerial photograph of our shelter in autumn.</figcaption>
       </figure>
       <div></div>
