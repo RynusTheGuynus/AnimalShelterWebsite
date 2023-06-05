@@ -1,8 +1,26 @@
 <template>
   <div>
       <shelter-header />
-      <add-pet />
-      <update-pet />
+      <div class="add-update-container">
+        <add-pet v-if="isAdd" />
+        <update-pet v-if="isUpdate" />
+        <div class="button-container">
+          <input
+          type="button"
+          id="add-pet-button"
+          class="button"
+          value="Add Pet"
+          @click="addPetToggle"   
+          />
+          <input
+          type="button"
+          id="update-pet-button"
+          class="button"
+          value="Update Pet" 
+          @click="updatePetToggle"  
+          />
+      </div>
+      </div>
       <shelter-footer />
   </div>
 </template>
@@ -21,10 +39,58 @@ export default {
     AddPet,
     UpdatePet
     },
+  data() {
+    return {
+      isAdd: false,
+      isUpdate: false
+    }
+  },
+  methods: {
+    addPetToggle() {
+      if(this.isUpdate == false) {
+        this.isAdd = !this.isAdd;
+      } else if (this.isUpdate == true) {
+        this.isUpdate = false;
+        this.isAdd = true;
+      }
+    },
+    updatePetToggle() {
+      if(this.isAdd == false) {
+        this.isUpdate = !this.isUpdate;
+      } else if (this.isAdd == true) {
+        this.isAdd = false;
+        this.isUpdate = true;
+      }
+    }
+  }
 
 }
 </script>
     
 <style>
+
+.button-container {
+  text-align: center;
+}
+
+.button {
+  cursor: pointer;
+}
+
+#add-pet-button {
+  font-size: 20px;
+  text-align: center;
+  margin: 50px;
+  border-radius: 5px;
+  padding: 20px 50px;
+}
+
+#update-pet-button {
+  font-size: 20px;
+  text-align: center;
+  margin: 50px;
+  border-radius: 5px;
+  padding: 20px 38px;
+}
 
 </style>
