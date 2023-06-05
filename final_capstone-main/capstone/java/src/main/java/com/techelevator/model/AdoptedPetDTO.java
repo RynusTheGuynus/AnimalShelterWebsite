@@ -32,13 +32,8 @@ public class AdoptedPetDTO {
 
     }
 
-<<<<<<< HEAD
     public AdoptedPetDTO(String petName, String ownerName,
                          LocalDate adoptionDate, String imagePath) {
-=======
-    // Complete Constructor
-    public AdoptedPetDTO(String petName, String ownerName, LocalDate adoptionDate) {
->>>>>>> main
         this.petName = petName;
         this.ownerName = ownerName;
         this.adoptionDate = adoptionDate;

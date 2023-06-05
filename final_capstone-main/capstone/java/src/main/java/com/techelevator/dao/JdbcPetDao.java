@@ -68,11 +68,6 @@ public class JdbcPetDao implements PetDao {
                 "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
                 "JOIN pet_image AS pi ON pi.pet_id = p.pet_id " +
                 "WHERE pa.adoption_id IS NOT NULL;";
-//        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date " +
-//                     "FROM pet AS p " +
-//                     "JOIN pet_adoption AS pa ON pa.pet_id = p.pet_id " +
-//                     "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
-//                     "WHERE pa.adoption_id IS NOT NULL;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while(results.next()) {

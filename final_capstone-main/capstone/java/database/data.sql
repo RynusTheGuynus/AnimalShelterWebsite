@@ -40,11 +40,14 @@ INSERT INTO pet_adoption (pet_id, adoption_id)
 	VALUES (12, 3);
 
 INSERT INTO pet_image (pet_id, image_name, image_path)
-	VALUES (2, 'gina1','@/images/gina1.jpg');
+    VALUES (2, 'gina1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/gina1.jpg');
+--	VALUES (2, 'gina1', pg_read_binary_file('/static/images/gina1.jpg'));
 INSERT INTO pet_image (pet_id, image_name, image_path)
-	VALUES (8, 'oliver1', '@/images/oliver1.jpg');
+    VALUES (8, 'oliver1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/oliver1.jpg');
+--	VALUES (8, 'oliver1', pg_read_binary_file('static/images/oliver1.jpg'));
 INSERT INTO pet_image (pet_id, image_name, image_path)
-	VALUES (12, 'ginger1', '@/images/ginger1.jpg');
+    VALUES (12, 'ginger1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/ginger1.jpg');
+--	VALUES (12, 'ginger1', pg_read_binary_file('static/images/ginger1.jpg'));
 
 
 COMMIT;
