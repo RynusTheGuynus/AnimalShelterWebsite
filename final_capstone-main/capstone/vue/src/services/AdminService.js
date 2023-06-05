@@ -19,5 +19,5 @@ const http = axios.create({
 
       promoteToAdmin(user, userId) {
           return http.put(`/admin/promote/${userId}`, user);
-      }
+      },
   }

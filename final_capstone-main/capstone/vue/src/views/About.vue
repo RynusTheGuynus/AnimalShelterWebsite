@@ -1,11 +1,11 @@
 <template>
   <div class="about">
+    <shelter-header id='shelterHeader' />
       <h1>About Rising Sun</h1>
       <figure>
         <img src="vue\public\risingsunaerial.png" alt="aerial photo">
         <figcaption>An aerial photograph of our shelter in autumn.</figcaption>
       </figure>
-      <shelter-header id='shelterHeader' />
       <div></div>
       <div id="about">
           <p>Welcome to Rising Sun Animal Shelter! We are a compassionate haven dedicated to 

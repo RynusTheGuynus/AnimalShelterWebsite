@@ -1,27 +1,30 @@
 <template>
   <div>
       <shelter-header />
-      <adopted-pet-list />
+      <add-pet />
+      <update-pet />
       <shelter-footer />
   </div>
 </template>
 
 <script>
-import AdoptedPetList from '../components/AdoptedPetList.vue'
 import ShelterHeader from '../components/ShelterHeader.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
+import AddPet from '../components/AddPet.vue'
+import UpdatePet from '../components/UpdatePet.vue'
 
 export default {
-  name: 'celebrate',
+  name: 'update',
   components: { 
-      AdoptedPetList,
-      ShelterHeader,
-      ShelterFooter
+    ShelterHeader,
+    ShelterFooter,
+    AddPet,
+    UpdatePet
     },
 
 }
 </script>
-
+    
 <style>
 
 </style>

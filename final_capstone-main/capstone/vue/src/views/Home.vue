@@ -2,7 +2,7 @@
   <div class="home">
     <div id="grid">             
       <shelter-header id='shelterHeader' />
-      <pet-component id='pets' />
+      <pet-showcase id='pets' />
       <event-component id='events' />
       <shelter-footer id='shelterFooter'/>
     </div>
@@ -12,7 +12,7 @@
 <script>
 
 import ShelterHeader from '../components/ShelterHeader.vue'
-import PetComponent from '../components/PetComponent.vue'
+import PetShowcase from '../components/PetShowcase.vue'
 import EventComponent from '../components/EventComponent.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 
@@ -20,7 +20,7 @@ export default {
   name: "home",
   components: { 
     ShelterHeader,
-    PetComponent,
+    PetShowcase,
     EventComponent,
     ShelterFooter
   }

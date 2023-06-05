@@ -10,4 +10,8 @@ export default {
     return http.get('/celebrate');
   },
 
+  getAvailablePets() {
+    return http.get('/pets');
+  }
+
 }

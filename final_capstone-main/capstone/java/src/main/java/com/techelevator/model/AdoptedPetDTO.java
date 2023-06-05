@@ -25,17 +25,19 @@ public class AdoptedPetDTO {
     private String petName;
     private String ownerName;
     private LocalDate adoptionDate;
+    private String imagePath;
 
     // Default Constructor
     public AdoptedPetDTO() {
 
     }
 
-    // Complete Constructor
-    public AdoptedPetDTO(String petName, String ownerName, LocalDate adoptionDate) {
+    public AdoptedPetDTO(String petName, String ownerName,
+                         LocalDate adoptionDate, String imagePath) {
         this.petName = petName;
         this.ownerName = ownerName;
         this.adoptionDate = adoptionDate;
+        this.imagePath = imagePath;
     }
 
     // Getters and Setters
@@ -63,4 +65,11 @@ public class AdoptedPetDTO {
         this.adoptionDate = adoptionDate;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 }

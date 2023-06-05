@@ -55,7 +55,7 @@ export default {
         .then((response) => {
             if (response.status == 200) {
                 this.successMessage = "Password changed successfully.";
-                this.$router.push("/");
+                this.$router.push("/home");
             }
         })
         .catch(error => {

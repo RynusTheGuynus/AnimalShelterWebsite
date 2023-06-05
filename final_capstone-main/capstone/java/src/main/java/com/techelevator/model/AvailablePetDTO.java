@@ -23,6 +23,7 @@ public class AvailablePetDTO {
     private String species;
     private String breed;
     private int age;
+    private String imagePath;
 
     // Default Constructor
     public AvailablePetDTO() {
@@ -30,11 +31,13 @@ public class AvailablePetDTO {
     }
 
     // Complete Constructor
-    public AvailablePetDTO(String petName, String species, String breed, int age) {
+    public AvailablePetDTO(String petName, String species, String breed,
+                           int age, String imagePath) {
         this.petName = petName;
         this.species = species;
         this.breed = breed;
         this.age = age;
+        this.imagePath = imagePath;
     }
 
     // Getters and Setters
@@ -63,4 +66,11 @@ public class AvailablePetDTO {
         this.age = age;
     }
 
+    public String getImagePath() {
+        return imagePath;
+    }
+
+    public void setImagePath(String imagePath) {
+        this.imagePath = imagePath;
+    }
 }

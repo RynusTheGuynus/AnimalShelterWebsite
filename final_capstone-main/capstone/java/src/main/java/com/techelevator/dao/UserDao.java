@@ -13,10 +13,13 @@ import java.util.List;
 
 public interface UserDao {
 
+
+
     // Data members
     List<User> findAll();
     List<User> viewPendingApplications();
     User getUserById(int userId);
+    User getUserEmailById(int userId);
     User findByUsername(String username);
     int findIdByUsername(String username);
     boolean changePassword(String username, String password);

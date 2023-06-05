@@ -1,47 +1,55 @@
 <template>
-  <div>
-      <shelter-header />
-      <h1>Pets Now Available for Adoption</h1>
-      <h2>Filter by</h2>
-      <pet-component id="pets">Pet Component</pet-component>
-      <shelter-footer />
+  <div class="pet-container">
+      <shelter-header class="shelter-header" />
+      <available-pet-list class="pet-list" />
+      <shelter-footer class="shelter-footer" />
   </div>
 </template>
 
 <script>
 
 import ShelterHeader from '../components/ShelterHeader.vue'
-import PetComponent from '../components/PetComponent.vue'
+import AvailablePetList from '../components/AvailablePetList.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 
 export default {
     name: "pets",
     components: { 
         ShelterHeader,
-        PetComponent,
+        AvailablePetList,
         ShelterFooter
-    },
-    data() {
-        return {
-            
-        }
     }
 }
 </script>
 
-<style scoped>
+<style>
 
-div {
-    background-color: #dc9d4e;
+/* .pet-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "shelter-header"
+    "pet-list"
+    "shelter-footer";
 }
 
-h2 {
-    color: antiquewhite;
+.shelter-header {
+  grid-area: shelter-header;
 }
 
-#pets {
-    height: 60vh;
-    width: 100vw;
+.pet-list {
+  grid-area: pet-list;
+  max-height: calc(100vh - 200px);
+  max-width: 120vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-bottom: 20px;
 }
+
+.shelter-footer {
+  grid-area: shelter-footer;
+} */
+
 
 </style>

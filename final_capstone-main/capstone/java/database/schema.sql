@@ -1,6 +1,6 @@
 BEGIN TRANSACTION;
 
-DROP TABLE IF EXISTS users, pet, adoption, pet_adoption CASCADE;
+DROP TABLE IF EXISTS users, pet, adoption, pet_adoption, pet_image CASCADE;
 
 CREATE TABLE users (
 	user_id SERIAL,
@@ -49,6 +49,15 @@ CREATE TABLE pet_adoption (
 	PRIMARY KEY (adoption_id, pet_id),
 	CONSTRAINT FK_adopted_id FOREIGN KEY (adoption_id) REFERENCES adoption(adoption_id),
 	CONSTRAINT FK_pet_id FOREIGN KEY (pet_id) REFERENCES pet(pet_id)
+);
+
+CREATE TABLE pet_image (
+	image_id SERIAL,
+	pet_id int,
+	image_name varchar(255) NOT NULL,
+	image_path varchar(255) NOT NULL,
+	CONSTRAINT PK_image PRIMARY KEY (image_id),
+	CONSTRAINT FK_pet_id_images FOREIGN KEY (pet_id) REFERENCES pet(pet_id)
 );
 
 COMMIT TRANSACTION;

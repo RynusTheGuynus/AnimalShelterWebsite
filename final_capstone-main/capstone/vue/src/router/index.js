@@ -6,11 +6,12 @@ import Logout from '../views/Logout.vue'
 import Register from '../views/Register.vue'
 import Users from '../views/Users.vue'
 import store from '../store/index'
-import PetComponent from '../components/PetComponent.vue'
+import Pets from '../views/Pets.vue'
 import ChangePassword from '../components/ChangePassword.vue'
 import Admin from '../views/Admin.vue'
 import Celebrate from '../views/Celebrate.vue'
 import About from '../views/About.vue'
+import Update from '../views/Update.vue'
 
 Vue.use(Router)
 
@@ -28,7 +29,7 @@ const router = new Router({
   base: process.env.BASE_URL,
   routes: [
     {
-      path: '/',
+      path: '/home',
       name: 'home',
       component: Home,
       meta: {
@@ -70,7 +71,7 @@ const router = new Router({
     {
       path: "/pets",
       name: "pets",
-      component: PetComponent,
+      component: Pets,
       meta: {
         requiresAuth: false
       }
@@ -93,7 +94,7 @@ const router = new Router({
     },
     {
       path: "/celebrate",
-      name: "Celebrate",
+      name: "celebrate",
       component: Celebrate,
       meta: {
         requiresAuth: false
@@ -105,6 +106,14 @@ const router = new Router({
       component: About,
       meta: {
         requiresAuth: false
+      }
+    },
+    {
+      path: "/update",
+      name: "update",
+      component: Update,
+      meta: {
+        requiresAuth: true
       }
     }
   ]
