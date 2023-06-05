@@ -2,7 +2,7 @@
   <div class="about">
       <h1>About Rising Sun</h1>
       <figure>
-        <img src="src\components\risingsunaerial.png" alt="aerial photo">
+        <img src="vue\public\risingsunaerial.png" alt="aerial photo">
         <figcaption>An aerial photograph of our shelter in autumn.</figcaption>
       </figure>
       <shelter-header id='shelterHeader' />
@@ -80,7 +80,7 @@ img {
 }
 
 #about {
-  font-size: 24px;
+  font-size: 12px;
 }
 
 #shelterFooter {
