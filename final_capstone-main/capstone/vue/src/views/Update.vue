@@ -10,7 +10,8 @@
           id="add-pet-button"
           class="button"
           value="Add Pet"
-          @click="addPetToggle"   
+          @click="addPetToggle" 
+          v-if="!isAdd"  
           />
           <input
           type="button"
@@ -18,6 +19,7 @@
           class="button"
           value="Update Pet" 
           @click="updatePetToggle"  
+          v-if="!isUpdate"
           />
       </div>
       </div>
