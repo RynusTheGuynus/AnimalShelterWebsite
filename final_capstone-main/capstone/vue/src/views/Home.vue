@@ -46,7 +46,7 @@ export default {
 }
 
 #shelterHeader {
-  height: 20vh;
+  height: 21vh;
   width: 100vw;  
   grid-area: shelterHead;
   align-content: center;
