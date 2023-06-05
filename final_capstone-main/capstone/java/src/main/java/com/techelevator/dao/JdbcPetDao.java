@@ -117,9 +117,16 @@ public class JdbcPetDao implements PetDao {
                           boolean redFlag, String gender, boolean adoptedStatus, String description) {
         String insertUserSql = "insert into pet (pet_name, age, species, breed, weight, red_flag, gender, adopted_status, description)" +
                 "values (?,?,?,?,?,?,?,?,?)";
-
-        return jdbcTemplate.update(insertUserSql, petName, age, species, breed, weight, redFlag,
-                gender, adoptedStatus, description) == 1;
+        try {
+            return jdbcTemplate.update(insertUserSql, petName, age, species, breed, weight, redFlag,
+                    gender, adoptedStatus, description) == 1;
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
     }
 
 
