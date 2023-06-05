@@ -12,6 +12,14 @@ export default {
 
   getAvailablePets() {
     return http.get('/pets');
+  },
+
+  addPet(newPet) {
+    return http.post('/update', newPet);
+  },
+
+  updatePet(pet) {
+    return http.put('/update', pet);
   }
 
 }
