@@ -32,9 +32,7 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: Home,
-      meta: {
-        requiresAuth: false
-      }
+      alias: ['/home', '/']
     },
     {
       path: "/login",

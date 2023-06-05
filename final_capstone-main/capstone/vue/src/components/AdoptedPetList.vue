@@ -55,6 +55,20 @@ export default {
                 }).catch((error) => {
                     console.log(error);
                 });
+        }, 
+        getMostRecentAdoptee() {
+            PetService.getMostRecentAdoptee()
+                .then((response) => {
+                    this.adoptedPets = response.data.map((pet) => {
+                        return {
+                            pet_name: pet.petName,
+                            adoption_date: pet.adoptionDate,
+                            image_path: pet.imagePath
+                        };
+                    });
+                }).catch((error) => {
+                    console.log(error);
+                });
         }
     },
     computed: {
