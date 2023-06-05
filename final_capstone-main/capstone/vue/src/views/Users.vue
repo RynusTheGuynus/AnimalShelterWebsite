@@ -1,7 +1,7 @@
 <template>
   <div>
     <shelter-header />
-    <users-list />
+    <users-list/>
     <shelter-footer />
   </div>
 </template>
@@ -17,6 +17,8 @@ export default {
     ShelterHeader,
     ShelterFooter
   },
+
+  
 };
 </script>
 

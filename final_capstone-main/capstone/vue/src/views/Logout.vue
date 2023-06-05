@@ -15,7 +15,7 @@ export default {
   components: { ShelterHeader, ShelterFooter },
   created() {
     this.$store.commit("LOGOUT");
-    this.$router.push("/home");
+    this.$router.push("/");
   }
 };
 </script>

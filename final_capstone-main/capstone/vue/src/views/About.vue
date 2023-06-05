@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="layout">
     <shelter-header id='shelterHeader' />
       <h1>About Rising Sun</h1>
       <figure>

@@ -6,6 +6,7 @@ import com.techelevator.security.jwt.TokenProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.method.P;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
@@ -53,21 +54,25 @@ public class UserController {
             return userId;
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(path = "/users/pending", method = RequestMethod.GET)
     public List<User> viewPendingApplications() {
         return userDao.viewPendingApplications();
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(path = "/users/approve/{id}", method = RequestMethod.PUT)
     public boolean approveApplication(@RequestBody User user, @PathVariable int id) {
         return userDao.approveVolunteer(user, id);
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(path = "/users/decline/{id}", method = RequestMethod.PUT)
     public boolean declineApplication(@RequestBody User user, @PathVariable int id) {
         return userDao.declineVolunteer(user, id);
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @RequestMapping(path = "/admin/promote/{id}", method = RequestMethod.PUT)
     public boolean promote(@RequestBody User user, @PathVariable int id) {
         return userDao.promoteToAdmin(user, id);
