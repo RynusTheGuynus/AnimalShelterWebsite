@@ -1,7 +1,9 @@
 <template>
   <div>
-      <h3 id='shelterFoot'>Location: 123 Front St., ST 11111</h3>
+      <h3 id='shelterFoot'>🐶 Location: 123 Front St., ST 11111 🐱</h3>
       <p id='social'>Social Media</p>
+      
+      
   </div>
 </template>
 
@@ -41,7 +43,5 @@ p {
     width: 25vw;
     margin-left: 150px;
 }
-
-
 
 </style>

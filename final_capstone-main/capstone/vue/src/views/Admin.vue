@@ -2,10 +2,10 @@
   <div>
       <shelter-header/>
       
-      <approve-pending v-if="access === true" />
-      <p v-else>You do not have permission to view this page.</p>
-      <add-admin v-if="access === true"/>
+      <approve-pending v-if="isAuthorized"/>
       
+      <add-admin v-if="isAuthorized"/>
+      <p v-else>You are not authorized to view this page.</p>
       <shelter-footer/>
   </div>
 </template>
@@ -19,21 +19,18 @@ import ShelterHeader from '../components/ShelterHeader.vue'
 export default {
   name: 'Admin',
   components: { ApprovePending, AddAdmin, ShelterHeader, ShelterFooter },
-  computed: {
-    access() {
-      if (this.$store.state.user === {}) {
-        return false;
-      }
-      else if (this.$store.state.user.authorities[0].name === 'ROLE_ADMIN') {
-        return true;
-      } else {
-        return false;
-      }
+
+  data() {
+    return {
+    isAuthorized: false,
+    }
+  },
+  
+  created() {
+    if (this.$store.state.user.authorities[0].name === 'ROLE_ADMIN') {
+      this.isAuthorized = true;
     }
   }
-
-  
-
 }
 </script>
 
