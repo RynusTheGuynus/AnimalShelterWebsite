@@ -5,16 +5,16 @@
         <!-- The img below isn't necessary due to the background image in #shelterHead -->
         <!-- <img src="'shelterheadbanner.png'" alt="banner"> -->
         <ul class="headLeft">
-          <router-link :to="{name: 'home'}" tag="li">Home</router-link>
-          <router-link :to="{name: 'about'}" tag="li">About Us</router-link>
-          <router-link :to="{name: 'pets'}" tag="li">Pets Available for Adoption</router-link>
-          <router-link :to="{name: 'celebrate'}" tag="li">Second Chances!</router-link>
-          <router-link :to="{name: 'register'}" tag="li">Apply to be a Volunteer!</router-link>
+          <router-link :to="{name: 'home'}" tag="li" class="router-link">Home</router-link>
+          <router-link :to="{name: 'about'}" tag="li" class="router-link">About Us</router-link>
+          <router-link :to="{name: 'pets'}" tag="li" class="router-link">Pets Available for Adoption</router-link>
+          <router-link :to="{name: 'celebrate'}" tag="li" class="router-link">Second Chances!</router-link>
+          <router-link :to="{name: 'register'}" tag="li" class="router-link">Apply to be a Volunteer!</router-link>
           <!-- We need to add the admin view to the nav and base its visibility on user auth/role -->
-          <router-link :to="{ name: 'update' }" tag="li" v-if="$store.state.token != ''">Add/Update Pets</router-link>
-          <router-link :to="{ name: 'users' }" tag="li" v-if="$store.state.token != ''">Volunteer Directory</router-link>
-          <router-link :to="{ name: 'login' }" tag="li" v-if="$store.state.token == ''">Volunteer Login</router-link>
-          <router-link v-bind:to="{ name: 'logout' }" tag="li" v-if="$store.state.token != ''">Volunteer Logout</router-link>
+          <router-link :to="{ name: 'update' }" tag="li" class="router-link" v-if="$store.state.token != ''">Add/Update Pets</router-link>
+          <router-link :to="{ name: 'users' }" tag="li" class="router-link" v-if="$store.state.token != ''">Volunteer Directory</router-link>
+          <router-link :to="{ name: 'login' }" tag="li" class="router-link" v-if="$store.state.token == ''">Volunteer Login</router-link>
+          <router-link v-bind:to="{ name: 'logout' }" tag="li" class="router-link" v-if="$store.state.token != ''">Volunteer Logout</router-link>
         </ul>
       </div>
   </div>
@@ -52,14 +52,14 @@ img {
     grid-area: headLeft;
     display: flex;
     flex-direction: column;
-    height: 20vh;
+    height: 15vh;
     width: 15vw;
     justify-content: left;
     align-self: flex-start;
     align-items: left;
-    margin-top: 5px;
-    font-size: 12px;
-    cursor: pointer;
+    margin-top: 50px;
+    font-size: 16px;
+    font-weight: 700;
 }
 
 .headCenter {
@@ -84,5 +84,9 @@ h1, h2 {
   color: lightgray;
 }
 
+.router-link {
+  padding: 3px;
+  cursor: pointer;
+}
 
 </style>

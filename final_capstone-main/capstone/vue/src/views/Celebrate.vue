@@ -12,7 +12,7 @@ import ShelterHeader from '../components/ShelterHeader.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 
 export default {
-  name: 'Celebrate',
+  name: 'celebrate',
   components: { 
       AdoptedPetList,
       ShelterHeader,
@@ -21,8 +21,6 @@ export default {
 
 }
 </script>
-    ShelterFooter
-    ShelterHeader
 
 <style>
 

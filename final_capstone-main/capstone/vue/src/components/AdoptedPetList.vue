@@ -12,6 +12,7 @@
         v-for="pet in adoptedPets"
         v-bind:key="pet.id"
         >
+        <div class="adopted-pet-text-box">
             <h2 class="adopted-pet-name">
                 Adoptee: {{ pet.pet_name }}
             </h2>
@@ -21,6 +22,7 @@
             <p class="adopted-pet-gotcha-day">
                 "Gotcha" day: {{ pet.adoption_date }}
             </p>
+        </div>
             <img class="adopted-pet-image" :src="pet.image_path" alt="Pet Image" /> 
         </div>
       </div>
@@ -76,7 +78,8 @@ export default {
     grid-template-areas:
         "adopted-pet adopted-pet adopted-pet"
     ;
-    height: 45vh;
+    height: 100%;
+    width: 100%;
     gap: 10px;
     margin: 20px 1px;
     text-align: center;
@@ -104,31 +107,33 @@ h1 {
 .adopted-pet {
   border-radius: 25px;
   background-color: tan;
+  width: 400px;
   padding: 10px 5px;
   margin: 20px;
   justify-items: center;
   /* grid-area: adopted-pet; */
 }
 
-/* .adopted-pet-name {
-    
+.adopted-pet-name {   
     text-align: left;
 }
 
-.adopted-pet-adopter {
-    
+.adopted-pet-adopter { 
     text-align: left;
 }
 
 .adopted-pet-gotcha-day {
-    
     text-align: left;
-} */
+}
 
 .adopted-pet img {
-    height:320px;
-    width:480px;
+    height: 240px;
+    width: 360px;
     border-radius: 5%;
+}
+
+.adopted-pet-text-box {
+    display: inline-block;
 }
 
 </style>

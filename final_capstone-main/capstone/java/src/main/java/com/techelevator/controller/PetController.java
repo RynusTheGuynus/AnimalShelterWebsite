@@ -6,6 +6,7 @@ import com.techelevator.model.AdoptedPetDTO;
 
 import com.techelevator.model.AdoptedPetDTO;
 
+import com.techelevator.model.AvailablePetDTO;
 import com.techelevator.model.Pet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -24,8 +25,8 @@ public class PetController {
     }
 
     @RequestMapping(path = "/pets", method = RequestMethod.GET)
-    public List<Pet> getAll() {
-        return petDao.findAll();
+    public List<AvailablePetDTO> getAvailablePets() {
+        return petDao.getAvailablePets();
     }
 
     @RequestMapping(path = "/pets/id/{petId}", method = RequestMethod.GET)

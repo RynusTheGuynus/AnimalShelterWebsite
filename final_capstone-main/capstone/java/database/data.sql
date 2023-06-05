@@ -1,29 +1,29 @@
 BEGIN TRANSACTION;
 
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Sparky', 0, 'dog', 'Terrier mix', 6, 'female', false, false, ' ');
+	VALUES ('Sparky', 1, 'dog', 'Terrier mix', 6, 'female', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Gina', 19, 'dog', 'Shepherd/Collie mix', 42, 'female', true, true, ' ');
+	VALUES ('Gina', 19, 'dog', 'Shepherd/Collie mix', 42, 'female', true, true, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Chester', 0, 'cat', 'Domestic Shorthair', 11, 'male', false, false, ' ');
+	VALUES ('Chester', 1, 'cat', 'Domestic Shorthair', 11, 'male', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Rosie', 2, 'cat', 'Domestic Shorthair', 10, 'female', false, false, ' ');
+	VALUES ('Rosie', 2, 'cat', 'Domestic Shorthair', 10, 'female', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Sadie', 2, 'dog', 'Australian Cattle Dog', 23, 'female', true, false, ' ');
+	VALUES ('Sadie', 2, 'dog', 'Australian Cattle Dog', 23, 'female', true, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Arthur', 3, 'cat', 'Domestic Shorthair', 10, 'male', false, false, ' ');
+	VALUES ('Arthur', 3, 'cat', 'Domestic Shorthair', 10, 'male', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Sylvie', 1, 'dog', 'Spitz mix', 25, 'female', false, false, ' ');
+	VALUES ('Sylvie', 1, 'dog', 'Spitz mix', 25, 'female', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Oliver', 3, 'cat', 'Domestic Shorthair', 12, 'male', false, true, ' ');
+	VALUES ('Oliver', 3, 'cat', 'Domestic Shorthair', 12, 'male', false, true, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Oberon', 0, 'dog', 'Pit/Lab mix', 20, 'male', false, false, ' ');
+	VALUES ('Oberon', 1, 'dog', 'Pit/Lab mix', 20, 'male', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Lola', 0, 'cat', 'Himalayan mix', 1, 'female', false, true, ' ');
+	VALUES ('Lola', 1, 'cat', 'Himalayan mix', 1, 'female', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Rosebud', 2, 'dog', 'Hound mix', 18, 'female', false, false, ' ');
+	VALUES ('Rosebud', 2, 'dog', 'Hound mix', 18, 'female', false, false, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Ginger', 0, 'dog', 'Chow/Golden mix', 5, 'female', false, true, ' ');
+	VALUES ('Ginger', 1, 'dog', 'Chow/Golden mix', 5, 'female', false, true, 'placeholder');
 
 INSERT INTO adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)
 	VALUES ('Debra Nichols', '1313 Mockingbird Ln, Halloween Town', 'dln@fakedomain.com', '111-222-333', '1994-03-12');
@@ -48,6 +48,48 @@ INSERT INTO pet_image (pet_id, image_name, image_path)
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (12, 'ginger1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/ginger1.jpg');
 --	VALUES (12, 'ginger1', pg_read_binary_file('static/images/ginger1.jpg'));
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (1, 'sparky1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sparky1_qa6pua.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (1, 'sparky2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sparky2_orjm50.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (1, 'sparky3', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sparky3_rumg6h.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (3, 'chester1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954150/Animal%20Shelter/chester1_hcbtfx.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (3, 'chester2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954150/Animal%20Shelter/chester2_iovz1j.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (3, 'chester3', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954151/Animal%20Shelter/chester3_gcol3i.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (4, 'rosie1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954153/Animal%20Shelter/rosie1_zukupp.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (4, 'rosie2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954153/Animal%20Shelter/rosie2_x1ayon.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (5, 'sadie1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sadie1_tsnu5o.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (5, 'sadie2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sadie2_o3hzg8.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (6, 'arthur1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954150/Animal%20Shelter/arthur1_q8cjec.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (6, 'arthur2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954150/Animal%20Shelter/arthur2_haghof.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (7, 'sylvie1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sylvie1_aszyil.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (7, 'sylvie2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954149/Animal%20Shelter/sylvie2_pd9cft.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (9, 'oberon1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954152/Animal%20Shelter/oberon1_ymlh6n.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (9, 'oberon2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954153/Animal%20Shelter/oberon2_voxcqd.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (10, 'lola1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954151/Animal%20Shelter/lola1_bna3fl.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (10, 'lola2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954151/Animal%20Shelter/lola2_jwxzez.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (11, 'rosebud1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954152/Animal%20Shelter/rosebud1_fq4nem.jpg');
+INSERT INTO pet_image (pet_id, image_name, image_path)
+    VALUES (11, 'rosebud2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954153/Animal%20Shelter/rosebud2_n5gwc2.jpg');
+
+
 
 
 COMMIT;

@@ -1,5 +1,5 @@
 <template>
-  <div>Pet Component</div>
+  <div>Pet Showcase Component</div>
 </template>
 
 <script>

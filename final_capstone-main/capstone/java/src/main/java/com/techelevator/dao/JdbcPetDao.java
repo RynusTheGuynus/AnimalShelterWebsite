@@ -87,13 +87,19 @@ public class JdbcPetDao implements PetDao {
     @Override
     public List<AvailablePetDTO> getAvailablePets() {
         List<AvailablePetDTO> availablePetList = new ArrayList<>();
-        String sql = "SELECT p.pet_name, p.species, p.breed, p.age " +
+        String sql = "SELECT p.pet_name, p.species, p.breed, p.age, MIN(pi.image_path) AS image_path " +
                 "FROM pet AS p " +
-                "WHERE p.adopted_status = true;";
+                "LEFT JOIN pet_image AS pi ON pi.pet_id = p.pet_id " +
+                "WHERE p.adopted_status = false " +
+                "GROUP BY p.pet_id, p.pet_name, p.species, p.breed, p.age " +
+                "ORDER BY p.pet_name ASC;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while(results.next()) {
                 AvailablePetDTO availablePet = mapRowToAvailablePetDTO(results);
+                if (results.getString("image_path") == null) {
+                    availablePet.setImagePath("https://res.cloudinary.com/doliuuvrv/image/upload/v1685946485/Animal%20Shelter/placeholder-image_npzf77.jpg");
+                }
                 availablePetList.add(availablePet);
             }
         } catch(CannotGetJdbcConnectionException e) {
@@ -147,6 +153,7 @@ public class JdbcPetDao implements PetDao {
         availablePetDTO.setSpecies(rs.getString("species"));
         availablePetDTO.setBreed(rs.getString("breed"));
         availablePetDTO.setAge(rs.getInt("age"));
+        availablePetDTO.setImagePath(rs.getString("image_path"));
         return availablePetDTO;
     }
 

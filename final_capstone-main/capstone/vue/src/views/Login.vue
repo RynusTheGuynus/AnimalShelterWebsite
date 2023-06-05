@@ -1,5 +1,6 @@
 <template>
   <div id="login" class="text-center">
+    <shelter-header />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -34,15 +35,18 @@
       <router-link :to="{ name: 'register' }">Interested in becoming a volunteer? Apply here!</router-link>
       <button type="submit">Sign in</button>
     </form>
+    <shelter-footer />
   </div>
 </template>
 
 <script>
 import authService from "../services/AuthService";
+import ShelterHeader from '../components/ShelterHeader.vue'
+import ShelterFooter from '../components/ShelterFooter.vue'
 
 export default {
   name: "login",
-  components: {},
+  components: { ShelterHeader, ShelterFooter },
   data() {
     return {
       user: {
