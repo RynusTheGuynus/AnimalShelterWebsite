@@ -22,9 +22,9 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
-/* .pet-container {
+.pet-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -34,7 +34,7 @@ export default {
     "shelter-footer";
 }
 
-.shelter-header {
+/* .shelter-header {
   grid-area: shelter-header;
 }
 
