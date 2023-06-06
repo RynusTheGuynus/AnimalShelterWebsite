@@ -35,6 +35,7 @@ export default {
     getAvailablePets() {
       PetService.getAvailablePets()
         .then((response) => {
+          console.log('API Response:', response.data);
           this.availablePets = response.data.map((pet) => {
             return {
               pet_name: pet.petName,
@@ -44,6 +45,7 @@ export default {
               image_path: pet.imagePath
             };
           });
+          console.log('Available Pets:', this.availablePets);
         })
         .catch((error) => {
           console.log(error);
@@ -67,6 +69,7 @@ export default {
   },
   created() {
     this.getAvailablePets();
+    console.log('Available Pets (AvailablePetList): ', this.availablePets);
   },
 };
 </script>

@@ -90,9 +90,10 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas:
+        "header header header"
         "adopted-pet adopted-pet adopted-pet"
     ;
-    height: 100%;
+    height: 60vh;
     width: 100%;
     gap: 10px;
     margin: 20px 1px;
@@ -109,12 +110,14 @@ h1 {
     text-align: center;
     margin: 20px;
     height: 35vh;
-    /* grid-area: header; */
+    grid-area: header;
     background-image: url("../images/second-chance-2.png");
+    background-position-y: 40px;
     background-repeat: no-repeat;
     background-size: cover;
     background-color: transparent;
     border-radius: 25px;
+    color: black;
     /* height: 10vh; */
 }
 
@@ -125,7 +128,7 @@ h1 {
   padding: 10px 5px;
   margin: 20px;
   justify-items: center;
-  /* grid-area: adopted-pet; */
+  grid-area: adopted-pet;
 }
 
 .adopted-pet-name {   

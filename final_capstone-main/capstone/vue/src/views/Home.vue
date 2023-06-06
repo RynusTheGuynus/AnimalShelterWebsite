@@ -1,16 +1,16 @@
 <template>
   <div class="home">
     <p
-      class="alert alert-success"
-      role="alert"
-      v-if="this.$route.query.registration"
-    >Thank you for applying. You will be able to sign in once approved.</p>
-    <p
-      class="alert alert-failure"
-      role="alert"
-      v-if="this.$route.query.loggedIn"
-    >You have not yet been approved by an Admin.</p>
-    <div class="grid">
+        class="alert alert-success"
+        role="alert"
+        v-if="this.$route.query.registration"
+      >Thank you for applying. You will be able to sign in once approved.</p>
+      <p
+        class="alert alert-failure"
+        role="alert"
+        v-if="this.$route.query.loggedIn"
+      >You have not yet been approved by an Admin.</p>     
+    <div class="grid">         
       <shelter-header id='shelterHeader' />
       <pet-showcase id='pets' />
       <event-component id='events' />
@@ -56,10 +56,14 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    "shelterHead shelterHead"
-    "content content"
-    "shelterFoot shelterFoot";
-  flex: 1;
+  "shelterHead shelterHead"
+  "pets events"
+  "shelterFoot shelterFoot"
+}
+#home {
+  height: 100vh;
+  width: 100vw;
+  background-color: #dc9d4e;
 }
 
 #shelterHeader {
@@ -73,48 +77,34 @@ body {
 
 #shelterHeader .nav {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-left: 20px;
-}
-
-#shelterHeader .nav li {
-  list-style-type: none;
-  margin-right: 20px;
-  font-size: 16px;
-  color: antiquewhite;
-}
-
-#content {
-  display: flex; /* Added */
-  flex-wrap: wrap; /* Added */
-  align-items: flex-start; /* Added */
-  justify-content: center; /* Added */
-}
-
-#pets {
-  display: flex; /* Added */
-  flex-direction: column; /* Added */
-  align-items: center;
-  margin-top: 45px;
-  margin-bottom: 5px;
-  margin-right: 5px;
-  justify-content: center;
+  flex-direction: row;
+  justify-self: flex-start;
+  min-width: 60vw;
+  width: 60vw;
+  height: 84vh;
+  margin-top: 30px;
+  margin-right: -12px;
+  margin-bottom: -17px;
 }
 
 #events {
-  display: flex; /* Added */
-  flex-direction: column; /* Added */
-  align-items: center;
-  height: 75vh;
-  margin-top: 45px;
+  grid-area: events;
+  display: flex;
+  flex-direction: row;
+  justify-self: flex-end;
+  height: 84vh;
+  width: 35vw;
+  margin-top: 30px;
+  margin-left: -15px;
+  margin-right: 168px;
+  padding-right: 15px;
+  margin-bottom: -17px;
+  
 }
 
 #shelterFooter {
   height: 8vh;
-  width: 100vh;
-  display: flex;
-  justify-content: flex-end;
+  width: 98vw;
   grid-area: shelterFoot;
 }
 
@@ -132,5 +122,6 @@ ul {
   background-color: #f8d7da;
   border: 1px solid #f5c6cb;
 }
+
 </style>
 

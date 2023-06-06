@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div id="celebrate">
     <shelter-header />
     <h1>Our latest adoption success story!</h1>
-    <adopted-pet-list />
-    <shelter-footer />
+    <adopted-pet-list class="adopted" />
+    <shelter-footer class="shelterFooter" />
   </div>
 </template>
 
@@ -23,7 +23,22 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+#celebrate {
+  display: flex;
+  flex-direction: column;
+}
+
+.adopted {
+  margin-top: -118px;
+  margin-bottom: 2px;
+  max-width: 97vw;
+  border: 3px solid #a36c2c;
+}
+
+.shelterFooter {
+  max-width: 97vw;
+}
 
 h1 {
   color: black;

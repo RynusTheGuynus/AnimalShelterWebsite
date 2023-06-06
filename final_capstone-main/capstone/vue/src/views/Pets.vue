@@ -1,7 +1,7 @@
 <template>
   <div class="pet-container">
       <shelter-header class="shelter-header" />
-      <available-pet-list class="pet-list" />
+      <available-pet-list :filteredPets="filteredPets" class="pet-list" />
       <shelter-footer class="shelter-footer" />
   </div>
 </template>
@@ -19,12 +19,18 @@ export default {
         ShelterHeader,
         AvailablePetList,
         ShelterFooter,
+        
+    },
+     data() {
+    return {
+      searchQuery: '',
+      availablePets: [],
+    };
   },
-  
 }
 </script>
 
-<style scoped>
+<style>
 
 .pet-container {
   display: grid;
@@ -36,8 +42,9 @@ export default {
     "shelter-footer";
 }
 
-/* .shelter-header {
+.shelter-header {
   grid-area: shelter-header;
+  max-width: 98vw;
 }
 
 .pet-list {
@@ -51,7 +58,8 @@ export default {
 
 .shelter-footer {
   grid-area: shelter-footer;
-} */
+  max-width: 96vw;
+} 
 
 
 </style>
