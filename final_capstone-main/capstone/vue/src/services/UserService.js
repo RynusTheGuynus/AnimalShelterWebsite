@@ -13,4 +13,5 @@ export default {
   get(id) {
     return http.get(`/users/id/${id}`)
   },
+
 }

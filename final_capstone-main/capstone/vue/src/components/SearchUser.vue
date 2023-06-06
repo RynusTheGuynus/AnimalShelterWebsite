@@ -5,6 +5,7 @@
     <table class="user-table">
       <thead>
         <tr>
+          <th>Username</th>
           <th>Role</th>
           <th>First Name</th>
           <th>Last Name</th>
@@ -14,6 +15,7 @@
       </thead>
       <tbody>
         <tr v-for="user in filteredUsers" v-bind:key="user.id">
+          <td>{{ user.username }}</td>
           <td>{{ extractUserRole(user.authorities) }}</td>
           <td>{{ user.first_name }}</td>
           <td>{{ user.last_name }}</td>

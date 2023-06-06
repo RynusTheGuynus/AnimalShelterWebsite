@@ -5,7 +5,7 @@
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <label for="username" class="sr-only">Username: </label>
+      <label for="username" class="sr-only">Username </label>
       <input
         type="text"
         id="username"
@@ -15,7 +15,7 @@
         required
         autofocus
       /> <br>
-      <label for="password" class="sr-only">Password: </label>
+      <label for="password" class="sr-only">Password </label>
       <input
         type="password"
         id="password"
@@ -32,7 +32,7 @@
         v-model="user.confirmPassword"
         required
       /> <br>
-      <label for="firstName" class="sr-only">First Name: </label>
+      <label for="firstName" class="sr-only">First Name </label>
       <input
         type="text"
         id="firstName"
@@ -41,7 +41,7 @@
         v-model="user.firstName"
         required        
       /> <br>
-      <label for="lastName" class="sr-only">Last Name: </label>
+      <label for="lastName" class="sr-only">Last Name </label>
       <input
         type="text"
         id="lastName"
@@ -50,7 +50,7 @@
         v-model="user.lastName"
         required        
       /> <br>
-      <label for="emailAddress" class="sr-only">Email Address: </label>
+      <label for="emailAddress" class="sr-only">Email Address </label>
       <input
         type="text"
         id="emailAddress"
@@ -59,7 +59,7 @@
         v-model="user.emailAddress"
         required        
       /> <br>
-      <label for="phoneNumber" class="sr-only">Phone Number: </label>
+      <label for="phoneNumber" class="sr-only">Phone Number </label>
       <input
         type="text"
         id="phoneNumber"
@@ -68,7 +68,7 @@
         v-model="user.phoneNumber"
         required        
       /> <br>
-      <label for="age" class="sr-only">Age: </label>
+      <label for="age" class="sr-only">Age </label>
       <input
         type="number"
         id="age"
@@ -78,7 +78,7 @@
         required        
       /> <br>
       <h3>Emergency Contact Information</h3>
-      <label for="emergFirstName" class="sr-only">First Name: </label>
+      <label for="emergFirstName" class="sr-only">First Name </label>
       <input
         type="text"
         id="emergFirstName"
@@ -87,7 +87,7 @@
         v-model="user.emergencyFirstName"
         required        
       /> <br>
-      <label for="emergLastName" class="sr-only">Last Name: </label>
+      <label for="emergLastName" class="sr-only">Last Name </label>
       <input
         type="text"
         id="emergLastName"
@@ -96,7 +96,7 @@
         v-model="user.emergencyLastName"
         required        
       /> <br>
-      <label for="emergPhone" class="sr-only">Phone Number: </label>
+      <label for="emergPhone" class="sr-only">Phone Number </label>
       <input
         type="text"
         id="emergPhone"
@@ -177,13 +177,27 @@ export default {
 
 <style>
 .form-control {
-  margin: 10px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: none;
 }
 
 button {
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 25px;
+  color: #fff;
+  background-color: #747474;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+button:hover {
+  background-color: #444444;
 }
 
 #register {
@@ -195,7 +209,17 @@ button {
 
 #volunteerPhoto {
   height: 450px;
-  border: 10px solid black;
+  border-radius: 5px;
+  margin-bottom: 200px;
+}
+
+.form-register {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
 }
 
 </style>

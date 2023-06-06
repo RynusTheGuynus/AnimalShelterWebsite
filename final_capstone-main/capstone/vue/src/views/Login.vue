@@ -48,11 +48,23 @@ export default {
         username: "",
         password: ""
       },
-      invalidCredentials: false
+      invalidCredentials: false,
+      role: '',
     };
   },
   methods: {
     login() {
+      authService.getRole(this.user.username)
+      .then(answer => {
+        this.role = answer.data;
+      });
+      if (!this.role.includes('ADMIN') || !this.role.includes('USER')) {
+        this.invalidCredentials = true;
+        return this.$router.push({
+          path: '/',
+          query: {loggedIn: 'failure'} });
+      }
+      
       authService
         .login(this.user)
         .then(response => {
@@ -80,3 +92,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.form-control {
+  margin: 3px;
+}
+</style>

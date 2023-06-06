@@ -1,11 +1,16 @@
 <template>
   <div class="home">
-    <div
+    <p
         class="alert alert-success"
         role="alert"
         v-if="this.$route.query.registration"
-      >Thank you for applying. You will be able to sign in once approved.</div>   
-    <div id="grid">         
+      >Thank you for applying. You will be able to sign in once approved.</p>
+      <p
+        class="alert alert-failure"
+        role="alert"
+        v-if="this.$route.query.loggedIn"
+      >You have not yet been approved by an Admin.</p>     
+    <div class="grid">         
       <shelter-header id='shelterHeader' />
       <pet-showcase id='pets' />
       <event-component id='events' />
@@ -34,7 +39,7 @@ export default {
 
 <style>
 
-#grid {
+.grid {
   background-color: #dc9d4e;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -100,6 +105,13 @@ ul {
   justify-content: left;
 }
 
-
+.alert {
+  padding: 10px;
+  width: 300px;
+  border-radius: 5px;
+  color: #721c24;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+}
 
 </style>

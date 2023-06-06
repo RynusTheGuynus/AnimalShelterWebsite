@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Objects;
 import com.techelevator.exception.DaoException;
 import com.techelevator.exception.UserNotFoundException;
+import com.techelevator.model.LoginDTO;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.BadSqlGrammarException;
@@ -177,6 +178,17 @@ public class JdbcUserDao implements UserDao {
             throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
         } catch(DataIntegrityViolationException e) {
             throw new DaoException("Invalid operation - Data integrity error");
+        }
+    }
+
+    @Override
+    public String getRole(String username) {
+        String sql = "SELECT role FROM users WHERE username = ?";
+        SqlRowSet results = jdbcTemplate.queryForRowSet(sql, username);
+        if (results.next()) {
+            return results.getString("role");
+        } else {
+            return null;
         }
     }
 

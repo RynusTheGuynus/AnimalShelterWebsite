@@ -54,7 +54,7 @@ img {
 
 #about {
   font-size: 12px;
-    grid-area: about;
+  grid-area: about;
 }
 
 #shelterFoot {

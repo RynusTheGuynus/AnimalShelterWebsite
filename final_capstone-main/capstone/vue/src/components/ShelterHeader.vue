@@ -58,7 +58,7 @@ img {
     justify-content: left;
     align-self: flex-start;
     align-items: left;
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 12px;
     font-weight: 700;
     list-style-type: none;
