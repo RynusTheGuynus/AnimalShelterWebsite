@@ -14,4 +14,7 @@ export default {
     return http.get(`/users/id/${id}`)
   },
 
+  getUserByName(username) {
+    return http.get(`/users/username/${username}`)
+  }
 }

@@ -105,4 +105,8 @@ tbody tr:nth-child(even) {
 button {
     margin: 0px;
 }
+
+#volunteerContainer > h2 {
+    color: black;
+}
 </style>
