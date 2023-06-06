@@ -22,6 +22,7 @@ public class Pet {
     // Data members
     @JsonProperty("pet_id")
     public int petId;                  // serially assigned by dB
+    @JsonProperty("pet_name")
     public String petName;             // pet's name as a string
     @Min(value=0, message="Age cannot be less than zero.")
     public int age;                    // pet's known or estimated age in years as an integer
