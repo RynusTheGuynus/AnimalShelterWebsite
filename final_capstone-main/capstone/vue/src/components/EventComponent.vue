@@ -23,8 +23,6 @@ export default {
   display: flex;
   flex-direction: column;
   border: 3px solid #a36c2c;
-  height: 75vh;
-  width: 30vw;
   align-items: center;
 }
 
@@ -38,8 +36,8 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  
-  padding-right: 40px;
+  margin-left: -10px;
+  padding-right: 20px;
 }
 
 </style>

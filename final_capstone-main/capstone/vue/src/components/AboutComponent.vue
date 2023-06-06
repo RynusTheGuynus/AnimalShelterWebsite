@@ -2,7 +2,7 @@
   <div id="layout">
     <h1 id="aboutUs">About Rising Sun</h1>
     <figure id="aerialPhoto">
-        <img id="overhead" src="risingsunaerial.png" alt="aerial photo"/>
+        <img id="overhead" src="../images/risingsunaerial.png" alt="aerial photo"/>
         <figcaption id="caption">An aerial photograph of our shelter in autumn.</figcaption>
     </figure>
     <div id="aboutText">
@@ -41,13 +41,8 @@ export default {
 <style scoped>
 
 #layout {
-    justify-content: center;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: 
-        "aboutTitle"
-        "aerialPhoto"
-        "aboutText"
+    border: 3px solid #a36c2c;
+    justify-content: center;     
 }
 
 #aboutUs {
@@ -81,7 +76,6 @@ img {
 #aboutText {
     justify-content: center;
     font-size: 14px;
-    grid-area: "aboutText";
     width: 90vw;
     margin-left: 50px;
     margin-right: 50px;

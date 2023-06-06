@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <shelter-header id='shelterHeader' />
-    <about-component />
+    <about-component id="about" />
     <shelter-footer id='shelterFooter'/>
   </div>
 </template>
@@ -30,12 +30,12 @@ div {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-template-areas:
-  "shelterHead shelterHead"
-  "photo photo"
-  "history findus"
-  "shelterFoot shelterFoot"
+  "shelterHead"
+  "photo"
+  "about"
+  "shelterFoot"
 }
 
 #shelterHeader {
@@ -54,14 +54,11 @@ img {
 
 #about {
   font-size: 12px;
+  grid-area: about;
 }
 
 #shelterFoot {
-  height: 8vh;
-  width: 100vw;
-  margin-top: 10px;
-  
-  grid-area: shelterFooter;
+  grid-area: shelterFoot;
   border: 3px solid #a36c2c;
 }
 

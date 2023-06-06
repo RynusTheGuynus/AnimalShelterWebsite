@@ -11,6 +11,7 @@
           <router-link :to="{name: 'celebrate'}" tag="li" class="router-link">Second Chances!</router-link>
           <router-link :to="{name: 'register'}" tag="li" class="router-link">Apply to be a Volunteer!</router-link>
           <!-- We need to add the admin view to the nav and base its visibility on user auth/role -->
+          <router-link :to="{ name: 'admin' }" tag="li" class="router-link" v-if="$store.state.token != ''">Admin</router-link>
           <router-link :to="{ name: 'update' }" tag="li" class="router-link" v-if="$store.state.token != ''">Add/Update Pets</router-link>
           <router-link :to="{ name: 'users' }" tag="li" class="router-link" v-if="$store.state.token != ''">Volunteer Directory</router-link>
           <router-link :to="{ name: 'login' }" tag="li" class="router-link" v-if="$store.state.token == ''">Volunteer Login</router-link>
@@ -32,12 +33,13 @@ export default {
 #shelterHead {
     max-height: 24vh;
     min-height: 24vh;
+    width: 97vw;
     border: 3px solid #a36c2c;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "headLeft headCenter .";
-    background-image: url('shelterheadbanner.png');
+    background-image: url('../images/shelterheadbanner.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: content-box;

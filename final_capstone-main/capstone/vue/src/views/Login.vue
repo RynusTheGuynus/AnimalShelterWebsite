@@ -35,9 +35,10 @@
 </template>
 
 <script>
-import authService from "../services/AuthService";
+import UserService from "../services/UserService.js";
 import ShelterHeader from '../components/ShelterHeader.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
+import authService from '../services/AuthService.js'
 
 export default {
   name: "login",
@@ -46,25 +47,32 @@ export default {
     return {
       user: {
         username: "",
-        password: ""
+        password: "",
+        authorities: [],
       },
       invalidCredentials: false,
       role: '',
+      message: ''
     };
   },
   methods: {
-    login() {
-      authService.getRole(this.user.username)
-      .then(answer => {
-        this.role = answer.data;
-      });
-      if (!this.role.includes('ADMIN') || !this.role.includes('USER')) {
-        this.invalidCredentials = true;
-        return this.$router.push({
-          path: '/',
-          query: {loggedIn: 'failure'} });
-      }
-      
+    async login() {
+        const results = await UserService.getUserByName(this.user.username);
+          this.authorities = results.data.authorities;
+          if (Array.isArray(this.authorities) && this.authorities.length >0) {
+            const role = this.authorities[0].name;
+            console.log(role);
+            
+            if (role === 'ROLE_PENDING' || role === 'ROLE_DECLINED') {
+              
+              this.$router.push({
+                path: '/',
+                query: {loggedIn: 'failure'}
+              })
+              return;
+            }
+          }
+        
       authService
         .login(this.user)
         .then(response => {
@@ -87,9 +95,9 @@ export default {
           if (response.status === 401) {
             this.invalidCredentials = true;
           }
-        });
+        })
     }
-  }
+  },
 };
 </script>
 <style scoped>

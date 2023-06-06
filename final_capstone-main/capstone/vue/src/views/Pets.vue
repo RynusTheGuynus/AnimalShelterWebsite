@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .pet-container {
   display: grid;
@@ -42,8 +42,9 @@ export default {
     "shelter-footer";
 }
 
-/* .shelter-header {
+.shelter-header {
   grid-area: shelter-header;
+  max-width: 98vw;
 }
 
 .pet-list {
@@ -57,7 +58,8 @@ export default {
 
 .shelter-footer {
   grid-area: shelter-footer;
-} */
+  max-width: 96vw;
+} 
 
 
 </style>
