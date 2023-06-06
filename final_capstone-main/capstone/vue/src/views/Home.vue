@@ -14,13 +14,12 @@
       <shelter-header id='shelterHeader' />
       <pet-showcase id='pets' />
       <event-component id='events' />
-      <shelter-footer id='shelterFooter'/>
+      <shelter-footer id='shelterFooter' />
     </div>
   </div>
 </template>
 
 <script>
-
 import ShelterHeader from '../components/ShelterHeader.vue'
 import PetShowcase from '../components/PetShowcase.vue'
 import EventComponent from '../components/EventComponent.vue'
@@ -28,7 +27,7 @@ import ShelterFooter from '../components/ShelterFooter.vue'
 
 export default {
   name: "home",
-  components: { 
+  components: {
     ShelterHeader,
     PetShowcase,
     EventComponent,
@@ -38,6 +37,16 @@ export default {
 </script>
 
 <style>
+body {
+  margin: 0;
+}
+
+#home {
+  background-color: #dc9d4e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .grid {
   background-color: #dc9d4e;
@@ -58,15 +67,15 @@ export default {
 }
 
 #shelterHeader {
-  height: 21vh;
-  width: 100vw;  
+  width: 100vw;
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
+  display: flex;
+  justify-content: flex-start;
 }
 
-#pets {
-  grid-area: pets;
+#shelterHeader .nav {
   display: flex;
   flex-direction: row;
   justify-self: flex-start;
@@ -115,3 +124,4 @@ ul {
 }
 
 </style>
+
