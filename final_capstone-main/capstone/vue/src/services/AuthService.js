@@ -16,6 +16,9 @@ export default {
 
   changePassword(user) {
     return http.put('/change-password', user);
-  }
+  },
   
+  getRole(name) {
+    return http.get(`/role/${name}`)
+  }
 }

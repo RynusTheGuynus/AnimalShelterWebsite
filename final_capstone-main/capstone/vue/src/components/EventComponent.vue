@@ -38,7 +38,7 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-left: -10px;
+  
   padding-right: 40px;
 }
 
