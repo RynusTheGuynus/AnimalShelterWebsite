@@ -60,7 +60,7 @@ img {
   height: 8vh;
   width: 100vw;
   margin-top: 10px;
-  justify-content: space-evenly;
+  
   grid-area: shelterFooter;
   border: 3px solid #a36c2c;
 }

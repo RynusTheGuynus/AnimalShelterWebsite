@@ -21,7 +21,8 @@ export default {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
-    width: 100vw;
+    flex-wrap: nowrap;
+    width: 100%;
     background-color: #dc9d4e;
     border: 3px solid #a36c2c;
 }
@@ -33,6 +34,7 @@ export default {
     flex-wrap: nowrap;
     justify-content: space-evenly;
     color: black;
+    margin: 25px;
 }
 
 
@@ -44,4 +46,7 @@ img {
     max-height: 5vh;
 }
 
+#social {
+    margin-right: 25px;
+}
 </style>

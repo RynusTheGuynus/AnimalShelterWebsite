@@ -8,6 +8,7 @@
 
 package com.techelevator.dao;
 
+import com.techelevator.model.LoginDTO;
 import com.techelevator.model.User;
 import java.util.List;
 
@@ -32,4 +33,6 @@ public interface UserDao {
                    String emergencyPhone);
 
     boolean promoteToAdmin(User user, int id);
+
+    String getRole(String username);
 }

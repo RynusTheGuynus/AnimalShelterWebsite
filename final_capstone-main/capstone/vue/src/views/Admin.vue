@@ -1,7 +1,7 @@
 <template>
   <div>
       <shelter-header/>
-      <search-user :search-query="searchQuery" @search="handleSearch" />
+      <search-user :search-query="searchQuery" @search="handleSearch" v-if="isAuthorized"/>
       <ul>
         <li v-for="user in filteredUsers" :key="user.id">{{ user.first_name }}</li>
       </ul>

@@ -87,6 +87,15 @@ public class AuthenticationController {
         }
     }
 
+    @RequestMapping(value = "/role/{username}", method = RequestMethod.GET)
+    public String getRole(@PathVariable String username) {
+        try {
+            return userDao.getRole(username);
+        } catch (UsernameNotFoundException e) {
+            throw new DaoException("Could not find user.");
+        }
+    }
+
     /**
      * Object to return as body in JWT Authentication.
      */
