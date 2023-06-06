@@ -16,6 +16,6 @@ public interface AdoptionDao {
 
     List<Adoption> findAll();
     Adoption getAdoptionById(int adoptionId);
-    boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, LocalDate adoptionDate);
-
+    int create(String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, LocalDate adoptionDate);
+    int update(String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, LocalDate adoptionDate);
 }

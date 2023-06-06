@@ -18,8 +18,8 @@ export default {
     return http.post('/update', addPetDTO);
   },
 
-  updatePet(pet) {
-    return http.put('/update', pet);
+  updatePet(updatePetDTO) {
+    return http.put('/update', updatePetDTO);
   }
 
 }

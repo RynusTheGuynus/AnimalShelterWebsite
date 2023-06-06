@@ -130,6 +130,26 @@ public class JdbcPetDao implements PetDao {
         }
     }
 
+    @Override
+    public int update(String petName, int age, String species, String breed, int weight,
+                      boolean redFlag, String gender, boolean adoptedStatus, String description) {
+        int rowsUpdated = 0;
+        String sql = "UPDATE pet " +
+                "SET pet_name = ?, age = ?, species = ?, breed = ?, weight = ?, red_flag = ?, gender = ?, adoptedStatus = ?, description = ? " +
+                "WHERE pet_id = ?;";
+        try {
+            rowsUpdated = jdbcTemplate.update(sql, int.class, petName, age, species, breed, weight, redFlag,
+                    gender, adoptedStatus, description);
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+        return rowsUpdated;
+    }
+
 
     private Pet mapRowToPet(SqlRowSet rs) {
         Pet pet = new Pet();

@@ -65,4 +65,36 @@ public class PetController {
         }
     }
 
+    // This is going to be a bit complicated. Need to do the following:
+    // 1. update the pet entry. need to update based on pet_id, but how are we retrieving that?
+        // a. consider updating based on pet_name - issue becomes, what to do when
+        //    there are multiple pets with the same name
+        // b. we could have users update pet listings based on a drop-down menu that pulls from available pets,
+        //    but the issue of pets with the same name remains
+    // 2. create an entry in the adoption table if the adoption status is updated
+    // 3. create an entry in the pet_adoption table if the pet is adopted
+    // 4. update the pet_image table if new images are added
+    // All of this data needs to be pulled from an UpdatePetDTO
+    // Plan to use a form similar to AddPet to collect most information
+    @ResponseStatus(HttpStatus.CREATED)
+    @RequestMapping(path = "/update", method = RequestMethod.PUT)
+    public void updatePet(@RequestBody UpdatePetDTO updatePetDTO) {
+        try {
+//            int newPetId = petDao.create(addPetDTO.getPetName(), addPetDTO.getAge(), addPetDTO.getSpecies(), addPetDTO.getBreed(),
+//                    addPetDTO.getWeight(), addPetDTO.isRedFlag(), addPetDTO.getGender(), addPetDTO.isAdoptedStatus(),
+//                    addPetDTO.getDescription());
+//            if(!addPetDTO.getPetImageDTOOne().getImagePath().isEmpty()) {
+//                petImageDao.addImage(newPetId, addPetDTO.getPetImageDTOOne().getImageName(), addPetDTO.getPetImageDTOOne().getImagePath());
+//            }
+//            if(!addPetDTO.getPetImageDTOTwo().getImagePath().isEmpty()) {
+//                petImageDao.addImage(newPetId, addPetDTO.getPetImageDTOTwo().getImageName(), addPetDTO.getPetImageDTOTwo().getImagePath());
+//            }
+//            if(!addPetDTO.getPetImageDTOThree().getImagePath().isEmpty()) {
+//                petImageDao.addImage(newPetId, addPetDTO.getPetImageDTOThree().getImageName(), addPetDTO.getPetImageDTOThree().getImagePath());
+//            }
+        } catch (Exception e) {
+            throw new DaoException("Pet Table Insertion Error.");
+        }
+    }
+
 }

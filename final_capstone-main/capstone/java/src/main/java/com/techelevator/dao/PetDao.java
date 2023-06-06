@@ -15,15 +15,14 @@ import java.util.List;
 
 public interface PetDao {
 
-    // Data members
     List<Pet> findAll();
     List<AdoptedPetDTO> getAdoptedPets();
     List<AvailablePetDTO> getAvailablePets();
     Pet getPetById(int petId);
-
-    // Methods
     int create(String petName, int age, String species, String breed, int weight,
-                   boolean red_flag, String gender, boolean adoptedStatus, String description);
+              boolean redFlag, String gender, boolean adoptedStatus, String description);
+    int update(String petName, int age, String species, String breed, int weight,
+               boolean redFlag, String gender, boolean adoptedStatus, String description);
 
 }
 
