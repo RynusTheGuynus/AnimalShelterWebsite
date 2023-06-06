@@ -11,7 +11,7 @@
             id="add-pet-name"
             class="add-pet-input"
             placeholder="Ralph, Charley, etc."
-            v-model="pet.petName"
+            v-model="addPetDTO.petName"
             required
             autofocus
         /> <br>
@@ -22,7 +22,7 @@
             id="add-pet-age"
             class="add-pet-input"
             placeholder="Whole numbers only"
-            v-model="pet.age"
+            v-model="addPetDTO.age"
             required
             autofocus
         /> <br>
@@ -32,7 +32,7 @@
             id="add-pet-species"
             class="add-pet-input"
             value="Choose here"
-            v-model="pet.species"
+            v-model="addPetDTO.species"
             required
             autofocus
         > <option selected disabled>Choose here</option>
@@ -47,7 +47,7 @@
             id="add-pet-breed"
             class="add-pet-input"
             placeholder="Shepherd mix, hound, etc."
-            v-model="pet.breed"
+            v-model="addPetDTO.breed"
             required
             autofocus
         /> <br>
@@ -58,7 +58,7 @@
             id="add-pet-weight"
             class="add-pet-input"
             placeholder="Whole numbers only"
-            v-model="pet.weight"
+            v-model="addPetDTO.weight"
             required
             autofocus
         /> <br>
@@ -68,7 +68,7 @@
             id="add-pet-gender"
             class="add-pet-input"
             value="Choose here"
-            v-model="pet.gender"
+            v-model="addPetDTO.gender"
             required
             autofocus
         > <option selected disabled>Choose here</option>
@@ -82,7 +82,7 @@
             id="add-pet-redflag"
             class="add-pet-input"
             value="Choose here"
-            v-model="pet.redFlag"
+            v-model="addPetDTO.redFlag"
             required
             autofocus
         > <option selected disabled>Choose here</option>
@@ -96,7 +96,7 @@
             id="add-pet-adoptedstatus"
             class="add-pet-input"
             value="Choose here"
-            v-model="pet.adoptedStatus"
+            v-model="addPetDTO.adoptedStatus"
             required
             autofocus
         > <option selected disabled>Choose here</option>
@@ -111,7 +111,7 @@
             id="add-pet-description"
             class="add-pet-input"
             placeholder="140 characters or less"
-            v-model="pet.description"
+            v-model="addPetDTO.description"
             required
             autofocus
         /> <br>
@@ -123,10 +123,9 @@
             id="add-pet-image-1-name"
             class="add-pet-input"
             placeholder="bob1, charley2, etc."
-            v-model="placeholder"
-            required
+            v-model="addPetDTO.petImageDTOOne.imageName"
             autofocus
-        /> <image-upload />
+        /> <image-upload v-model="addPetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
         <br>
         <label for="add-pet-image-2-name" class="add-pet-input-label">Second image name: </label>
         <br>
@@ -135,10 +134,9 @@
             id="add-pet-image-2-name"
             class="add-pet-input"
             placeholder="bob1, charley2, etc."
-            v-model="placeholder"
-            required
+            v-model="addPetDTO.petImageDTOTwo.imageName"
             autofocus
-        /> <image-upload />
+        /> <image-upload v-model="addPetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
         <br>
         <label for="add-pet-image-3-name" class="add-pet-input-label">Third image name: </label>
         <br>
@@ -147,10 +145,9 @@
             id="add-pet-image-3-name"
             class="add-pet-input"
             placeholder="bob1, charley2, etc."
-            v-model="placeholder"
-            required
+            v-model="addPetDTO.petImageDTOThree.imageName"
             autofocus
-        /> <image-upload />
+        /> <image-upload v-model="addPetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
         <br>
         <button id="submit-button" class="button" type="submit">
             Submit
@@ -170,7 +167,7 @@ export default {
     },
     data() {
         return {
-            pet: {
+            addPetDTO: {
                 petName: "",
                 age: 0,
                 species: "",
@@ -179,28 +176,28 @@ export default {
                 gender: "",
                 redFlag: false,
                 adoptedStatus: false,
-                description: ""
+                description: "",
+                petImageDTOOne: {
+                    imageName: "",
+                    imagePath: ""
+                },
+                petImageDTOTwo: {
+                    imageName: "",
+                    imagePath: ""
+                },
+                petImageDTOThree: {
+                    imageName: "",
+                    imagePath: ""
+                }
             },
-
         }
     },
     methods: {
         addPet() {
-            // const newPet = {
-            //     petName: this.pet.petName,
-            //     age: this.pet.age,
-            //     species: this.pet.species,
-            //     breed: this.pet.breed,
-            //     weight: this.pet.weight,
-            //     gender: this.pet.gender,
-            //     redFlag: this.pet.redFlag,
-            //     adoptedStatus: this.pet.adoptedStatus,
-            //     description: this.pet.description
-            // }
-            PetService.addPet(this.pet)
+            PetService.addPet(this.addPetDTO)
                 .then((response) => {
                     if(response.status === 201) {
-                        // this.$router.push(`/pets`);
+                        this.$router.push(`/pets`);
                     }
                 }).catch((error) => {
                     if(error.response) {
@@ -209,6 +206,15 @@ export default {
                         window.alert("Could Not Reach Service");
                     }
                 });
+        },
+        updatePetImageOne(url) {
+            this.addPetDTO.petImageDTOOne.imagePath = url;
+        },
+        updatePetImageTwo(url) {
+            this.addPetDTO.petImageDTOTwo.imagePath = url;
+        },
+        updatePetImageThree(url) {
+            this.addPetDTO.petImageDTOThree.imagePath = url;
         }
 
     },

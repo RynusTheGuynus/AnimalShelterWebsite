@@ -27,11 +27,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 #shelterHead {
-    max-height: 25vh;
-    min-height: 25vh;
+    max-height: 24vh;
+    min-height: 24vh;
     border: 3px solid #a36c2c;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -60,6 +60,7 @@ img {
     margin-top: 10px;
     font-size: 12px;
     font-weight: 700;
+    list-style-type: none;
 }
 
 .headCenter {
@@ -70,6 +71,7 @@ img {
     margin-top: 5vh;
     margin-left: 30vw;
     font-size: 24px;
+    color: antiquewhite;
     text-shadow: -1px -1px 0 #dc9d4e, 1px -1px 0 #dc9d4e, -1px 1px 0 #dc9d4e, 1px 1px 0 #898686;
 
 }

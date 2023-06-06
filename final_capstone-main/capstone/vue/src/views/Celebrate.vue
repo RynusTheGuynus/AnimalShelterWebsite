@@ -1,8 +1,9 @@
 <template>
   <div>
-      <shelter-header />
-      <adopted-pet-list />
-      <shelter-footer />
+    <shelter-header />
+    <h1>Our latest adoption success story!</h1>
+    <adopted-pet-list />
+    <shelter-footer />
   </div>
 </template>
 
@@ -23,5 +24,9 @@ export default {
 </script>
 
 <style>
+
+h1 {
+  color: black;
+}
 
 </style>

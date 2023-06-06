@@ -12,6 +12,9 @@ package com.techelevator.dao;
 
 import com.techelevator.exception.DaoException;
 import com.techelevator.model.Adoption;
+import org.springframework.dao.DataIntegrityViolationException;
+import org.springframework.jdbc.BadSqlGrammarException;
+import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import java.time.LocalDate;
@@ -53,13 +56,40 @@ public class JdbcAdoptionDao implements AdoptionDao {
 
 
     @Override
-    public boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail,
+    public int create(String ownerName, String ownerAddress, String ownerEmail,
                           String ownerPhoneNumber, LocalDate adoptionDate) {
-        String insertUserSql = "insert into adoption (pet_id, owner_name, owner_address, owner_email, owner_phone_number, adoption_date)" +
+        String insertUserSql = "insert into adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)" +
                 "values (?,?,?,?,?,?)";
+        try {
+            return jdbcTemplate.queryForObject(insertUserSql, int.class, ownerName, ownerAddress, ownerEmail,
+                    ownerPhoneNumber, adoptionDate);
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+    }
 
-        return jdbcTemplate.update(insertUserSql, petId, ownerName, ownerAddress, ownerEmail,
-                                  ownerPhoneNumber, adoptionDate) == 1;
+    @Override
+    public int update(String ownerName, String ownerAddress, String ownerEmail,
+                      String ownerPhoneNumber, LocalDate adoptionDate) {
+        int rowsUpdated = 0;
+        String sql = "UPDATE adoption " +
+                "SET owner_name = ?, owner_address = ?, owner_email = ?, owner_phone_number = ?, adoption_date = ? " +
+                "WHERE adoption_id = ?;";
+        try {
+            rowsUpdated = jdbcTemplate.update(sql, int.class, ownerName, ownerAddress,
+                    ownerEmail, ownerPhoneNumber, adoptionDate);
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+        return rowsUpdated;
     }
 
 

@@ -17,25 +17,29 @@ export default {
 
 </script>
 
-<style>
+<style scoped>
+
 #events {
   display: flex;
   flex-direction: column;
   border: 3px solid #a36c2c;
-  height: 60vh;
-  width: 45vw;
-  align-items: right;
+  height: 75vh;
+  width: 30vw;
+  align-items: center;
 }
 
-#eventHeader {
-  align-items: flex-start;
-  justify-content: flex-start;
+h3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #eventList {
-  grid-area: list;
+  display: flex;
+  flex-direction: column;
   justify-content: left;
-  margin-left: 10px;
+  margin-left: -10px;
+  padding-right: 40px;
 }
 
 </style>

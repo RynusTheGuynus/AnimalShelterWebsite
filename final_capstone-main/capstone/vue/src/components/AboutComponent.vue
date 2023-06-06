@@ -2,7 +2,7 @@
   <div id="layout">
     <h1 id="aboutUs">About Rising Sun</h1>
     <figure id="aerialPhoto">
-        <img id="overhead" src="risingsunaerial.png" alt="aerial photo">
+        <img id="overhead" src="risingsunaerial.png" alt="aerial photo"/>
         <figcaption id="caption">An aerial photograph of our shelter in autumn.</figcaption>
     </figure>
     <div id="aboutText">

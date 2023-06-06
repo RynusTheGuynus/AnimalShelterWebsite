@@ -110,7 +110,9 @@
         Submit Application
       </button>
     </form>
+    <img id="volunteerPhoto" :src="'https://cdn.pixabay.com/photo/2017/03/24/09/10/dog-2170565_1280.jpg'" alt="Heart-shaped hot air balloon"/>
   </div>
+  
 </template>
 
 <script>
@@ -151,7 +153,7 @@ export default {
           .then((response) => {
             if (response.status == 201) {
               this.$router.push({
-                path: '/login',
+                path: '/',
                 query: { registration: 'success' },
               });
             }
@@ -184,5 +186,16 @@ button {
   margin-bottom: 25px;
 }
 
+#register {
+  background-color: #FDB750;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#volunteerPhoto {
+  height: 450px;
+  border: 10px solid black;
+}
 
 </style>

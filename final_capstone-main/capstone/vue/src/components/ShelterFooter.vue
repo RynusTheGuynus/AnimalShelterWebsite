@@ -1,7 +1,11 @@
 <template>
-  <div>
+  <div id="wholeFooter">
       <h3 id='shelterFoot'>Location: 123 Front St., ST 11111</h3>
-      <p id='social'>Social Media</p>
+      <div id='social'>
+          <a href="http://www.facebook.com"><img src="fbicon.png" alt="Facebook"></a>
+          <a href="http://www.instagram.com"><img src="igicon.png" alt="Instagram"></a>
+          <a href="http://www.twitter.com"><img src="twicon.png" alt="Twitter"></a>
+      </div>
   </div>
 </template>
 
@@ -13,35 +17,31 @@ export default {
 
 <style scoped>
 
-div {
+#wholeFooter {
     display: flex;
     justify-content: flex-end;
     flex-direction: row;
+    width: 100vw;
     background-color: #dc9d4e;
     border: 3px solid #a36c2c;
 }
 
-
 #shelterFoot {
-    width: 45vw;
-    margin-left: 500px;
-    
-}
-
-h3 {
-    
-    color: black;
-    margin-left: 100px;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
     flex-wrap: nowrap;
-}
-
-p {
-    justify-items: right;
-    justify-content: right;
-    width: 25vw;
-    margin-left: 150px;
+    justify-content: space-evenly;
+    color: black;
 }
 
 
+
+img {
+    margin-top: 10px;
+    margin-right: 10px;
+    align-items: center;
+    max-height: 5vh;
+}
 
 </style>
