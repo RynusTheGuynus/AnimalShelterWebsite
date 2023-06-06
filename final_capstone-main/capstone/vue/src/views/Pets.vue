@@ -1,7 +1,7 @@
 <template>
   <div class="pet-container">
       <shelter-header class="shelter-header" />
-      <available-pet-list :filteredPets="filteredPets" class="pet-list" />
+      <available-pet-list class="pet-list" />
       <shelter-footer class="shelter-footer" />
   </div>
 </template>
@@ -19,14 +19,8 @@ export default {
         ShelterHeader,
         AvailablePetList,
         ShelterFooter,
-        
-    },
-     data() {
-    return {
-      searchQuery: '',
-      availablePets: [],
-    };
   },
+  
 }
 </script>
 
