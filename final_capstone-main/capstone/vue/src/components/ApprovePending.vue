@@ -141,4 +141,8 @@ tbody tr:nth-child(even) {
 button {
     margin: 0px;
 }
+
+#applicationContainer > h2 {
+    color: black;
+}
 </style>
