@@ -1,7 +1,7 @@
 <template>
   <div class="pet-container">
       <shelter-header class="shelter-header" />
-      <available-pet-list class="pet-list" />
+      <available-pet-list class="pet-list" /> <br><br><br>
       <shelter-footer class="shelter-footer" />
   </div>
 </template>

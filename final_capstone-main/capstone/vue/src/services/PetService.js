@@ -14,12 +14,12 @@ export default {
     return http.get('/pets');
   },
 
-  addPet(newPet) {
-    return http.post('/update', newPet);
+  addPet(addPetDTO) {
+    return http.post('/update', addPetDTO);
   },
 
-  updatePet(pet) {
-    return http.put('/update', pet);
+  updatePet(updatePetDTO) {
+    return http.put('/update', updatePetDTO);
   }
 
 }

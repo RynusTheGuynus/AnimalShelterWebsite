@@ -1,6 +1,11 @@
 <template>
   <div class="home">
-    <div id="grid">             
+    <div
+        class="alert alert-success"
+        role="alert"
+        v-if="this.$route.query.registration"
+      >Thank you for applying. You will be able to sign in once approved.</div>   
+    <div id="grid">         
       <shelter-header id='shelterHeader' />
       <pet-showcase id='pets' />
       <event-component id='events' />

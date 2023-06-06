@@ -1,6 +1,6 @@
 <template>
   <span>
-      <button v-on:click="upload">Upload Image</button>
+      <button v-on:click.prevent="upload">Upload Image</button>
   </span>
 </template>
 
@@ -15,6 +15,9 @@ export default {
   methods: {
       upload() {
         this.myWidget.open();
+      },
+      returnImageUrl(result) {
+          this.$emit('image-uploaded', result.info.url);
       }
   },
   mounted() {
@@ -27,6 +30,7 @@ export default {
         if (!error && result && result.event === "success") { 
           console.log('Done! Here is the image info: ', result.info); 
           console.log("Image URL: " + result.info.url);
+          this.returnImageUrl(result);
         }
       }
     );

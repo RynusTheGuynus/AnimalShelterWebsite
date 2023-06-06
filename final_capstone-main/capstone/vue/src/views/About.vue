@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="layout">
     <shelter-header id='shelterHeader' />
     <about-component />
     <shelter-footer id='shelterFooter'/>

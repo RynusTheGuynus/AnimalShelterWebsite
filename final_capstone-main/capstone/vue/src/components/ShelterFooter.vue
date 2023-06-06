@@ -44,6 +44,4 @@ img {
     max-height: 5vh;
 }
 
-
-
 </style>
