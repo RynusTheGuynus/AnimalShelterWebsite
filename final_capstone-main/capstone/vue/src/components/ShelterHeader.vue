@@ -32,12 +32,13 @@ export default {
 #shelterHead {
     max-height: 24vh;
     min-height: 24vh;
+    width: 97vw;
     border: 3px solid #a36c2c;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-areas: 
         "headLeft headCenter .";
-    background-image: url('shelterheadbanner.png');
+    background-image: url('../images/shelterheadbanner.png');
     background-repeat: no-repeat;
     background-size: cover;
     background-clip: content-box;

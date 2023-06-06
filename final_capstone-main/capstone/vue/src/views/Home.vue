@@ -47,6 +47,8 @@ export default {
   "shelterFoot shelterFoot"
 }
 #home {
+  height: 100vh;
+  width: 100vw;
   background-color: #dc9d4e;
 }
 
@@ -63,12 +65,12 @@ export default {
   display: flex;
   flex-direction: row;
   justify-self: flex-start;
-  flex-wrap: nowrap;
-  flex-grow: 5;
-  height: 75vh;
-  margin-top: 45px;
-  margin-bottom: 5px;
-  margin-right: 5px;
+  min-width: 60vw;
+  width: 60vw;
+  height: 84vh;
+  margin-top: 30px;
+  margin-right: -12px;
+  margin-bottom: -17px;
 }
 
 #events {
@@ -76,18 +78,20 @@ export default {
   display: flex;
   flex-direction: row;
   justify-self: flex-end;
-  flex-wrap: nowrap;
-  flex-grow: 1;
-  height: 75vh;
-  margin-top: 45px;
+  height: 84vh;
+  width: 35vw;
+  margin-top: 30px;
+  margin-left: -15px;
+  margin-right: 168px;
+  padding-right: 15px;
+  margin-bottom: -17px;
+  
 }
 
 #shelterFooter {
   height: 8vh;
-  width: 100vw;
-  justify-content: space-evenly;
+  width: 98vw;
   grid-area: shelterFoot;
-  border: 3px solid #dc9d4e;
 }
 
 ul {
