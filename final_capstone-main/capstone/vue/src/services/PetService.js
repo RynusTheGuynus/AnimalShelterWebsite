@@ -14,8 +14,8 @@ export default {
     return http.get('/pets');
   },
 
-  addPet(newPet) {
-    return http.post('/update', newPet);
+  addPet(addPetDTO) {
+    return http.post('/update', addPetDTO);
   },
 
   updatePet(pet) {

@@ -1,6 +1,7 @@
 package com.techelevator.controller;
 
 import com.techelevator.dao.PetDao;
+import com.techelevator.dao.PetImageDao;
 import com.techelevator.dao.UserDao;
 import com.techelevator.exception.DaoException;
 import com.techelevator.model.*;
@@ -20,9 +21,11 @@ public class PetController {
 
     @Autowired
     private PetDao petDao;
+    private PetImageDao petImageDao;
 
-    public PetController(PetDao petDao) {
+    public PetController(PetDao petDao, PetImageDao petImageDao) {
         this.petDao = petDao;
+        this.petImageDao = petImageDao;
     }
 
     @RequestMapping(path = "/pets/id/{petId}", method = RequestMethod.GET)
@@ -43,11 +46,20 @@ public class PetController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(path = "/update", method = RequestMethod.POST)
-    public void addPet(@RequestBody Pet newPet) {
+    public void addPet(@RequestBody AddPetDTO addPetDTO) {
         try {
-            petDao.create(newPet.getPetName(), newPet.getAge(), newPet.getSpecies(), newPet.getBreed(),
-                    newPet.getWeight(), newPet.isRedFlag(), newPet.getGender(), newPet.isAdoptedStatus(),
-                    newPet.getDescription());
+            int newPetId = petDao.create(addPetDTO.getPetName(), addPetDTO.getAge(), addPetDTO.getSpecies(), addPetDTO.getBreed(),
+                    addPetDTO.getWeight(), addPetDTO.isRedFlag(), addPetDTO.getGender(), addPetDTO.isAdoptedStatus(),
+                    addPetDTO.getDescription());
+            if(!addPetDTO.getPetImageDTOOne().getImagePath().isEmpty()) {
+                petImageDao.addImage(newPetId, addPetDTO.getPetImageDTOOne().getImageName(), addPetDTO.getPetImageDTOOne().getImagePath());
+            }
+            if(!addPetDTO.getPetImageDTOTwo().getImagePath().isEmpty()) {
+                petImageDao.addImage(newPetId, addPetDTO.getPetImageDTOTwo().getImageName(), addPetDTO.getPetImageDTOTwo().getImagePath());
+            }
+            if(!addPetDTO.getPetImageDTOThree().getImagePath().isEmpty()) {
+                petImageDao.addImage(newPetId, addPetDTO.getPetImageDTOThree().getImageName(), addPetDTO.getPetImageDTOThree().getImagePath());
+            }
         } catch (Exception e) {
             throw new DaoException("Pet Table Insertion Error.");
         }

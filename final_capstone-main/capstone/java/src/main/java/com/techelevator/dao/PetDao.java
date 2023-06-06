@@ -22,7 +22,7 @@ public interface PetDao {
     Pet getPetById(int petId);
 
     // Methods
-    boolean create(String petName, int age, String species, String breed, int weight,
+    int create(String petName, int age, String species, String breed, int weight,
                    boolean red_flag, String gender, boolean adoptedStatus, String description);
 
 }

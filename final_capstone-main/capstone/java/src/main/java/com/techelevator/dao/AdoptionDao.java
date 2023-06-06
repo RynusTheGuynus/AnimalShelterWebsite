@@ -14,11 +14,8 @@ import java.util.List;
 
 public interface AdoptionDao {
 
-    // Data members
     List<Adoption> findAll();
     Adoption getAdoptionById(int adoptionId);
-
-    // Methods
     boolean create(int petId, String ownerName, String ownerAddress, String ownerEmail, String ownerPhoneNumber, LocalDate adoptionDate);
 
 }
