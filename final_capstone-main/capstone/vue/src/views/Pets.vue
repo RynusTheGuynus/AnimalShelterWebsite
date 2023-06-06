@@ -1,7 +1,7 @@
 <template>
   <div class="pet-container">
       <shelter-header class="shelter-header" />
-      <available-pet-list class="pet-list" />
+      <available-pet-list :filteredPets="filteredPets" class="pet-list" />
       <shelter-footer class="shelter-footer" />
   </div>
 </template>
@@ -12,13 +12,21 @@ import ShelterHeader from '../components/ShelterHeader.vue'
 import AvailablePetList from '../components/AvailablePetList.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 
+
 export default {
     name: "pets",
     components: { 
         ShelterHeader,
         AvailablePetList,
-        ShelterFooter
-    }
+        ShelterFooter,
+        
+    },
+     data() {
+    return {
+      searchQuery: '',
+      availablePets: [],
+    };
+  },
 }
 </script>
 

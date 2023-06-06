@@ -57,7 +57,7 @@ img {
     justify-content: left;
     align-self: flex-start;
     align-items: left;
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 12px;
     font-weight: 700;
 }
