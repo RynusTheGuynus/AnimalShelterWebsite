@@ -17,7 +17,6 @@ export default {
   display: grid;
   grid-area: pets;
   border: 3px solid #a36c2c;
-  height: 60vh;
-  width: 45vw;
+  height: 75vh;
 }
 </style>

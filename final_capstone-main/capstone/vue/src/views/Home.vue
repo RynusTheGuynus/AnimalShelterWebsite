@@ -57,8 +57,9 @@ export default {
   grid-area: pets;
   display: flex;
   flex-direction: row;
+  justify-self: flex-start;
   flex-wrap: nowrap;
-  width: 60vw;
+  flex-grow: 5;
   height: 75vh;
   margin-top: 45px;
   margin-bottom: 5px;
@@ -69,8 +70,9 @@ export default {
   grid-area: events;
   display: flex;
   flex-direction: row;
+  justify-self: flex-end;
   flex-wrap: nowrap;
-  width: 40vw;
+  flex-grow: 1;
   height: 75vh;
   margin-top: 45px;
 }
@@ -80,6 +82,7 @@ export default {
   width: 100vw;
   justify-content: space-evenly;
   grid-area: shelterFoot;
+  border: 3px solid #dc9d4e;
 }
 
 ul {

@@ -44,6 +44,7 @@ div {
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
+  margin-bottom: 10px;
 }
 
 img {
@@ -55,11 +56,13 @@ img {
   font-size: 12px;
 }
 
-#shelterFooter {
+#shelterFoot {
   height: 8vh;
   width: 100vw;
+  margin-top: 10px;
   justify-content: space-evenly;
-  grid-area: shelterFoot;
+  grid-area: shelterFooter;
+  border: 3px solid #a36c2c;
 }
 
 </style>
