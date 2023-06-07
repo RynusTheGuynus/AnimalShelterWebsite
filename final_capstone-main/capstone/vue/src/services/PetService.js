@@ -24,6 +24,14 @@ export default {
 
   updatePet(updatePetDTO) {
     return http.put('/update', updatePetDTO);
+  },
+
+  getPetById(id) {
+    return http.get(`/pets/id/${id}`);
+  },
+
+  getPetImages(id) {
+    return http.get(`/pets/images/${id}`);
   }
 
 }

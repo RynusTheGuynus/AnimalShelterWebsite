@@ -5,7 +5,7 @@
       <ul>
         <li v-for="user in filteredUsers" :key="user.id">{{ user.first_name }}</li>
       </ul>
-      <approve-pending v-if="isAuthorized"/>
+      <approve-pending id="approvePending" v-if="isAuthorized"/>
       
       <add-admin v-if="isAuthorized"/>
       <p v-else>You are not authorized to view this page.</p>
@@ -57,6 +57,12 @@ export default {
     
 
 <style>
+#approvePending {
+  margin-top: 100px;
+}
 
+#approvePending > h2 {
+  color: black;
+}
 
 </style>

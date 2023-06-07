@@ -25,6 +25,7 @@
         </div>
             <img class="adopted-pet-image" :src="pet.image_path" alt="Pet Image" /> 
         </div>
+        <router-link v-bind:to="{name: 'PetDetail', params: {id: pet.id}}">Details</router-link>
       </div>
   </div>
 </template>
