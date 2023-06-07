@@ -19,12 +19,16 @@ export default {
 
 <style scoped>
 
+
+
 #wholeFooter {
     display: flex;
     flex-direction: row;
     background-color: #dc9d4e;
     border: 3px solid #a36c2c;
     justify-content: center;
+    margin-top: 2px;
+    max-width: 96vw;
     
 } 
  

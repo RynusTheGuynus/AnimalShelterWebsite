@@ -63,6 +63,7 @@ img {
     font-size: 12px;
     font-weight: 700;
     list-style-type: none;
+    margin-left: -20px;
 }
 
 .headCenter {

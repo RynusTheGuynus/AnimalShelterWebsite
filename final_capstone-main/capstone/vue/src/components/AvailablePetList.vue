@@ -39,7 +39,7 @@ export default {
           console.log('API Response:', response.data);
           this.availablePets = response.data.map((pet) => {
             return {
-              pet_id: pet.id,
+              pet_id: pet.petId,
               pet_name: pet.petName,
               species: pet.species,
               breed: pet.breed,
