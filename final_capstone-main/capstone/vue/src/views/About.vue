@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 
-div {
+#layout {
   max-width: 97vw;
   background-color: #dc9d4e;
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -41,25 +41,30 @@ div {
 
 #shelterHeader {
   height: 21vh;
-  width: 100vw;  
+  width: 94vw;  
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 img {
   width: 20vw;
   max-height: 50vh;
+
 }
 
 #about {
   max-width: 96vw;
   font-size: 12px;
   grid-area: about;
+  margin-top: 22px;
+  
+
 }
 
 #shelterFoot {
+  margin-top: 2px;
   grid-area: shelterFoot;
   border: 3px solid #a36c2c;
 }
