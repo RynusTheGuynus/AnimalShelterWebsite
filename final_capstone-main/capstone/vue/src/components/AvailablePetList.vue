@@ -11,7 +11,7 @@
           <p class="available-pet-age">Age: {{ pet.age }}</p>
         </div>
         <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /> <br>
-        <router-link v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link>
+        <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link>
       </div>
     </div>
   </div>
@@ -132,6 +132,14 @@ h1 {
 
 .available-pet-text-box {
   display: inline-block;
+}
+
+#detailLink:hover {
+  color: white;
+}
+
+#detailLink {
+  color: blue;
 }
 
 </style>
