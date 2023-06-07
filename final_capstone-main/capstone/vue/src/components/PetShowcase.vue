@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="pet-showcase">
-      <div class="available-pet" v-if="currentPet" :key="currentPet.id">
+      <div class="available-pet" v-if="currentPet" :key="currentPetIndex">
         <div class="available-pet-text-box">
           <h2 class="available-pet-name">Name: {{ currentPet.pet_name }}</h2>
           <p class="available-pet-species">Species: {{ currentPet.species }}</p>
@@ -12,9 +12,9 @@
       </div>
     </div>
     <div class="available-pet-buttons">
-      <div class="scroll-buttons">
+      <!-- <div class="scroll-buttons">
         <button @click="nextPet">Next</button>
-      </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -29,6 +29,7 @@ export default {
     return {
       availablePets: [],
       currentPetIndex: 0,
+      timer: null
     };
   },
   computed: {
@@ -50,6 +51,7 @@ export default {
             };
           });
           this.randomlySelectPet();
+          this.startTimer(); // Start the timer after getting available pets
         })
         .catch((error) => {
           console.log(error);
@@ -60,16 +62,30 @@ export default {
       this.currentPetIndex = randomIndex;
     },
     nextPet() {
+      console.log("Current pet index before update:", this.currentPetIndex);
       if (this.currentPetIndex < this.availablePets.length - 1) {
-        this.currentPetIndex++;
+        const randomIndex = Math.floor(Math.random() * this.availablePets.length);
+        this.currentPetIndex = randomIndex;
+        // this.currentPetIndex++;
       } else {
         this.currentPetIndex = 0;
       }
     },
+    startTimer() {
+      this.timer = setInterval(() => {
+        this.nextPet();
+      }, 5000); // Change the interval value as desired
+  },
+  stopTimer() {
+    clearInterval(this.timer);
+  }
   },
   created() {
     this.getAvailablePets();
   },
+  beforeDestroy() {
+    this.stopTimer(); // Stop the timer when the component is destroyed
+  }
 };
 </script>
 
