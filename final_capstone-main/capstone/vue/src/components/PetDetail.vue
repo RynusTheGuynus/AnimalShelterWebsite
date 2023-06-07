@@ -1,6 +1,6 @@
 <template>
   <div id="pet-detail-container">
-      <h2>{{this.pet.pet_name}}</h2>
+      <h1 id="nameHeader">{{this.pet.pet_name}}</h1>
       <div id="photoAndDetails">
       <div id="imageContainer">
       <img :src="images[this.currentIndex].image_path" alt="Available Pet Image" id="detailImage"> <br>
@@ -80,6 +80,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    background-image: linear-gradient(to right, tan, #F1ECE4);
+    font-family: Verdana, Helvetica, sans-serif;
 }
 
 #imageContainer {
@@ -90,17 +92,29 @@ export default {
 
 #photoAndDetails {
     display: flex;
-    margin-top: 75px;
+    margin-top: 50px;
     justify-content: space-evenly;
 }
 
 #petDescription {
     margin: auto;
+    margin-bottom: 50px;
     margin-top: 25px;
+}
+
+#detailsTable {
+    border-collapse: collapse;
+}
+
+#detailsTable td {
+    border-bottom: 1px solid #ECECEC;
 }
 #detailImage {
   height: 240px;
   width: 360px;
   border-radius: 5%;
+}
+#nameHeader {
+    color: black;
 }
 </style>
