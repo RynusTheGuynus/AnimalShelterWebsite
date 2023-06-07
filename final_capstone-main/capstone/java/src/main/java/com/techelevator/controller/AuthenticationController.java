@@ -49,7 +49,6 @@ public class AuthenticationController {
         User user = userDao.findByUsername(loginDto.getUsername());
 
         boolean firstLogin = user.isFirstLogin();
-
 ////        boolean firstLogin = false;
 //
 //        if(user.isFirstLogin()) {

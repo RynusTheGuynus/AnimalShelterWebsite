@@ -1,7 +1,6 @@
 <template>
   <div id="celebrate">
     <shelter-header />
-    <h1>Our latest adoption success story!</h1>
     <adopted-pet-list class="adopted" />
     <shelter-footer class="shelterFooter" />
   </div>
@@ -24,7 +23,7 @@ export default {
 </script>
 
 <style scoped>
-#celebrate {
+/* #celebrate {
   display: flex;
   flex-direction: column;
 }
@@ -34,7 +33,7 @@ export default {
   margin-bottom: 2px;
   max-width: 97vw;
   border: 3px solid #a36c2c;
-}
+} */
 
 .shelterFooter {
   max-width: 98vw;

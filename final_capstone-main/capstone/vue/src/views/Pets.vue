@@ -32,7 +32,7 @@ export default {
 
 <style>
 
-.pet-container {
+/* .pet-container {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
@@ -40,25 +40,25 @@ export default {
     "shelter-header"
     "pet-list"
     "shelter-footer";
-}
+} */
 
 .shelter-header {
-  grid-area: shelter-header;
-  max-width: 98vw;
+  /* grid-area: shelter-header; */
+  max-width: 100%;
 }
 
-.pet-list {
-  grid-area: pet-list;
-  max-height: calc(100vh - 200px);
+/* .pet-list {
+  grid-area: pet-list; */
+  /* max-height: calc(100vh - 200px);
   max-width: 120vh;
   overflow-y: auto;
-  overflow-x: auto;
-  margin-bottom: 20px;
-}
+  overflow-x: auto; */
+  /* margin-bottom: 20px;
+} */
 
 .shelter-footer {
-  grid-area: shelter-footer;
-  max-width: 96vw;
+  /* grid-area: shelter-footer; */
+  max-width: 100%;
 } 
 
 

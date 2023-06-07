@@ -20,7 +20,6 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {},
-    // firstLogin: true // X
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -31,11 +30,7 @@ export default new Vuex.Store({
     SET_USER(state, user) {
       state.user = user;
       localStorage.setItem('user',JSON.stringify(user));
-      // state.firstLogin = user.firstLogin;
     },
-    // SET_USER_FIRST_LOGIN(state, isFirstLogin) { // X
-    //   state.user.firstLogin = isFirstLogin;
-    // },
     LOGOUT(state) {
       localStorage.removeItem('token');
       localStorage.removeItem('user');

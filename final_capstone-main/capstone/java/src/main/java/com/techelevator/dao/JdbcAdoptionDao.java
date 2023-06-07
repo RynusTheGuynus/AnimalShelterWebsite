@@ -17,10 +17,13 @@ import org.springframework.jdbc.BadSqlGrammarException;
 import org.springframework.jdbc.CannotGetJdbcConnectionException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+@Component
 public class JdbcAdoptionDao implements AdoptionDao {
 
     // Data members
@@ -58,8 +61,9 @@ public class JdbcAdoptionDao implements AdoptionDao {
     @Override
     public int create(String ownerName, String ownerAddress, String ownerEmail,
                           String ownerPhoneNumber, LocalDate adoptionDate) {
-        String insertUserSql = "insert into adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)" +
-                "values (?,?,?,?,?,?)";
+        String insertUserSql = "insert into adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date) " +
+                "values (?,?,?,?,?) " +
+                "RETURNING adoption_id;";
         try {
             return jdbcTemplate.queryForObject(insertUserSql, int.class, ownerName, ownerAddress, ownerEmail,
                     ownerPhoneNumber, adoptionDate);
@@ -75,13 +79,13 @@ public class JdbcAdoptionDao implements AdoptionDao {
     @Override
     public int update(String ownerName, String ownerAddress, String ownerEmail,
                       String ownerPhoneNumber, LocalDate adoptionDate) {
-        int rowsUpdated = 0;
         String sql = "UPDATE adoption " +
                 "SET owner_name = ?, owner_address = ?, owner_email = ?, owner_phone_number = ?, adoption_date = ? " +
                 "WHERE adoption_id = ?;";
         try {
-            rowsUpdated = jdbcTemplate.update(sql, int.class, ownerName, ownerAddress,
+            int rowsUpdated = jdbcTemplate.update(sql, ownerName, ownerAddress,
                     ownerEmail, ownerPhoneNumber, adoptionDate);
+            return rowsUpdated;
         } catch(CannotGetJdbcConnectionException e) {
             throw new DaoException("Could not connect to data source");
         } catch(BadSqlGrammarException e) {
@@ -89,7 +93,6 @@ public class JdbcAdoptionDao implements AdoptionDao {
         } catch(DataIntegrityViolationException e) {
             throw new DaoException("Invalid operation - Data integrity error");
         }
-        return rowsUpdated;
     }
 
 

@@ -7,6 +7,7 @@ import java.time.LocalDate;
 
 public class UpdatePetDTO {
 
+    private int petId;
     private String petName;
     private int age;
     private String species;
@@ -29,12 +30,13 @@ public class UpdatePetDTO {
 
     }
 
-    public UpdatePetDTO(String petName, int age, String species,
+    public UpdatePetDTO(int petId, String petName, int age, String species,
                         String breed, int weight, String gender, boolean redFlag,
                         boolean adoptedStatus, String description,
                         PetImageDTO petImageDTOOne, PetImageDTO petImageDTOTwo, PetImageDTO petImageDTOThree,
                         String ownerName, String ownerAddress, String ownerEmail,
                         String ownerPhoneNumber, LocalDate adoptionDate) {
+        this.petId = petId;
         this.petName = petName;
         this.age = age;
         this.species = species;
@@ -54,6 +56,13 @@ public class UpdatePetDTO {
         this.adoptionDate = adoptionDate;
     }
 
+    public int getPetId() {
+        return petId;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
 
     public String getPetName() {
         return petName;

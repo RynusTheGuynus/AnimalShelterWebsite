@@ -21,7 +21,7 @@
           @click="updatePetToggle"  
           v-if="!isUpdate"
           />
-      </div>
+        </div>
       </div>
       <shelter-footer />
   </div>
@@ -73,6 +73,11 @@ export default {
 
 .button-container {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .button {

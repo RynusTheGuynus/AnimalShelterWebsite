@@ -207,6 +207,7 @@ public class JdbcUserDao implements UserDao {
         user.setEmergencyFirstName(rs.getString("emerg_first_name"));
         user.setEmergencyLastName(rs.getString("emerg_last_name"));
         user.setEmergencyPhone(rs.getString("emerg_phone"));
+        user.setFirstLogin(rs.getBoolean("first_login"));
         user.setActivated(true);
         return user;
     }

@@ -24,14 +24,14 @@ public class JdbcPetImageDao implements PetImageDao {
     }
 
     @Override
-    public List<PetImage> getAllImagesByPetId(){
+    public List<PetImage> getAllImagesByPetId(int id){
         List<PetImage> petImageList = new ArrayList<>();
         String sql = "SELECT pi.image_path " +
                 "FROM pet_image AS pi " +
                 "JOIN pet AS p ON p.pet_id = pi.pet_id " +
                 "WHERE pi.pet_id = ?;";
         try {
-            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql, id);
             while(results.next()) {
                 PetImage petImage = mapRowToPetImage(results);
                 petImageList.add(petImage);

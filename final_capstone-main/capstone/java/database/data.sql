@@ -81,8 +81,6 @@ INSERT INTO pet_image (pet_id, image_name, image_path)
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (9, 'oberon2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954153/Animal%20Shelter/oberon2_voxcqd.jpg');
 INSERT INTO pet_image (pet_id, image_name, image_path)
-    VALUES (10, 'lola1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954151/Animal%20Shelter/lola1_bna3fl.jpg');
-INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (10, 'lola2', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954151/Animal%20Shelter/lola2_jwxzez.jpg');
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (11, 'rosebud1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954152/Animal%20Shelter/rosebud1_fq4nem.jpg');
