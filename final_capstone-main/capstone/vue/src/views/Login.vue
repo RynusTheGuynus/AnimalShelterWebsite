@@ -1,6 +1,7 @@
 <template>
   <div id="login" class="text-center">
     <shelter-header id="header" />
+    <navigation-bar id='navigationBar' />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -39,10 +40,11 @@ import UserService from "../services/UserService.js";
 import ShelterHeader from '../components/ShelterHeader.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 import authService from '../services/AuthService.js'
+import NavigationBar from '../components/NavigationBar.vue'
 
 export default {
   name: "login",
-  components: { ShelterHeader, ShelterFooter },
+  components: { ShelterHeader, ShelterFooter, NavigationBar },
   data() {
     return {
       user: {

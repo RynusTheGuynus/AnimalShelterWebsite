@@ -1,6 +1,7 @@
 <template>
   <div class="pet-container">
       <shelter-header class="shelter-header" />
+      <navigation-bar id='navigationBar' />
       <available-pet-list :filteredPets="filteredPets" class="pet-list" />
       <shelter-footer class="shelter-footer" />
   </div>
@@ -11,7 +12,7 @@
 import ShelterHeader from '../components/ShelterHeader.vue'
 import AvailablePetList from '../components/AvailablePetList.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
-
+import NavigationBar from '../components/NavigationBar.vue'
 
 export default {
     name: "pets",
@@ -19,6 +20,7 @@ export default {
         ShelterHeader,
         AvailablePetList,
         ShelterFooter,
+        NavigationBar,
         
     },
      data() {
