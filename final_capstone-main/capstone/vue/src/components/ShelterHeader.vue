@@ -34,8 +34,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-height: 24vh;
-  min-height: 24vh;
+  height: 19.5vh;
   width: 97vw;
   border: 3px solid #a36c2c;
   display: grid;
@@ -82,7 +81,7 @@ img {
 
 }
 
-h1, h2 {
+/* h1, h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -90,7 +89,7 @@ h1, h2 {
   margin-bottom: 20px;
   justify-content: center;
   color: lightgray;
-}
+} */
 
 .router-link {
   padding: 3px;
