@@ -112,8 +112,7 @@ export default {
 .available-pet-buttons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  flex-direction: column; /* Added */
-  align-items: center; /* Added */
+  margin-top: 1%;
+  
 }
 </style>

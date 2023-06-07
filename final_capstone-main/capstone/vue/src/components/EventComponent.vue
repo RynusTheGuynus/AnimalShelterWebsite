@@ -41,6 +41,7 @@ h3 {
   margin-left: -10px;
   padding-left: 10px;
   overflow: auto;
+  text-align: left;
 
 }
 

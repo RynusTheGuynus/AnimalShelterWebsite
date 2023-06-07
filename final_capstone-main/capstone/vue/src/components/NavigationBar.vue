@@ -11,25 +11,21 @@
         <li v-if="$store.state.token !== ''" class="admin-link"><router-link :to="{ name: 'update' }" class="router-link">Add/Update Pets</router-link></li>
         <li v-if="$store.state.token !== ''" class="admin-link"><router-link :to="{ name: 'users' }" class="router-link">Volunteer Directory</router-link></li>
         <li v-if="$store.state.token === ''"><router-link :to="{ name: 'login' }" class="router-link">Volunteer Login</router-link></li>
-        <li v-if="$store.state.token !== ''" class="router-link"><router-link :to="{ name: 'logout' }" class="router-link">Volunteer Logout</router-link></li>
+        <li v-if="$store.state.token !== ''"><router-link :to="{ name: 'logout' }" class="router-link">Volunteer Logout</router-link></li>
       </ul>
     </nav>
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
-<style>
+<style scoped>
 #NavBar {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   background-color: rgb(92, 59, 10);
-  padding: 10px 0;
-  border-radius: 5px;
-  white-space: nowrap; /* Prevent line breaks within the navigation links */
+  padding: 5px 0;
+  white-space: nowrap;
 }
 
 ul {
@@ -37,24 +33,50 @@ ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  justify-content: center; /* Center the navigation links */
-  flex-wrap: wrap; /* Allow wrapping of the navigation items */
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 li {
-  font-size: 12px;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
   text-align: center;
 }
 
 .router-link {
   text-decoration: none;
   color: white;
-  padding: 5px 5px; /* Adjust the padding to reduce the spaces */
+  padding: 2vh 1vh;
   border-radius: 5px;
-  margin: 5px; /* Adjust the margin to reduce the spaces */
+  margin: 5px;
+  display: inline-block;
+  
 }
 
 .router-link:hover {
-  background-color: rgb(85, 85, 85); /* Change the background color of the links on hover */
+  background-color: rgb(85, 85, 85);
+}
+
+#navigationBar {
+  grid-area: navigationBar;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#navigationBar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navigationBar li {
+  margin-right: 20px;
+  font-size: 16px;
+  color: antiquewhite;
 }
 </style>

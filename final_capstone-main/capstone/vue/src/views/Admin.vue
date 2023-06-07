@@ -1,6 +1,7 @@
 <template>
   <div>
       <shelter-header/>
+      <navigation-bar id="navigationBar" />
       <search-user :search-query="searchQuery" @search="handleSearch" v-if="isAuthorized"/>
       <ul>
         <li v-for="user in filteredUsers" :key="user.id">{{ user.first_name }}</li>
@@ -20,10 +21,11 @@ import ApprovePending from '../components/ApprovePending.vue'
 import SearchUser from '../components/SearchUser.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 import ShelterHeader from '../components/ShelterHeader.vue'
+import NavigationBar from '../components/NavigationBar.vue'
 
 export default {
   name: 'Admin',
-  components: { ApprovePending, AddAdmin, ShelterHeader, ShelterFooter, SearchUser },
+  components: { ApprovePending, AddAdmin, ShelterHeader, ShelterFooter, SearchUser, NavigationBar },
 
   data() {
     return {
