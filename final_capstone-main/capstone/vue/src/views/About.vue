@@ -25,6 +25,7 @@ export default {
 <style scoped>
 
 div {
+  max-width: 97vw;
   background-color: #dc9d4e;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -53,6 +54,7 @@ img {
 }
 
 #about {
+  max-width: 96vw;
   font-size: 12px;
   grid-area: about;
 }

@@ -53,6 +53,7 @@ export default {
     height: 4vh;
     width: 30vw;
     margin: auto;
+    margin-top: 10px;
     justify-content: space-around;
 }
 

@@ -1,10 +1,14 @@
 <template>
-  <div id="wholeFooter">
-    <h3 id='shelterFoot'>Location: 123 Front St., ST 11111</h3>
-    <a href="http://www.facebook.com"><img src="../images/fbicon.png" alt="Facebook"></a>
-    <a href="http://www.instagram.com"><img src="../images/igicon.png" alt="Instagram"></a>
-    <a href="http://www.twitter.com"><img src="../images/twicon.png" alt="Twitter"></a>
-  </div>
+    <div>
+        <div id="wholeFooter">
+        <h3 id='shelterFoot'>Location: 123 Front St., ST 11111</h3>
+        <span id="social">
+            <a href="http://www.facebook.com"><img src="../images/fbicon.png" alt="Facebook"></a>
+            <a href="http://www.instagram.com"><img src="../images/igicon.png" alt="Instagram"></a>
+            <a href="http://www.twitter.com"><img src="../images/twicon.png" alt="Twitter"></a>
+        </span>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -20,12 +24,12 @@ export default {
     flex-direction: row;
     background-color: #dc9d4e;
     border: 3px solid #a36c2c;
-    justify-content: flex-end;
+    justify-content: center;
     
 } 
  
 #shelterFoot {
-    margin-left: 380px;
+    margin-left: 250px;
     width: 450px;
     height: 3vh;
     display: flex;
@@ -37,7 +41,6 @@ export default {
 } 
  
 #social {
-        margin-left: 300px;
     display: flex;
     padding-top: 15px;
     align-content: center;

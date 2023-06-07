@@ -43,7 +43,7 @@ body {
 
 #home {
   background-color: #dc9d4e;
-  min-height: 100vh;
+  max-width: 96vw;
   display: flex;
   flex-direction: column;
 }
@@ -103,8 +103,7 @@ body {
 }
 
 #shelterFooter {
-  height: 8vh;
-  width: 98vw;
+  max-width: 98vw;
   grid-area: shelterFoot;
 }
 

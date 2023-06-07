@@ -37,7 +37,7 @@ export default {
 }
 
 .shelterFooter {
-  max-width: 97vw;
+  max-width: 98vw;
 }
 
 h1 {

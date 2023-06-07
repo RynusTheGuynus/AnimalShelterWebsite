@@ -30,7 +30,7 @@
       <router-link :to="{ name: 'register' }">Interested in becoming a volunteer? Apply here!</router-link>
       <button type="submit">Sign in</button>
     </form>
-    <shelter-footer />
+    <shelter-footer id="footer" />
   </div>
 </template>
 
@@ -100,8 +100,13 @@ export default {
   },
 };
 </script>
+
 <style scoped>
+
 .form-control {
   margin: 3px;
 }
+
+
+
 </style>
