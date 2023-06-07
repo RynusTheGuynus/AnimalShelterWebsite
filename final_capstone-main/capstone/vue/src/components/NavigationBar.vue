@@ -4,7 +4,7 @@
       <ul>
         <li><router-link :to="{ name: 'home' }" class="router-link">Home</router-link></li>
         <li><router-link :to="{ name: 'about' }" class="router-link">About Us</router-link></li>
-        <li><router-link :to="{ name: 'pets' }" class="router-link">Pets Available</router-link><br>for Adoption</li>
+        <li><router-link :to="{ name: 'pets' }" class="router-link">Pets Available<br>for Adoption</router-link></li>
         <li><router-link :to="{ name: 'celebrate' }" class="router-link">Second Chances!</router-link></li>
         <li><router-link :to="{ name: 'register' }" class="router-link">Apply to be a<br>Volunteer!</router-link></li>
         <li v-if="$store.state.token !== ''" class="admin-link"><router-link :to="{ name: 'admin' }" class="router-link">Admin</router-link></li>
