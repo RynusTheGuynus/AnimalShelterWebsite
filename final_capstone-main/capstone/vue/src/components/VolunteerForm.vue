@@ -201,7 +201,7 @@ button:hover {
 }
 
 #register {
-  background-color: #FDB750;
+  background-color: #dc9d4e;
   display: flex;
   justify-content: space-around;
   align-items: center;
