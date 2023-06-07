@@ -44,6 +44,8 @@ h3 {
   margin-right: 20px;
   padding-left: 10px;
   overflow: auto;
+  text-align: left;
+
 }
 
 

@@ -6,9 +6,7 @@
       <div id="shelterHeader">
         <shelter-header />
       </div>
-      <div id="navigationBar">
-        <navigation-bar />
-      </div>
+        <navigation-bar id="navigationBar"/>
       <div class="content">
         <pet-showcase />
         <div id='events' class="events-box">
@@ -57,14 +55,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: auto auto auto auto;
   grid-template-areas:
     "shelterHead shelterHead"
     "navigationBar navigationBar"
     "content content"
     "shelterFoot shelterFoot";
   width: 100%;
-  height: 100%;
+  
 }
 
 #shelterHeader {
@@ -74,26 +72,6 @@ export default {
   align-items: center;
   color: antiquewhite;
   width: 100%;
-}
-
-#navigationBar {
-  grid-area: navigationBar;
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-#navigationBar ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#navigationBar li {
-  margin-right: 20px;
-  font-size: 16px;
-  color: antiquewhite;
 }
 
 .content {
