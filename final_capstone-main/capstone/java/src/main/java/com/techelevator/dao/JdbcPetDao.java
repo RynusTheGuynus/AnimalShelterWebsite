@@ -89,7 +89,7 @@ public class JdbcPetDao implements PetDao {
     @Override
     public List<AvailablePetDTO> getAvailablePetDTOs() {
         List<AvailablePetDTO> availablePetList = new ArrayList<>();
-        String sql = "SELECT p.pet_name, p.species, p.breed, p.age, MIN(pi.image_path) AS image_path " +
+        String sql = "SELECT p.pet_id, p.pet_name, p.species, p.breed, p.age, MIN(pi.image_path) AS image_path " +
                 "FROM pet AS p " +
                 "LEFT JOIN pet_image AS pi ON pi.pet_id = p.pet_id " +
                 "WHERE p.adopted_status = false " +
@@ -201,6 +201,7 @@ public class JdbcPetDao implements PetDao {
 
     private AvailablePetDTO mapRowToAvailablePetDTO(SqlRowSet rs) {
         AvailablePetDTO availablePetDTO = new AvailablePetDTO();
+        availablePetDTO.setPetId(rs.getInt("pet_id"));
         availablePetDTO.setPetName(rs.getString("pet_name"));
         availablePetDTO.setSpecies(rs.getString("species"));
         availablePetDTO.setBreed(rs.getString("breed"));
