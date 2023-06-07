@@ -28,12 +28,12 @@ export default {
     border: 3px solid #a36c2c;
     justify-content: center;
     margin-top: 2px;
-    max-width: 96vw;
+    max-width: 97vw;
     
 } 
  
 #shelterFoot {
-    margin-left: 250px;
+    margin-left: 350px;
     width: 450px;
     height: 3vh;
     display: flex;
@@ -48,9 +48,10 @@ export default {
     display: flex;
     padding-top: 15px;
     align-content: center;
-    flex-basis: 20%;
+    flex-basis: 10%;
     flex-direction: row;
     justify-items: flex-end;
+    margin-left: 300px;
 } 
 
 img {
