@@ -3,7 +3,7 @@
     <div class="pet-showcase">
       <div class="available-pet" v-if="currentPet" :key="currentPetIndex">
         <div class="available-pet-text-box">
-          <h2 class="available-pet-name">Name: {{ currentPet.pet_name }}</h2>
+          <h2 class="available-pet-name">{{ currentPet.pet_name }}</h2>
           <!-- <p class="available-pet-species">Species: {{ currentPet.species }}</p>
           <p class="available-pet-breed">Breed: {{ currentPet.breed }}</p>
           <p class="available-pet-age">Age: {{ currentPet.age }}</p> -->
@@ -90,7 +90,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 50vh;
+  height: 40vh;
 }
 
 .available-pet {
@@ -117,20 +117,14 @@ export default {
   height: 360px;
   width: 540px;
   border-radius: 5%;
-  margin-top: -100px;
+  margin-top: 0px;
 }
 
 .available-pet-buttons {
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
   margin-top: 20px;
   flex-direction: column; 
   align-items: center; 
-=======
-  margin-top: 5px;
-  flex-direction: column; /* Added */
-  align-items: center; /* Added */
->>>>>>> main
 }
 </style>

@@ -43,7 +43,7 @@ export default {
 
 <style>
 .home {
-  background-color: #dc9d4e;
+  /* background-color: #dc9d4e; */
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@ export default {
 }
 
 .grid {
-  background-color: white;
+  background-color: tan;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -73,6 +73,7 @@ export default {
   justify-content: center;
   align-items: center;
   color: antiquewhite;
+  width: 100%;
 }
 
 #navigationBar {
