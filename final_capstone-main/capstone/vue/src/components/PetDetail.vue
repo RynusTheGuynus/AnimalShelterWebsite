@@ -80,7 +80,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: stretch;
-    background-image: linear-gradient(to right, tan, white)
+    background-image: linear-gradient(to right, tan, #F1ECE4);
+    font-family: Verdana, Helvetica, sans-serif;
 }
 
 #imageContainer {
@@ -99,6 +100,14 @@ export default {
     margin: auto;
     margin-bottom: 50px;
     margin-top: 25px;
+}
+
+#detailsTable {
+    border-collapse: collapse;
+}
+
+#detailsTable td {
+    border-bottom: 1px solid #ECECEC;
 }
 #detailImage {
   height: 240px;

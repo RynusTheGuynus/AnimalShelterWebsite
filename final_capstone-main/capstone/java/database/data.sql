@@ -1,27 +1,27 @@
 BEGIN TRANSACTION;
 
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Sparky', 1, 'dog', 'Terrier mix', 6, 'female', false, false, 'placeholder');
+	VALUES ('Sparky', 1, 'dog', 'Terrier mix', 6, 'female', false, false, 'Sparky: An energetic Terrier mix bursting with love and a zest for life. Adopt this playful companion and fill your days with happiness!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Gina', 19, 'dog', 'Shepherd/Collie mix', 42, 'female', true, true, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Chester', 1, 'cat', 'Domestic Shorthair', 11, 'male', false, false, 'placeholder');
+	VALUES ('Chester', 1, 'cat', 'Domestic Shorthair', 11, 'male', false, false, 'Meet Chester: A playful 1-year-old male cat, eager to bring joy to your home. Adopt this charming feline today!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Rosie', 2, 'cat', 'Domestic Shorthair', 10, 'female', false, false, 'placeholder');
+	VALUES ('Rosie', 2, 'cat', 'Domestic Shorthair', 10, 'female', false, false, 'Rosie: A graceful 10-year-old cat with a heart full of love. Ready to bring warmth to your home. Adopt this charming feline today!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Sadie', 2, 'dog', 'Australian Cattle Dog', 23, 'female', true, false, 'placeholder');
+	VALUES ('Sadie', 2, 'dog', 'Australian Cattle Dog', 23, 'female', true, false, 'Meet Sadie: An intelligent Australian Cattle Dog eager to be your loyal and active partner. Experience the boundless energy and devotion of Sadie today!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Arthur', 3, 'cat', 'Domestic Shorthair', 10, 'male', false, false, 'placeholder');
+	VALUES ('Arthur', 3, 'cat', 'Domestic Shorthair', 10, 'male', false, false, 'Meet Arthur: A charming and curious cat, longing for a loving home. Ready to be your lifelong feline companion. Adopt Arthur today!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Sylvie', 1, 'dog', 'Spitz mix', 25, 'female', false, false, 'placeholder');
+	VALUES ('Sylvie', 1, 'dog', 'Spitz mix', 25, 'female', false, false, 'Say hello to Sylvie: An adorable female Spitz mix puppy just waiting to melt your heart. Bring love into your home by adopting Sylvie today!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Oliver', 3, 'cat', 'Domestic Shorthair', 12, 'male', false, true, 'placeholder');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Oberon', 1, 'dog', 'Pit/Lab mix', 20, 'male', false, false, 'placeholder');
+	VALUES ('Oberon', 1, 'dog', 'Pit/Lab mix', 20, 'male', false, false, 'Introducing Oberon: A playful 1-year-old male Pit/Lab mix ready to bring joy and loyalty to your family. Do not miss out on adopting him!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Lola', 1, 'cat', 'Himalayan mix', 1, 'female', false, false, 'placeholder');
+	VALUES ('Lola', 1, 'cat', 'Himalayan mix', 1, 'female', false, false, 'Meet Lola: A sweet Himalayan mix kitten full of cuddles and purrs. Bring home this bundle of joy and experience pure feline bliss!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
-	VALUES ('Rosebud', 2, 'dog', 'Hound mix', 18, 'female', false, false, 'placeholder');
+	VALUES ('Rosebud', 2, 'dog', 'Hound mix', 18, 'female', false, false, 'Rosebud: A friendly female hound mix seeking a loving home. Embrace the joy of adopting this affectionate canine companion today!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Ginger', 1, 'dog', 'Chow/Golden mix', 5, 'female', false, true, 'placeholder');
 
