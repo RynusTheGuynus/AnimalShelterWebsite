@@ -14,9 +14,6 @@ import java.util.List;
 
 public interface UserDao {
 
-
-
-    // Data members
     List<User> findAll();
     List<User> viewPendingApplications();
     User getUserById(int userId);
@@ -26,11 +23,13 @@ public interface UserDao {
     boolean changePassword(String username, String password);
     boolean approveVolunteer(User user, int userId);
     boolean declineVolunteer(User user, int userId);
-
-    // Methods
-    boolean create(String username, String password, String role, String firstName, String lastName,
+    String create(String username, String role, String firstName, String lastName,
                    String emailAddress, String phoneNumber, int age, String emergencyFirstName, String emergencyLastName,
                    String emergencyPhone);
+    void setTempPassword(String tempPassword);
+    String getTempPassword();
+    void setUsername(String username);
+    String getUsername();
 
     boolean promoteToAdmin(User user, int id);
 
