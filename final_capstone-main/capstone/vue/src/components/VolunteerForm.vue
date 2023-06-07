@@ -15,23 +15,6 @@
         required
         autofocus
       /> <br>
-      <label for="password" class="sr-only">Password </label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      /> <br>
-      <input
-        type="password"
-        id="confirmPassword"
-        class="form-control"
-        placeholder="Confirm Password"
-        v-model="user.confirmPassword"
-        required
-      /> <br>
       <label for="firstName" class="sr-only">First Name </label>
       <input
         type="text"
@@ -126,8 +109,6 @@ export default {
     return {
       user: {
         username: '',
-        password: '',
-        confirmPassword: '',
         role: 'pending',
         firstName: '',
         lastName: '',
@@ -144,28 +125,23 @@ export default {
   },
   methods: {
     register() {
-      if (this.user.password != this.user.confirmPassword) {
-        this.registrationErrors = true;
-        this.registrationErrorMsg = 'Password & Confirm Password do not match.';
-      } else {
-        authService
-          .register(this.user)
-          .then((response) => {
-            if (response.status == 201) {
-              this.$router.push({
-                path: '/',
-                query: { registration: 'success' },
-              });
-            }
-          })
-          .catch((error) => {
-            const response = error.response;
-            this.registrationErrors = true;
-            if (response.status === 400) {
-              this.registrationErrorMsg = 'Bad Request: Validation Errors';
-            }
-          });
-      }
+      authService
+        .register(this.user)
+        .then((response) => {
+          if (response.status == 201) {
+            this.$router.push({
+              path: '/',
+              query: { registration: 'success' },
+            });
+          }
+        })
+        .catch((error) => {
+          const response = error.response;
+          this.registrationErrors = true;
+          if (response.status === 400) {
+            this.registrationErrorMsg = 'Bad Request: Validation Errors';
+          }
+        });
     },
     clearErrors() {
       this.registrationErrors = false;
@@ -201,7 +177,7 @@ button:hover {
 }
 
 #register {
-  background-color: #FDB750;
+  background-color: #dc9d4e;
   display: flex;
   justify-content: space-around;
   align-items: center;

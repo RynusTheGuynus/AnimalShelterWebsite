@@ -26,6 +26,7 @@ export default {
 
 #layout {
   max-width: 97vw;
+
   background-color: #dc9d4e;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -41,11 +42,12 @@ export default {
 
 #shelterHeader {
   height: 21vh;
-  width: 94vw;  
+  width: 93vw;  
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
   margin-bottom: 20px;
+  margin-right: 10px;
 }
 
 img {
@@ -55,18 +57,20 @@ img {
 }
 
 #about {
-  max-width: 96vw;
+  max-width: 96.5vw;
   font-size: 12px;
   grid-area: about;
-  margin-top: 22px;
-  
-
+  margin-top: 26px;
+  margin-bottom: -5px;
+  margin-right: -1px;
 }
 
-#shelterFoot {
+#shelterFooter {
+  max-width: 97vw;
+  margin-right: -5px;
   margin-top: 2px;
   grid-area: shelterFoot;
-  border: 3px solid #a36c2c;
+  
 }
 
 </style>

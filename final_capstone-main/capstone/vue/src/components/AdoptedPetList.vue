@@ -1,10 +1,6 @@
 <template>
   <div class="adopted-pet-list-container">
       <h1 class="adopted-pet-list-heading">
-          <!-- Celebrate our furry friends who found forever homes! -->
-          
-            <!-- <img src="@/images/dog-and-balloons.jpg" alt="Balloons Image" /> -->
-          
       </h1>
       <div class="adopted-pet-list-item-container">
         <div 

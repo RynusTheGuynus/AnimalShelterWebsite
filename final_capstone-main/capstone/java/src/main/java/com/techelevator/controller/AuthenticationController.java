@@ -49,12 +49,6 @@ public class AuthenticationController {
         User user = userDao.findByUsername(loginDto.getUsername());
 
         boolean firstLogin = user.isFirstLogin();
-////        boolean firstLogin = false;
-//
-//        if(user.isFirstLogin()) {
-//            user.setFirstLogin(false);
-////            firstLogin = true;
-//        }
 
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(JWTFilter.AUTHORIZATION_HEADER, "Bearer " + jwt);
@@ -69,9 +63,11 @@ public class AuthenticationController {
             User user = userDao.findByUsername(newUser.getUsername());
             throw new UserAlreadyExistsException();
         } catch (UsernameNotFoundException e) {
-            userDao.create(newUser.getUsername(),newUser.getPassword(), newUser.getRole(),
+            String tempPassword = userDao.create(newUser.getUsername(), newUser.getRole(),
                           newUser.getFirstName(), newUser.getLastName(), newUser.getEmailAddress(), newUser.getPhoneNumber(), newUser.getAge(),
                           newUser.getEmergencyFirstName(), newUser.getEmergencyLastName(), newUser.getEmergencyPhone());
+            userDao.setTempPassword(tempPassword);
+            userDao.setUsername(newUser.getUsername());
         }
     }
 

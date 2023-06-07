@@ -1,5 +1,6 @@
 package com.techelevator.controller;
 
+import com.techelevator.dao.UserDao;
 import com.techelevator.model.EmailService;
 import com.techelevator.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,12 @@ public class EmailController {
     @Autowired
     private EmailService emailService;
     private User user;
+    private UserDao userDao;
+
+    public EmailController(EmailService emailService, UserDao userDao) {
+        this.emailService = emailService;
+        this.userDao = userDao;
+    }
 
     @PostMapping("/messages/approved")
     String sendEmailApproveMessage(@RequestBody String email) {
@@ -23,7 +30,15 @@ public class EmailController {
         this.emailService.sendApproveEmail(
                 email,
                 "Rising Sun Animal Shelter: Volunteer Request",
-                "Thank you for applying to be a volunteer at Rising Sun Animal Shelter! We are happy to say that you meet all of the qualifications we are looking for! Please visit our website and login!"
+                "Thank you for applying to be a volunteer at Rising Sun Animal Shelter! We are happy to say that you meet all of the qualifications we are looking for! Please visit our website and login! " +
+                        "\n" +
+                        "\n" +
+                        "Here are your username and temporary password. You'll be prompted to change your password upon first logging in: " +
+                        "\n" +
+                        "\n" +
+                        "Username: " + userDao.getUsername() +
+                        "\n" +
+                        "Password: " + userDao.getTempPassword()
         );
         return "Message Sent (approved)";
     }
