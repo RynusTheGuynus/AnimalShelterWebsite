@@ -5,7 +5,7 @@
     <div class="available-pet-list-item-container">
       <div class="available-pet" v-for="pet in filteredPets" :key="pet.id">
         <div class="available-pet-text-box">
-          <h2 class="available-pet-name">Name: {{ pet.pet_name }}</h2>
+          <h2 class="available-pet-name">{{ pet.pet_name }}</h2>
           <p class="available-pet-species">Species: {{ pet.species }}</p>
           <p class="available-pet-breed">Breed: {{ pet.breed }}</p>
           <p class="available-pet-age">Age: {{ pet.age }}</p>
