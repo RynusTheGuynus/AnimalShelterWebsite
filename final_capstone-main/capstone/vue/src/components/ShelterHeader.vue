@@ -42,9 +42,9 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
     "headLeft headCenter .";
-  background-image: url('../images/shelterheadbanner.png');
+  background-image: url('../images/shelterbanner3.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 138%;
   background-clip: content-box;
     
 }
@@ -75,7 +75,7 @@ img {
     width: 50vw;
     justify-items: center;
     margin-top: 5vh;
-    margin-left: 30vw;
+    margin-left: 5vw;
     font-size: 24px;
     color: antiquewhite;
     text-shadow: -1px -1px 0 #dc9d4e, 1px -1px 0 #dc9d4e, -1px 1px 0 #dc9d4e, 1px 1px 0 #898686;
