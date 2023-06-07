@@ -4,10 +4,7 @@ import com.techelevator.dao.PetDao;
 import com.techelevator.dao.PetImageDao;
 import com.techelevator.model.PetImage;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +22,7 @@ public class PetImageController {
     }
 
     @RequestMapping(value = "/pets/images/{id}", method = RequestMethod.GET)
-    List<PetImage> getAllImagesByPetId(int id) {
+    List<PetImage> getAllImagesByPetId(@PathVariable int id) {
         return petImageDao.getAllImagesByPetId(id);
     }
 

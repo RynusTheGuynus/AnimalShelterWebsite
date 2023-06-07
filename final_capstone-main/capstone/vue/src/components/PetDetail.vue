@@ -1,6 +1,35 @@
 <template>
   <div id="pet-detail-container">
-      {{pet.name}}
+      <h2>{{this.pet.pet_name}}</h2>
+      <div id="photoAndDetails">
+      <div id="imageContainer">
+      <img :src="images[this.currentIndex].image_path" alt="Available Pet Image" id="detailImage"> <br>
+      <button v-on:click="changePhoto">Next Photo</button>
+      </div>
+      <table id="detailsTable" style="width:35%">
+  <tr class="detailsRow">
+    <th>Age</th>
+    <td>{{this.pet.age}}</td>
+  </tr>
+  <tr class="detailsRow">
+    <th>Species</th>
+    <td>{{this.pet.species}}</td>
+  </tr>
+  <tr class="detailsRow">
+    <th>Breed</th>
+    <td>{{this.pet.breed}}</td>
+  </tr>
+  <tr class="detailsRow">
+    <th>Weight</th>
+    <td>{{this.pet.weight}} lbs.</td>
+  </tr>
+  <tr class="detailsRow">
+    <th>Gender</th>
+    <td>{{this.pet.gender}}</td>
+  </tr>
+</table>
+</div>
+    <p id="petDescription">{{this.pet.description}}</p>
   </div>
 </template>
 
@@ -14,10 +43,11 @@ export default {
             images: [],
             id: this.$route.params.id,
             pet: {},
+            currentIndex: 0,
         }
     },
     methods: {
-        getPetImages(id) {
+        getAllImages(id) {
             PetService.getPetImages(id)
             .then(response => {
                 this.images = response.data;
@@ -28,14 +58,49 @@ export default {
             .then(response => {
                 this.pet = response.data;
             })
+        },
+        changePhoto() {
+            if (this.currentIndex < this.images.length -1) {
+                this.currentIndex++;
+            } else {
+                this.currentIndex = 0;
+            }
         }
+    
     },
     created() {
         this.getPetDetails(this.id);
+        this.getAllImages(this.id);
     }
 }
 </script>
 
-<style>
+<style scoped>
+#pet-detail-container {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
 
+#imageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#photoAndDetails {
+    display: flex;
+    margin-top: 75px;
+    justify-content: space-evenly;
+}
+
+#petDescription {
+    margin: auto;
+    margin-top: 25px;
+}
+#detailImage {
+  height: 240px;
+  width: 360px;
+  border-radius: 5%;
+}
 </style>
