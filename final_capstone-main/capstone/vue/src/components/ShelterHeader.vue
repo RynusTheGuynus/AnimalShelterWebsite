@@ -42,11 +42,7 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
     "headLeft headCenter .";
-<<<<<<< HEAD
-  background-image: url('../images/shelterheadbanner2.png');
-=======
   background-image: url('../images/shelterbanner3.png');
->>>>>>> main
   background-repeat: no-repeat;
   background-size: 138%;
   background-clip: content-box;
