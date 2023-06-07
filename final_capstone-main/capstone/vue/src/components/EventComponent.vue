@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <h3 id="eventHeader">Events</h3>
+    <h3 id="eventHeader">Upcoming Events!</h3>
     <ul id="eventList">
      <p>Friday, June 9th, 2023: Graduation ceremony for Tech Elevator's NLR-13 Cohort!</p>
      <p>Sunday, June 11th, 2023: Shelter closed to the general public.</p>
@@ -22,9 +22,12 @@ export default {
 #events {
   display: flex;
   flex-direction: column;
-  border: 3px solid #a36c2c;
+  justify-content: center;
   align-items: center;
-  padding: 10px;
+  height: 35vh;
+  border: 3px solid #a36c2c;
+  border-radius: 25px;
+  margin-top: 20px;
 }
 
 h3 {
@@ -37,8 +40,8 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: left;
-  margin-top: 10px;
-  margin-left: -10px;
+  margin-left: 20px;
+  margin-right: 20px;
   padding-left: 10px;
   overflow: auto;
   text-align: left;

@@ -34,17 +34,16 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-height: 24vh;
-  min-height: 24vh;
+  height: 19.5vh;
   width: 97vw;
   border: 3px solid #a36c2c;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas: 
     "headLeft headCenter .";
-  background-image: url('../images/shelterheadbanner.png');
+  background-image: url('../images/shelterbanner3.png');
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 138%;
   background-clip: content-box;
     
 }
@@ -75,14 +74,14 @@ img {
     width: 50vw;
     justify-items: center;
     margin-top: 5vh;
-    margin-left: 30vw;
+    margin-left: 5vw;
     font-size: 24px;
     color: antiquewhite;
     text-shadow: -1px -1px 0 #dc9d4e, 1px -1px 0 #dc9d4e, -1px 1px 0 #dc9d4e, 1px 1px 0 #898686;
 
 }
 
-h1, h2 {
+/* h1, h2 {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -90,7 +89,7 @@ h1, h2 {
   margin-bottom: 20px;
   justify-content: center;
   color: lightgray;
-}
+} */
 
 .router-link {
   padding: 3px;

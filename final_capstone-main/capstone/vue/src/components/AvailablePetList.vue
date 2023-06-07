@@ -5,13 +5,13 @@
     <div class="available-pet-list-item-container">
       <div class="available-pet" v-for="pet in filteredPets" :key="pet.id">
         <div class="available-pet-text-box">
-          <h2 class="available-pet-name">Name: {{ pet.pet_name }}</h2>
+          <h2 class="available-pet-name">{{ pet.pet_name }}</h2>
           <p class="available-pet-species">Species: {{ pet.species }}</p>
           <p class="available-pet-breed">Breed: {{ pet.breed }}</p>
           <p class="available-pet-age">Age: {{ pet.age }}</p>
         </div>
         <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /> <br>
-        <router-link v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link>
+        <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link>
       </div>
     </div>
   </div>
@@ -132,6 +132,14 @@ h1 {
 
 .available-pet-text-box {
   display: inline-block;
+}
+
+#detailLink:hover {
+  color: white;
+}
+
+#detailLink {
+  color: blue;
 }
 
 </style>
