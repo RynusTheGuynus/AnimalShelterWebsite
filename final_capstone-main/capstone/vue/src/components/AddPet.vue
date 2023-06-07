@@ -24,7 +24,6 @@
             placeholder="Whole numbers only"
             v-model="addPetDTO.age"
             required
-            autofocus
         /> <br>
         <label for="add-pet-species" class="add-pet-input-label">Species: </label>
         <br>
@@ -34,7 +33,6 @@
             value="Choose here"
             v-model="addPetDTO.species"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="cat">Cat</option>
           <option value="dog">Dog</option>
@@ -49,7 +47,6 @@
             placeholder="Shepherd mix, hound, etc."
             v-model="addPetDTO.breed"
             required
-            autofocus
         /> <br>
         <label for="add-pet-weight" class="add-pet-input-label">Weight: </label>
         <br>
@@ -60,7 +57,6 @@
             placeholder="Whole numbers only"
             v-model="addPetDTO.weight"
             required
-            autofocus
         /> <br>
         <label for="add-pet-gender" class="add-pet-input-label">Gender: </label>
         <br>
@@ -70,7 +66,6 @@
             value="Choose here"
             v-model="addPetDTO.gender"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="male">Male</option>
           <option value="dog">Female</option>
@@ -84,7 +79,6 @@
             value="Choose here"
             v-model="addPetDTO.redFlag"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="true">True</option>
           <option value="false">False</option>
@@ -98,7 +92,6 @@
             value="Choose here"
             v-model="addPetDTO.adoptedStatus"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="true">True</option>
           <option value="false">False</option>
@@ -113,7 +106,6 @@
             placeholder="140 characters or less"
             v-model="addPetDTO.description"
             required
-            autofocus
         /> <br>
         <br>
         <label for="add-pet-image-1-name" class="add-pet-input-label">First image name: </label>
@@ -124,7 +116,6 @@
             class="add-pet-input"
             placeholder="bob1, charley2, etc."
             v-model="addPetDTO.petImageDTOOne.imageName"
-            autofocus
         /> <image-upload v-model="addPetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
         <br>
         <label for="add-pet-image-2-name" class="add-pet-input-label">Second image name: </label>
@@ -135,7 +126,6 @@
             class="add-pet-input"
             placeholder="bob1, charley2, etc."
             v-model="addPetDTO.petImageDTOTwo.imageName"
-            autofocus
         /> <image-upload v-model="addPetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
         <br>
         <label for="add-pet-image-3-name" class="add-pet-input-label">Third image name: </label>
@@ -146,7 +136,6 @@
             class="add-pet-input"
             placeholder="bob1, charley2, etc."
             v-model="addPetDTO.petImageDTOThree.imageName"
-            autofocus
         /> <image-upload v-model="addPetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
         <br>
         <button id="submit-button" class="button" type="submit">
@@ -232,5 +221,58 @@ export default {
 </script>
 
 <style>
+
+.add-pet-container {
+    max-width: 40%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .add-pet-heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .add-pet-form {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .add-pet-input-label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  .add-pet-input {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+
+  .button {
+    display: block;
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 25%;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
 
 </style>

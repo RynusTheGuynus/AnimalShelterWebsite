@@ -1,7 +1,7 @@
 <template>
   <div class="update-pet-container">
     <h1 class="update-pet-heading">
-          Update Current Shelter Pet's Information
+          <!-- Update Current Shelter Pet's Information -->
       </h1>
       <div class="update-pet-select-pet">
         <label for="update-pet-select-pet-menu" class="update-pet-input-label">Select a pet: </label>
@@ -25,7 +25,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.petName"
             required
-            autofocus
         /> <br>
         <label for="update-pet-age" class="update-pet-input-label">Age: </label>
         <br>
@@ -35,7 +34,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.age"
             required
-            autofocus
         /> <br>
         <label for="update-pet-species" class="update-pet-input-label">Species: </label>
         <br>
@@ -44,7 +42,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.species"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="cat" :selected="selectedPet.species === 'cat'">Cat</option>
           <option value="dog" :selected="selectedPet.species === 'dog'">Dog</option>
@@ -58,7 +55,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.breed"
             required
-            autofocus
         /> <br>
         <label for="update-pet-weight" class="update-pet-input-label">Weight: </label>
         <br>
@@ -68,7 +64,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.weight"
             required
-            autofocus
         /> <br>
         <label for="update-pet-gender" class="update-pet-input-label">Gender: </label>
         <br>
@@ -77,7 +72,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.gender"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="male" :selected="selectedPet.gender === 'male'">Male</option>
           <option value="female" :selected="selectedPet.gender === 'female'">Female</option>
@@ -90,7 +84,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.redFlag"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="true" :selected="selectedPet.red_flag === true">True</option>
           <option value="false" :selected="selectedPet.red_flag === false">False</option>
@@ -103,7 +96,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.adoptedStatus"
             required
-            autofocus
         > <option selected disabled>Choose here</option>
           <option value="true" :selected="selectedPet.adopted_status === true">True</option>
           <option value="false" :selected="selectedPet.adopted_status === false">False</option>
@@ -117,7 +109,6 @@
             class="update-pet-input"
             v-model="updatePetDTO.description"
             required
-            autofocus
         /> <br>
         <div v-if="updatePetDTO.adoptedStatus === 'true'" class="update-pet-adoption-info-container">
           <label for="update-pet-owner-name" class="update-pet-input-label">Owner Name: </label>
@@ -128,7 +119,6 @@
               class="update-pet-input"
               v-model="updatePetDTO.ownerName"
               :required="updatePetDTO.adoptedStatus === 'true'"
-              autofocus
           /> <br>
           <label for="update-pet-owner-address" class="update-pet-input-label">Owner address: </label>
           <br>
@@ -138,7 +128,6 @@
               class="update-pet-input"
               v-model="updatePetDTO.ownerAddress"
               :required="updatePetDTO.adoptedStatus === 'true'"
-              autofocus
           /> <br>
           <label for="update-pet-owner-email" class="update-pet-input-label">Owner email: </label>
           <br>
@@ -148,7 +137,6 @@
               class="update-pet-input"
               v-model="updatePetDTO.ownerEmail"
               :required="updatePetDTO.adoptedStatus === 'true'"
-              autofocus
           /> <br>
           <label for="update-pet-owner-phone-number" class="update-pet-input-label">Owner phone number: </label>
           <br>
@@ -158,7 +146,6 @@
               class="update-pet-input"
               v-model="updatePetDTO.ownerPhoneNumber"
               :required="updatePetDTO.adoptedStatus === 'true'"
-              autofocus
           /> <br>
           <label for="update-pet-owner-adoption-date" class="update-pet-input-label">Adoption date: </label>
           <br>
@@ -168,43 +155,42 @@
               class="update-pet-input"
               v-model="updatePetDTO.adoptionDate"
               :required="updatePetDTO.adoptedStatus === 'true'"
-              autofocus
           /> <br>
         </div>
         <br>
-        <label for="update-pet-image-1-name" class="update-pet-input-label">First image name: </label>
-        <br>
-        <input
-            type="text"
-            id="update-pet-image-1-name"
-            class="update-pet-input"
-            placeholder="bob1, charley2, etc."
-            v-model="updatePetDTO.petImageDTOOne.imageName"
-            autofocus
-        /> <image-upload v-model="updatePetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
-        <br>
-        <label for="update-pet-image-2-name" class="update-pet-input-label">Second image name: </label>
-        <br>
-        <input
-            type="text"
-            id="update-pet-image-2-name"
-            class="update-pet-input"
-            placeholder="bob1, charley2, etc."
-            v-model="updatePetDTO.petImageDTOTwo.imageName"
-            autofocus
-        /> <image-upload v-model="updatePetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
-        <br>
-        <label for="update-pet-image-3-name" class="update-pet-input-label">Third image name: </label>
-        <br>
-        <input
-            type="text"
-            id="update-pet-image-3-name"
-            class="update-pet-input"
-            placeholder="bob1, charley2, etc."
-            v-model="updatePetDTO.petImageDTOThree.imageName"
-            autofocus
-        /> <image-upload v-model="updatePetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
-        <br>
+        <div class="update-pet-image-container">
+          <!-- <h2 class="update-pet-image-container-heading">Image Upload</h2> -->
+          <label for="update-pet-image-1-name" class="update-pet-input-label">First image name: </label>
+          <br>
+          <input
+              type="text"
+              id="update-pet-image-1-name"
+              class="update-pet-input"
+              placeholder="bob1, charley2, etc."
+              v-model="updatePetDTO.petImageDTOOne.imageName"
+          /> <image-upload v-model="updatePetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
+          <br>
+          <label for="update-pet-image-2-name" class="update-pet-input-label">Second image name: </label>
+          <br>
+          <input
+              type="text"
+              id="update-pet-image-2-name"
+              class="update-pet-input"
+              placeholder="bob1, charley2, etc."
+              v-model="updatePetDTO.petImageDTOTwo.imageName"
+          /> <image-upload v-model="updatePetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
+          <br>
+          <label for="update-pet-image-3-name" class="update-pet-input-label">Third image name: </label>
+          <br>
+          <input
+              type="text"
+              id="update-pet-image-3-name"
+              class="update-pet-input"
+              placeholder="bob1, charley2, etc."
+              v-model="updatePetDTO.petImageDTOThree.imageName"
+          /> <image-upload v-model="updatePetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
+          <br>
+        </div>
         <button id="submit-button" class="button" type="submit">
             Submit
         </button>
@@ -351,8 +337,66 @@ export default {
 
 <style scoped>
 
-.update-pet-input {
-  width: 500px; 
+.update-pet-container {
+  max-width: 40%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.update-pet-heading {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
+  /* background-image: url("../images/update3.png");
+  background-position-y: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border-radius: 25px; */
+}
+
+.update-pet-select-pet {
+  margin-bottom: 20px;
+}
+
+.update-pet-input-label {
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.update-pet-input,
+.button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: 25px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 50%;
+  margin-left: 25%;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.image-upload-container {
+  margin-top: 10px;
+}
+
 
 </style>

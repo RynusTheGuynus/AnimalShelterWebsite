@@ -62,12 +62,14 @@ public class JdbcPetDao implements PetDao {
     @Override
     public List<AdoptedPetDTO> getAdoptedPets() {
         List<AdoptedPetDTO> adoptedPetList = new ArrayList<>();
-        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date, pi.image_path " +
+        String sql = "SELECT p.pet_name, a.owner_name, a.adoption_date, MIN(pi.image_path) AS image_path " +
                 "FROM pet AS p " +
                 "JOIN pet_adoption AS pa ON pa.pet_id = p.pet_id " +
                 "JOIN adoption AS a ON a.adoption_id = pa.adoption_id " +
                 "JOIN pet_image AS pi ON pi.pet_id = p.pet_id " +
-                "WHERE pa.adoption_id IS NOT NULL;";
+                "WHERE pa.adoption_id IS NOT NULL " +
+                "GROUP BY p.pet_name, a.owner_name, a.adoption_date " +
+                "ORDER BY p.pet_name ASC;";
         try {
             SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
             while(results.next()) {

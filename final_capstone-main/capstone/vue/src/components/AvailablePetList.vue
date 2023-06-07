@@ -1,6 +1,6 @@
 <template>
   <div class="available-pet-list-container">
-    <h1 class="available-pet-list-heading">Available Pet List Component</h1>
+    <h1 class="available-pet-list-heading">Pets Available For Adoption</h1>
     <SearchPet :availablePets="availablePets" @search="handleSearch" />
     <div class="available-pet-list-item-container">
       <div class="available-pet" v-for="pet in filteredPets" :key="pet.id">
@@ -76,14 +76,16 @@ export default {
 </script>
 
 <style scoped>
+
 .available-pet-list-item-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   height: 100%;
-  width: 100%;
+  width: 80%;
   gap: 10px;
   margin: 30px;
   text-align: center;
+  margin-left: 10%;
 }
 
 h1 {
@@ -130,4 +132,5 @@ h1 {
 .available-pet-text-box {
   display: inline-block;
 }
+
 </style>
