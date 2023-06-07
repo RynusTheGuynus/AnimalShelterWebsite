@@ -14,6 +14,10 @@ export default {
     return http.get('/pets');
   },
 
+  getAvailablePetsForUpdate() {
+    return http.get('/update');
+  },
+
   addPet(addPetDTO) {
     return http.post('/update', addPetDTO);
   },

@@ -85,7 +85,7 @@ public class JdbcPetDao implements PetDao {
     }
 
     @Override
-    public List<AvailablePetDTO> getAvailablePets() {
+    public List<AvailablePetDTO> getAvailablePetDTOs() {
         List<AvailablePetDTO> availablePetList = new ArrayList<>();
         String sql = "SELECT p.pet_name, p.species, p.breed, p.age, MIN(pi.image_path) AS image_path " +
                 "FROM pet AS p " +
@@ -100,6 +100,29 @@ public class JdbcPetDao implements PetDao {
                 if (results.getString("image_path") == null) {
                     availablePet.setImagePath("https://res.cloudinary.com/doliuuvrv/image/upload/v1685946485/Animal%20Shelter/placeholder-image_npzf77.jpg");
                 }
+                availablePetList.add(availablePet);
+            }
+        } catch(CannotGetJdbcConnectionException e) {
+            throw new DaoException("Could not connect to data source");
+        } catch(BadSqlGrammarException e) {
+            throw new DaoException("Bad SQL grammar - Review the SQL statement syntax");
+        } catch(DataIntegrityViolationException e) {
+            throw new DaoException("Invalid operation - Data integrity error");
+        }
+        return availablePetList;
+    }
+
+    @Override
+    public List<Pet> getAvailablePets() {
+        List<Pet> availablePetList = new ArrayList<>();
+        String sql = "SELECT * " +
+                "FROM pet " +
+                "WHERE adopted_status = false " +
+                "ORDER BY pet_name ASC;";
+        try {
+            SqlRowSet results = jdbcTemplate.queryForRowSet(sql);
+            while(results.next()) {
+                Pet availablePet = mapRowToPet(results);
                 availablePetList.add(availablePet);
             }
         } catch(CannotGetJdbcConnectionException e) {
@@ -132,14 +155,14 @@ public class JdbcPetDao implements PetDao {
 
     @Override
     public int update(String petName, int age, String species, String breed, int weight,
-                      boolean redFlag, String gender, boolean adoptedStatus, String description) {
-        int rowsUpdated = 0;
+                      boolean redFlag, String gender, boolean adoptedStatus, String description, int petId) {
         String sql = "UPDATE pet " +
-                "SET pet_name = ?, age = ?, species = ?, breed = ?, weight = ?, red_flag = ?, gender = ?, adoptedStatus = ?, description = ? " +
+                "SET pet_name = ?, age = ?, species = ?, breed = ?, weight = ?, red_flag = ?, gender = ?, adopted_status = ?, description = ? " +
                 "WHERE pet_id = ?;";
         try {
-            rowsUpdated = jdbcTemplate.update(sql, int.class, petName, age, species, breed, weight, redFlag,
-                    gender, adoptedStatus, description);
+            int rowsUpdated = jdbcTemplate.update(sql, petName, age, species, breed, weight, redFlag,
+                    gender, adoptedStatus, description, petId);
+            return rowsUpdated;
         } catch(CannotGetJdbcConnectionException e) {
             throw new DaoException("Could not connect to data source");
         } catch(BadSqlGrammarException e) {
@@ -147,7 +170,6 @@ public class JdbcPetDao implements PetDao {
         } catch(DataIntegrityViolationException e) {
             throw new DaoException("Invalid operation - Data integrity error");
         }
-        return rowsUpdated;
     }
 
 

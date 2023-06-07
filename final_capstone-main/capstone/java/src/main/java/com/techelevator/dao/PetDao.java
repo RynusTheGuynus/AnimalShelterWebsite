@@ -17,12 +17,13 @@ public interface PetDao {
 
     List<Pet> findAll();
     List<AdoptedPetDTO> getAdoptedPets();
-    List<AvailablePetDTO> getAvailablePets();
+    List<AvailablePetDTO> getAvailablePetDTOs();
+    List<Pet> getAvailablePets();
     Pet getPetById(int petId);
     int create(String petName, int age, String species, String breed, int weight,
               boolean redFlag, String gender, boolean adoptedStatus, String description);
     int update(String petName, int age, String species, String breed, int weight,
-               boolean redFlag, String gender, boolean adoptedStatus, String description);
+               boolean redFlag, String gender, boolean adoptedStatus, String description, int petId);
 
 }
 
