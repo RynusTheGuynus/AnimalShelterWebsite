@@ -31,18 +31,21 @@ export default {
 <style>
 
 #shelterHead {
-    max-height: 24vh;
-    min-height: 24vh;
-    width: 97vw;
-    border: 3px solid #a36c2c;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas: 
-        "headLeft headCenter .";
-    background-image: url('../images/shelterheadbanner.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-clip: content-box;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  max-height: 24vh;
+  min-height: 24vh;
+  width: 97vw;
+  border: 3px solid #a36c2c;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas: 
+    "headLeft headCenter .";
+  background-image: url('../images/shelterheadbanner.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: content-box;
     
 }
 
@@ -63,6 +66,7 @@ img {
     font-size: 12px;
     font-weight: 700;
     list-style-type: none;
+    margin-left: -20px;
 }
 
 .headCenter {

@@ -19,6 +19,7 @@ package com.techelevator.model;
 
 public class AvailablePetDTO {
 
+    private int petId;
     private String petName;
     private String species;
     private String breed;
@@ -31,8 +32,9 @@ public class AvailablePetDTO {
     }
 
     // Complete Constructor
-    public AvailablePetDTO(String petName, String species, String breed,
+    public AvailablePetDTO(int petId, String petName, String species, String breed,
                            int age, String imagePath) {
+        this.petId = petId;
         this.petName = petName;
         this.species = species;
         this.breed = breed;
@@ -41,6 +43,15 @@ public class AvailablePetDTO {
     }
 
     // Getters and Setters
+
+    public int getPetId() {
+        return petId;
+    }
+
+    public void setPetId(int petId) {
+        this.petId = petId;
+    }
+
     public String getPetName() {
         return petName;
     }

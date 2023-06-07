@@ -44,7 +44,12 @@ export default {
 <style>
 .home {
   background-color: #dc9d4e;
+<<<<<<< HEAD
   max-width: 100%;
+=======
+  background-size: 96vw;
+  max-width: 96vw;
+>>>>>>> main
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,12 +64,23 @@ export default {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto auto;
   grid-template-areas:
+<<<<<<< HEAD
     "shelterHead shelterHead"
     "navigationBar navigationBar"
     "content content"
     "shelterFoot shelterFoot";
   width: 100%;
   height: 100%;
+=======
+  "shelterHead shelterHead"
+  "pets events"
+  "shelterFoot shelterFoot"
+}
+#home {
+  height: 100vh;
+  width: 96vw;
+  background-color: #dc9d4e;
+>>>>>>> main
 }
 
 #shelterHeader {
@@ -78,12 +94,21 @@ export default {
 #navigationBar {
   grid-area: navigationBar;
   display: flex;
+<<<<<<< HEAD
   justify-content: center;
+=======
+  flex-direction: row;
+  justify-self: flex-start;
+  min-width: 60vw;
+  width: 20vw;
+  height: 84vh;
+>>>>>>> main
   margin-top: 30px;
 }
 
 #navigationBar ul {
   display: flex;
+<<<<<<< HEAD
   list-style: none;
   margin: 0;
   padding: 0;
@@ -102,6 +127,18 @@ export default {
   grid-gap: 20px;
   margin: 30px 0;
   justify-items: center;
+=======
+  flex-direction: row;
+  justify-self: flex-end;
+  height: 84vh;
+  width: 30vw;
+  margin-top: 2px;
+  margin-left: -15px;
+  margin-right: 15px;
+  padding-right: 15px;
+  margin-bottom: 2px;
+  
+>>>>>>> main
 }
 
 #shelterFooter {

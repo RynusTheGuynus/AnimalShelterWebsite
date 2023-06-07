@@ -1,5 +1,5 @@
 <template>
-  <div id="layout">
+  <div class="layout">
     <h1 id="aboutUs">About Rising Sun</h1>
     <figure id="aerialPhoto">
         <img id="overhead" src="../images/risingsunaerial.png" alt="aerial photo"/>
@@ -40,38 +40,50 @@ export default {
 
 <style scoped>
 
-#layout {
+.layout {
+    background-color: #dc9d4e;
     border: 3px solid #a36c2c;
-    justify-content: center;     
+    justify-content: center; 
+    max-width: 97vw;    
 }
 
 #aboutUs {
     display: flex;
     flex-direction: row;
-    font-size: 16px;
+    font-size: 20px;
+    color: black;
     grid-area: "aboutTitle";
     height: 4vh;
     width: 30vw;
     margin: auto;
-    margin-top: 10px;
+    margin-top: 20px;
     justify-content: space-around;
 }
 
 #aerialPhoto {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     text-align: center;
     font-style: italic;
     grid-area: "aerialPhoto";
     caption-side: bottom;
+    justify-items: center;
+    max-width: 20vw;
+    max-height: 35vh;
+    margin-bottom: 40px;
 }
 
 figcaption {
     text-align: center;
+    margin-bottom: 10px;
 }
 
-img {
-    max-height: 40vh;
+#overhead {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 }
 
 #aboutText {
