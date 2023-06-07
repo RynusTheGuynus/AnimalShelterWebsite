@@ -43,6 +43,7 @@ body {
 
 #home {
   background-color: #dc9d4e;
+  background-size: 96vw;
   max-width: 96vw;
   display: flex;
   flex-direction: column;
@@ -62,12 +63,11 @@ body {
 }
 #home {
   height: 100vh;
-  width: 100vw;
+  width: 96vw;
   background-color: #dc9d4e;
 }
 
 #shelterHeader {
-  width: 100vw;
   grid-area: shelterHead;
   align-content: center;
   color: antiquewhite;
@@ -80,7 +80,7 @@ body {
   flex-direction: row;
   justify-self: flex-start;
   min-width: 60vw;
-  width: 60vw;
+  width: 20vw;
   height: 84vh;
   margin-top: 30px;
   margin-right: -12px;
@@ -93,12 +93,12 @@ body {
   flex-direction: row;
   justify-self: flex-end;
   height: 84vh;
-  width: 35vw;
-  margin-top: 30px;
+  width: 30vw;
+  margin-top: 2px;
   margin-left: -15px;
-  margin-right: 168px;
+  margin-right: 15px;
   padding-right: 15px;
-  margin-bottom: -17px;
+  margin-bottom: 2px;
   
 }
 
