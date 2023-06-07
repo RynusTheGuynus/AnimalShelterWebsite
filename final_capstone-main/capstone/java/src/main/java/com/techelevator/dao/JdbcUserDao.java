@@ -13,6 +13,8 @@ package com.techelevator.dao;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
+
 import com.techelevator.exception.DaoException;
 import com.techelevator.exception.UserNotFoundException;
 import com.techelevator.model.LoginDTO;
@@ -31,6 +33,8 @@ import com.techelevator.model.User;
 public class JdbcUserDao implements UserDao {
 
     private final JdbcTemplate jdbcTemplate;
+    private String tempPassword;
+    private String username;
 
     public JdbcUserDao(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
@@ -97,16 +101,40 @@ public class JdbcUserDao implements UserDao {
     }
 
     @Override
-    public boolean create(String username, String password, String role, String firstName, String lastName,
+    public String create(String username, String role, String firstName, String lastName,
                           String emailAddress, String phoneNumber, int age, String emergencyFirstName, String emergencyLastName,
                           String emergencyPhone) {
         String insertUserSql = "insert into users (username,password_hash,role,first_name,last_name,email_address,phone_number,age,emerg_first_name,emerg_last_name,emerg_phone)" +
                                "values (?,?,?,?,?,?,?,?,?,?,?)";
+        Random randomNumberGenerator = new Random();
+        int min = 10000;
+        int max = 99999;
+        int randomNumber = randomNumberGenerator.nextInt(max - min + 1) + min;
+        String password = "temp" + randomNumber;
         String password_hash = new BCryptPasswordEncoder().encode(password);
         String ssRole = role.toUpperCase().startsWith("ROLE_") ? role.toUpperCase() : "ROLE_" + role.toUpperCase();
+        jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, firstName, lastName,
+                                  emailAddress, phoneNumber, age, emergencyFirstName, emergencyLastName, emergencyPhone);
+        return password;
+    }
 
-        return jdbcTemplate.update(insertUserSql, username, password_hash, ssRole, firstName, lastName,
-                                  emailAddress, phoneNumber, age, emergencyFirstName, emergencyLastName, emergencyPhone) == 1;
+    @Override
+    public void setTempPassword(String tempPassword) {
+        this.tempPassword = tempPassword;
+    }
+    @Override
+    public String getTempPassword() {
+        return this.tempPassword;
+    }
+
+    @Override
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    @Override
+    public String getUsername() {
+        return this.username;
     }
 
     @Override
@@ -128,7 +156,7 @@ public class JdbcUserDao implements UserDao {
     public List<User> viewPendingApplications() {
         List<User> pendingUsers = new ArrayList<>();
         String sql = "SELECT user_id, username, password_hash, role, first_name, last_name, email_address, phone_number, " +
-                "age, emerg_first_name, emerg_last_name, emerg_phone FROM users WHERE " +
+                "age, emerg_first_name, emerg_last_name, emerg_phone, first_login FROM users WHERE " +
                 "role = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, "ROLE_PENDING");
         while (results.next()) {

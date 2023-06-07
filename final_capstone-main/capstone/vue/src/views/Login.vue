@@ -81,9 +81,8 @@ export default {
           if (response.status == 200) {
             this.$store.commit("SET_AUTH_TOKEN", response.data.token);
             this.$store.commit("SET_USER", response.data.user);
-            const firstLogin = response.data.firstLogin; // response.data.user.firstLogin
-            // this.$store.commit("SET_USER_FIRST_LOGIN", firstLogin); // X
-            if(firstLogin) { // this.$store.state.firstLogin this.$store.state.user.firstLogin
+            const firstLogin = response.data.firstLogin;
+            if(firstLogin) { 
                 // Prompt user to change their password
                 this.$router.push("/change-password");
             } else {
