@@ -10,8 +10,8 @@
           <p class="available-pet-breed">Breed: {{ pet.breed }}</p>
           <p class="available-pet-age">Age: {{ pet.age }}</p>
         </div>
-        <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" />
-        <router-link v-bind:to="{name: 'detail', params: {id: pet.id} }">Details</router-link>
+        <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /> <br>
+        <router-link v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link>
       </div>
     </div>
   </div>

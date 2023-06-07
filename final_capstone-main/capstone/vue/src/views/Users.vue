@@ -1,6 +1,7 @@
 <template>
   <div>
     <shelter-header />
+    <navigation-bar id='navigationBar' />
     <users-list/>
     <shelter-footer />
   </div>
@@ -10,12 +11,14 @@
 import UsersList from '../components/UsersList.vue';
 import ShelterFooter from '../components/ShelterFooter.vue'
 import ShelterHeader from '../components/ShelterHeader.vue'
+import NavigationBar from '../components/NavigationBar.vue'
 
 export default {
    components: {
     UsersList,
     ShelterHeader,
-    ShelterFooter
+    ShelterFooter,
+    NavigationBar
   },
 
   

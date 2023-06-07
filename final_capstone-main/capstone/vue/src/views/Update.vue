@@ -1,6 +1,7 @@
 <template>
   <div>
       <shelter-header />
+      <navigation-bar id='navigationBar' />
       <div class="add-update-container">
         <add-pet v-if="isAdd" />
         <update-pet v-if="isUpdate" />
@@ -32,6 +33,7 @@ import ShelterHeader from '../components/ShelterHeader.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 import AddPet from '../components/AddPet.vue'
 import UpdatePet from '../components/UpdatePet.vue'
+import NavigationBar from '../components/NavigationBar.vue'
 
 export default {
   name: 'update',
@@ -39,7 +41,8 @@ export default {
     ShelterHeader,
     ShelterFooter,
     AddPet,
-    UpdatePet
+    UpdatePet,
+    NavigationBar
     },
   data() {
     return {

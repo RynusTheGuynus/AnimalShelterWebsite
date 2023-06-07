@@ -26,7 +26,7 @@ public class JdbcPetImageDao implements PetImageDao {
     @Override
     public List<PetImage> getAllImagesByPetId(int id){
         List<PetImage> petImageList = new ArrayList<>();
-        String sql = "SELECT pi.image_path " +
+        String sql = "SELECT pi.pet_id, pi.image_name, pi.image_path " +
                 "FROM pet_image AS pi " +
                 "JOIN pet AS p ON p.pet_id = pi.pet_id " +
                 "WHERE pi.pet_id = ?;";
