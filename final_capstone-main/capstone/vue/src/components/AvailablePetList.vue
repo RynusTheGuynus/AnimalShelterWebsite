@@ -10,8 +10,8 @@
           <p class="available-pet-breed">Breed: {{ pet.breed }}</p>
           <p class="available-pet-age">Age: {{ pet.age }}</p>
         </div>
-        <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" />
-        <router-link v-bind:to="{name: 'detail', params: {id: pet.id} }">Details</router-link>
+        <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /> <br>
+        <router-link v-bind:to="{name: 'detail', params: {id: pet.id} }">Learn More</router-link>
       </div>
     </div>
   </div>
@@ -39,6 +39,7 @@ export default {
           console.log('API Response:', response.data);
           this.availablePets = response.data.map((pet) => {
             return {
+              pet_id: pet.id,
               pet_name: pet.petName,
               species: pet.species,
               breed: pet.breed,

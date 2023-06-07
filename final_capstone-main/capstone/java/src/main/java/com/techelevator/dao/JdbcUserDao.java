@@ -128,7 +128,7 @@ public class JdbcUserDao implements UserDao {
     public List<User> viewPendingApplications() {
         List<User> pendingUsers = new ArrayList<>();
         String sql = "SELECT user_id, username, password_hash, role, first_name, last_name, email_address, phone_number, " +
-                "age, emerg_first_name, emerg_last_name, emerg_phone FROM users WHERE " +
+                "age, emerg_first_name, emerg_last_name, emerg_phone, first_login FROM users WHERE " +
                 "role = ?";
         SqlRowSet results = jdbcTemplate.queryForRowSet(sql, "ROLE_PENDING");
         while (results.next()) {

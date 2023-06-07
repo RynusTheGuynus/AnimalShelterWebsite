@@ -7,7 +7,7 @@
 <script>
 import PetDetail from '../components/PetDetail.vue'
 export default {
-    name: "detail",
+    name: 'detail',
     components: { PetDetail },
 }
 </script>

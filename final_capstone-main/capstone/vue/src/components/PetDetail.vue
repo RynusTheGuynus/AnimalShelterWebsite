@@ -1,6 +1,6 @@
 <template>
   <div id="pet-detail-container">
-
+      {{pet.name}}
   </div>
 </template>
 
@@ -12,6 +12,8 @@ export default {
     data() {
         return {
             images: [],
+            id: this.$route.params.id,
+            pet: {},
         }
     },
     methods: {
@@ -20,7 +22,16 @@ export default {
             .then(response => {
                 this.images = response.data;
             })
+        },
+        getPetDetails(id) {
+            PetService.getPetById(id)
+            .then(response => {
+                this.pet = response.data;
+            })
         }
+    },
+    created() {
+        this.getPetDetails(this.id);
     }
 }
 </script>
