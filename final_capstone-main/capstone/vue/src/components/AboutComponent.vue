@@ -61,21 +61,29 @@ export default {
 }
 
 #aerialPhoto {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     font-size: 12px;
     text-align: center;
     font-style: italic;
     grid-area: "aerialPhoto";
     caption-side: bottom;
-    justify-self: right;
+    justify-items: center;
+    max-width: 20vw;
+    max-height: 35vh;
+    margin-bottom: 40px;
 }
 
 figcaption {
     text-align: center;
+    margin-bottom: 10px;
 }
 
-img {
-    max-height: 40vh;
+#overhead {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
 }
 
 #aboutText {

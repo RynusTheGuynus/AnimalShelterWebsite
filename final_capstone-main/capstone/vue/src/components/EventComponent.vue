@@ -24,6 +24,7 @@ export default {
   flex-direction: column;
   border: 3px solid #a36c2c;
   align-items: center;
+  padding: 10px;
 }
 
 h3 {
@@ -36,8 +37,12 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: left;
+  margin-top: 10px;
   margin-left: -10px;
-  padding-right: 20px;
+  padding-left: 10px;
+  overflow: auto;
+
 }
+
 
 </style>

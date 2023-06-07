@@ -1,6 +1,6 @@
 <template>
   <div id="login" class="text-center">
-    <shelter-header />
+    <shelter-header id="header" />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
       <div
@@ -102,14 +102,34 @@ export default {
 
 <style scoped>
 
+#login {
+  background-color: #dc9d4e;
+  border: 3px solid #a36c2c;
+  max-width: 97.3vw;
+  padding-right: -8px;
+}
+
+#header {
+  margin-top: -3px;
+  margin-left: -2px;
+  margin-right: 1px;
+}
+
 .form-control {
   margin-left: 10px;
   margin-right: 10px;
+  margin-bottom: 50px;
   background-color: lightgrey;
 }
 
 .sr-only {
   margin-left: 25px;
+}
+
+#footer {
+  margin-left: -2px;
+  margin-right: -5px;
+  margin-bottom: -3px;
 }
 
 
