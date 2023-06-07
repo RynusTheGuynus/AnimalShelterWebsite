@@ -12,6 +12,7 @@ import Admin from '../views/Admin.vue'
 import Celebrate from '../views/Celebrate.vue'
 import About from '../views/About.vue'
 import Update from '../views/Update.vue'
+import Detail from '../views/Detail.vue'
 
 Vue.use(Router)
 
@@ -115,6 +116,14 @@ const router = new Router({
       component: Update,
       meta: {
         requiresAuth: true
+      }
+    },
+    {
+      path: "/pets/:id",
+      name: "detail",
+      component: Detail,
+      meta: {
+        requiresAuth: false
       }
     }
   ]

@@ -102,6 +102,12 @@ export default {
 </script>
 <style scoped>
 .form-control {
-  margin: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: lightgrey;
+}
+
+.sr-only {
+  margin-left: 25px;
 }
 </style>

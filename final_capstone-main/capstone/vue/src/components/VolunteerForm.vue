@@ -222,4 +222,8 @@ label {
   font-weight: bold;
 }
 
+.h3 {
+  color: black;
+}
+
 </style>

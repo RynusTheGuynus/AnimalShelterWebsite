@@ -2,9 +2,14 @@ package com.techelevator.controller;
 
 import com.techelevator.dao.PetDao;
 import com.techelevator.dao.PetImageDao;
+import com.techelevator.model.PetImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @CrossOrigin
 @RestController
@@ -17,6 +22,11 @@ public class PetImageController {
     public PetImageController(PetImageDao petImageDao, PetDao petDao) {
         this.petImageDao = petImageDao;
         this.petDao = petDao;
+    }
+
+    @RequestMapping(value = "/pets/images/{id}", method = RequestMethod.GET)
+    List<PetImage> getAllImagesByPetId(int id) {
+        return petImageDao.getAllImagesByPetId(id);
     }
 
 
