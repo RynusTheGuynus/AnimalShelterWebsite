@@ -25,6 +25,7 @@ export default {
 #footer {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  border: 3px solid #a36c2c;
 }
 
 

@@ -106,8 +106,7 @@ export default {
 
 #login {
   background-color: tan;
-  border: 3px solid #a36c2c;
-  max-width: 97.3vw;
+  max-width: 100vw;
   padding-right: -8px;
 }
 
@@ -131,8 +130,8 @@ export default {
   justify-content: space-evenly;
   background-color: #3a4143;
   color: antiquewhite;
-  max-width: 100%;
-
+  max-width: 100vw;
+  border: 3px solid #a36c2c;
 }
 
 .loginBtn {
