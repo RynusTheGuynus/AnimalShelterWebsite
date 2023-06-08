@@ -28,11 +28,10 @@ export default {
 .password-change-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 1fr auto;
+  grid-template-rows: auto auto 1fr;
   grid-template-areas:
     "shelter-header"
     "navigation"
-    "pet-list"
     "shelter-footer";
 }
 

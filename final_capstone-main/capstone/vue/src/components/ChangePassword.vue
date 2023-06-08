@@ -1,20 +1,20 @@
 <template>
   <div class="change-password">
-    <h1>Change Password</h1>
-    <form @submit.prevent="changePassword">
+    <h1 class="password-header">Change Password</h1>
+    <form id="changePasswordForm" @submit.prevent="changePassword">
       <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div v-if="successMessage" class="alert alert-success">{{ successMessage }}</div>
-      <label for="username">Username:</label>
-      <input type="text" id="username" v-model="user.username" required />
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Username" v-model="user.username" required />
       <br>
-      <label for="current-password">Current Password:</label>
-      <input type="password" id="current-password" v-model="currentPassword" required />
+      <label for="current-password">Current Password</label>
+      <input type="password" id="current-password" placeholder="Current Password" v-model="currentPassword" required />
       <br>
-      <label for="new-password">New Password:</label>
-      <input type="password" id="new-password" v-model="newPassword" required />
+      <label for="new-password">New Password</label>
+      <input type="password" id="new-password" placeholder="New Password" v-model="newPassword" required />
       <br>
-      <label for="confirm-password">Confirm Password:</label>
-      <input type="password" id="confirm-password" v-model="confirmPassword" required />
+      <label for="confirm-password">Confirm Password</label>
+      <input type="password" id="confirm-password" placeholder="Confirm Password" v-model="confirmPassword" required />
       <br>
       <button type="submit">Change Password</button>
     </form>
@@ -72,20 +72,26 @@ export default {
 <style scoped>
 
 .change-password {
-  width: 100%;
+  width: 100vw;
+  max-width: 100vw;
+  font-family: Helvetica, Arial, sans-serif;
   margin: 0 auto;
   padding: 20px;
-  background-color: tan;
+  background-color: #C4AC95;
   border: 1px solid #ccc;
   border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  
 }
 
-h1 {
+.password-header {
   text-align: center;
 }
 
 form {
   margin-top: 20px;
+  
 }
 
 label {
@@ -96,7 +102,6 @@ label {
 
 input[type="text"],
 input[type="password"] {
-  width: 100%;
   padding: 8px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -105,13 +110,18 @@ input[type="password"] {
 
 button[type="submit"] {
   display: block;
-  width: 100%;
   padding: 10px;
-  background-color: #4caf50;
+  background-color: #747474;
   color: white;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-left: 25px;
+  margin-top: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #444444;
 }
 
 .alert {
@@ -132,4 +142,7 @@ button[type="submit"] {
   border: 1px solid #c3e6cb;
 }
 
+#changePasswordForm {
+  margin-left: 30px;
+}
 </style>
