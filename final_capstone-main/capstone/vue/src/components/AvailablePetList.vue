@@ -78,10 +78,16 @@ export default {
 
 <style scoped>
 
+.available-pet-list-container {
+  background-color: tan;
+  width: 100%;
+}
+
 .available-pet-list-item-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  height: 100%;
+  grid-template-rows: auto;
+  height: 50%;
   width: 80%;
   gap: 10px;
   margin: 30px;
