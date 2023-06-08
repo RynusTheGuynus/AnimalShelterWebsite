@@ -102,7 +102,11 @@ export default {
 
 .available-pet-name {
   margin-top: 10px;
-  font-size: 20px;
+   font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 32px;
+  color: #EEE6DB;
 }
 
 .available-pet-species,

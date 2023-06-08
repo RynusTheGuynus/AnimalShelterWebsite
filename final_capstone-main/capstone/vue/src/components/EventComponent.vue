@@ -34,10 +34,24 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 32px;
+  color: #EEE6DB;
+  text-align: center;
+  font-weight: bold;
 }
 
 #eventList {
   display: flex;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: #EEE6DB;
+  text-align: center;
+  font-weight: bold;
   flex-direction: column;
   justify-content: left;
   margin-left: 20px;
