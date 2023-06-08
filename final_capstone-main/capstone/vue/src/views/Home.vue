@@ -3,9 +3,8 @@
     <p class="alert alert-success" role="alert" v-if="$route.query.registration">Thank you for applying. You will be able to sign in once approved.</p>
     <p class="alert alert-failure" role="alert" v-if="$route.query.loggedIn">You have not yet been approved by an Admin.</p>     
     <div class="grid">         
-      <div id="shelterHeader">
         <shelter-header class="shelter-header" />
-      </div>
+      
       <navigation-bar id="navigationBar"/>
      
         <div class="pet-container">
@@ -43,13 +42,13 @@ export default {
 
 
 <style>
-.home {
-  /* background-color: #dc9d4e; */
+/* .home {
+  background-color: #dc9d4e;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
+} */
 
 .grid {
   background-color: tan;
@@ -58,9 +57,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 1fr auto;
+  grid-auto-rows: auto minmax(0, 1fr) auto;
   grid-template-areas:
-    "shelterHead shelterHead"
+    "shelter-header shelter-header"
     "navigationBar navigationBar"
     "pet-container events-box"
     "shelterFoot shelterFoot";
@@ -68,8 +67,10 @@ export default {
   flex-grow: 1;
 }
 
-#shelterHeader {
-  grid-area: shelterHead;
+.shelter-header {
+  grid-area: shelter-header;
+
+
 }
 
 .pet-container {
