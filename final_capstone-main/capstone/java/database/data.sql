@@ -1,5 +1,10 @@
 BEGIN TRANSACTION;
 
+INSERT INTO users (username,password_hash,role,first_name,last_name,email_address, phone_number, age, emerg_first_name, emerg_last_name, emerg_phone, first_login)
+VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'test', 'testerson', 'test@email.com', 'test', 18, 'test', 'testerson', 3634, false);
+INSERT INTO users (username,password_hash,role,first_name,last_name,email_address, phone_number, age, emerg_first_name, emerg_last_name, emerg_phone, first_login)
+VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', 'test', 'testerson', 'test@email.com', 'test', 18, 'test', 'testerson', 3634, false);
+
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Sparky', 1, 'dog', 'Terrier mix', 6, 'female', false, false, 'Sparky: An energetic Terrier mix bursting with love and a zest for life. Adopt this playful companion and fill your days with happiness!');
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)

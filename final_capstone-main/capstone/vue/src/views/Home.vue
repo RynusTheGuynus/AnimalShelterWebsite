@@ -96,6 +96,7 @@ export default {
   white-space: normal;
   padding: 0.5em;
   box-sizing: border-box;
+  margin-right: 120px;
 }
 
 
