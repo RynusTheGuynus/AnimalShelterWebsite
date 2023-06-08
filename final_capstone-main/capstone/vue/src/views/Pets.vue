@@ -61,6 +61,8 @@ export default {
 }
 
 .shelter-footer {
+  background-color: #3a4143;
+  color: antiquewhite;
   grid-area: shelter-footer;
   /* height: 300px; */
 } 

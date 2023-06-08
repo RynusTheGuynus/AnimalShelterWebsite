@@ -11,7 +11,7 @@
       <add-admin v-if="isAuthorized"/>
       <p v-else>You are not authorized to view this page.</p>
       
-      <shelter-footer/>
+      <shelter-footer id="footer" />
   </div>
 </template>
 
@@ -58,13 +58,19 @@ export default {
 </script>
     
 
-<style>
+<style scoped>
+
 #approvePending {
   margin-top: 100px;
 }
 
 #approvePending > h2 {
   color: black;
+}
+
+#footer {
+  background-color: #3a4143;
+  color: antiquewhite;
 }
 
 </style>

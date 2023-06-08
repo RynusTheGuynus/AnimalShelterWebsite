@@ -129,6 +129,8 @@ export default {
 }
 
 #footer {
+  background-color: #3a4143;
+  color: antiquewhite;
   margin-left: -2px;
   margin-right: -5px;
   margin-bottom: -3px;

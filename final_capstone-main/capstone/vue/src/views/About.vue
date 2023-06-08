@@ -69,6 +69,8 @@ img {
 }
 
 #shelterFooter {
+  background-color: #3a4143;
+  color: antiquewhite;
   max-width: 97vw;
   margin-right: -5px;
   margin-top: 2px;
