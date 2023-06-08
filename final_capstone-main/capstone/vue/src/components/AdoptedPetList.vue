@@ -69,12 +69,17 @@ export default {
 
 <style scoped>
 
+.adopted-pet-list-container {
+    background-color: tan;
+    width: 100%;
+}
+
 .adopted-pet-list-item-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
+    /* grid-template-areas:
         "adopted-pet adopted-pet adopted-pet"
-    ;
+    ; */
     height: 100%;
     width: 80%;
     gap: 10px;
@@ -132,74 +137,5 @@ h1 {
 .adopted-pet-text-box {
     display: inline-block;
 }
-
-
-
-/* .adopted-pet-list-item-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "header header header"
-        "adopted-pet adopted-pet adopted-pet"
-    ;
-    height: 60vh;
-    width: 100%;
-    gap: 10px;
-    margin: 20px 1px;
-    text-align: center;
-}
-
-h1 {
-  color: red;
-  background-image: none;
-  background-color: transparent;
-}
-
-.adopted-pet-list-heading {
-    text-align: center;
-    margin: 20px;
-    height: 35vh;
-    grid-area: header;
-    background-image: url("../images/second-chance-2.png");
-    background-position-y: 40px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: transparent;
-    border-radius: 25px;
-    color: black;
-    height: 10vh;
-}
-
-.adopted-pet {
-  border-radius: 25px;
-  background-color: tan;
-  width: 400px;
-  padding: 10px 5px;
-  margin: 20px;
-  justify-items: center;
-  grid-area: adopted-pet;
-}
-
-.adopted-pet-name {   
-    text-align: left;
-}
-
-.adopted-pet-adopter { 
-    text-align: left;
-}
-
-.adopted-pet-gotcha-day {
-    text-align: left;
-}
-
-.adopted-pet img {
-    height: 240px;
-    width: 360px;
-    border-radius: 5%;
-}
-
-.adopted-pet-text-box {
-    display: inline-block;
-} */
 
 </style>

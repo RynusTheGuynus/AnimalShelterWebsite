@@ -28,7 +28,7 @@
         ownership, Rising Sun Animal Shelter is here to inspire and empower you to be a part 
         of a kinder world for animals. Together, we can create a brighter future for all 
         creatures great and small.</p>
-      </div>
+    </div>
   </div>
 </template>
 
@@ -38,13 +38,13 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
 .layout {
-    background-color: #dc9d4e;
-    border: 3px solid #a36c2c;
+    background-color: tan;
+    /* border: 3px solid #a36c2c; */
     justify-content: center; 
-    max-width: 97vw;    
+    max-width: 100vw;    
 }
 
 #aboutUs {
@@ -52,7 +52,7 @@ export default {
     flex-direction: row;
     font-size: 20px;
     color: black;
-    grid-area: "aboutTitle";
+    /* grid-area: "aboutTitle"; */
     height: 4vh;
     width: 30vw;
     margin: auto;
@@ -66,7 +66,7 @@ export default {
     font-size: 12px;
     text-align: center;
     font-style: italic;
-    grid-area: "aerialPhoto";
+    /* grid-area: "aerialPhoto"; */
     caption-side: bottom;
     justify-items: center;
     max-width: 20vw;

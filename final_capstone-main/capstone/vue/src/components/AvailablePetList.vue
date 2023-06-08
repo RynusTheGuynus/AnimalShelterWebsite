@@ -1,7 +1,13 @@
 <template>
   <div class="available-pet-list-container">
-    <h1 class="available-pet-list-heading">Pets Available For Adoption</h1>
-    <SearchPet :availablePets="availablePets" @search="handleSearch" />
+    <div class="available-pet-list-heading">
+      <img src="@/images/availablepetsbanner1.jpg" alt="banner" />
+      <h1>PETS</h1>
+      <h3>CURRENTLY AVAILABLE FOR ADOPTION</h3>
+    </div>
+    <div class="search">
+      <SearchPet :availablePets="availablePets" @search="handleSearch" />
+    </div>
     <div class="available-pet-list-item-container">
       <div class="available-pet" v-for="pet in filteredPets" :key="pet.id">
         <div class="available-pet-text-box">
@@ -79,11 +85,43 @@ export default {
 <style scoped>
 
 .available-pet-list-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+  "header"
+  "search"
+  "pet-items";
   background-color: tan;
   width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.available-pet-list-heading {
+  grid-area: header;
+  width: 100%;
+  height: 100%;
+}
+
+.available-pet-list-heading h1 {
+  font-size: 50px;
+  color: red;
+}
+
+.available-pet-list-heading h3 {
+  color: black;
+}
+
+.available-pet-list-heading img {
+  border-radius: 25px;
+}
+
+.search {
+  text-align: left;
 }
 
 .available-pet-list-item-container {
+  grid-area: pet-items;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
@@ -100,11 +138,11 @@ h1 {
   background-color: transparent;
 }
 
-.available-pet-list-heading {
+/* .available-pet-list-heading {
   text-align: center;
   margin: 20px;
   height: 2vh;
-}
+} */
 
 .available-pet {
   border-radius: 25px;

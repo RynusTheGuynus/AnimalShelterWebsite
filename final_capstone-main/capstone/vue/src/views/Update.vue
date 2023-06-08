@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="update-container">
       <shelter-header />
       <navigation-bar id='navigationBar' />
       <div class="add-update-container">
@@ -73,6 +73,14 @@ export default {
 </script>
     
 <style>
+
+.update-container {
+  background-color: tan;
+}
+
+.add-update-container {
+  /* background-color: tan; */
+}
 
 .button-container {
   text-align: center;

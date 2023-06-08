@@ -1,22 +1,7 @@
 <template>
   <div>
       <div id='shelterHead'>
-        <h1 class="headCenter">Rising Sun Animal Shelter<br>Hours: Tuesday-Saturday, 9-5 Eastern</h1>
-        <!-- The img below isn't necessary due to the background image in #shelterHead -->
-        <!-- <img src="'shelterheadbanner.png'" alt="banner"> -->
-        <!-- <ul class="headLeft">
-          <router-link :to="{name: 'home'}" tag="li" class="router-link">Home</router-link>
-          <router-link :to="{name: 'about'}" tag="li" class="router-link">About Us</router-link>
-          <router-link :to="{name: 'pets'}" tag="li" class="router-link">Pets Available for Adoption</router-link>
-          <router-link :to="{name: 'celebrate'}" tag="li" class="router-link">Second Chances!</router-link>
-          <router-link :to="{name: 'register'}" tag="li" class="router-link">Apply to be a Volunteer!</router-link>
-          We need to add the admin view to the nav and base its visibility on user auth/role
-          <router-link :to="{ name: 'admin' }" tag="li" class="router-link" v-if="$store.state.token != ''">Admin</router-link>
-          <router-link :to="{ name: 'update' }" tag="li" class="router-link" v-if="$store.state.token != ''">Add/Update Pets</router-link>
-          <router-link :to="{ name: 'users' }" tag="li" class="router-link" v-if="$store.state.token != ''">Volunteer Directory</router-link>
-          <router-link :to="{ name: 'login' }" tag="li" class="router-link" v-if="$store.state.token == ''">Volunteer Login</router-link>
-          <router-link v-bind:to="{ name: 'logout' }" tag="li" class="router-link" v-if="$store.state.token != ''">Volunteer Logout</router-link>
-        </ul> -->
+        <h1 class="headCenter">Rising Sun Animal Shelter</h1>
       </div>
   </div>
 </template>

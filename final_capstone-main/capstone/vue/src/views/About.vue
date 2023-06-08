@@ -1,5 +1,5 @@
 <template>
-  <div class="layout">
+  <div class="about-container">
     <shelter-header id='shelterHeader' />
     <navigation-bar id='navigationBar' />
     <about-component id="about" />
@@ -25,25 +25,25 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 
-#layout {
-  max-width: 97vw;
-
+/* #layout {
+  max-width: 100vw;
   background-color: #dc9d4e;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
   "shelterHead"
   "photo"
   "about"
   "shelterFoot"
-}
+} */
 
-#shelterHeader {
+/* #shelterHeader {
   height: 21vh;
   width: 93vw;  
   grid-area: shelterHead;
@@ -51,29 +51,29 @@ export default {
   color: antiquewhite;
   margin-bottom: 20px;
   margin-right: 10px;
-}
+} */
 
-img {
+/* img {
   width: 20vw;
   max-height: 50vh;
 
-}
+} */
 
-#about {
+/* #about {
   max-width: 96.5vw;
   font-size: 12px;
   grid-area: about;
   margin-top: 26px;
   margin-bottom: -5px;
   margin-right: -1px;
-}
+} */
 
-#shelterFooter {
+/* #shelterFooter {
   max-width: 97vw;
   margin-right: -5px;
   margin-top: 2px;
   grid-area: shelterFoot;
   
-}
+} */
 
 </style>

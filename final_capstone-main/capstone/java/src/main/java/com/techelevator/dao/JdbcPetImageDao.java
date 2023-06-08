@@ -48,13 +48,10 @@ public class JdbcPetImageDao implements PetImageDao {
 
     @Override
     public void addImage(int petId, String imageName, String imagePath) {
-        // int imageId;
         String sql = "INSERT INTO pet_image (pet_id, image_name, image_path) " +
-                "VALUES (?, ?, ?) " +
-                "RETURNING image_id;";
+                "VALUES (?, ?, ?);";
         try {
-            jdbcTemplate.queryForObject(sql, int.class, petId, imageName, imagePath);
-            // imageId = jdbcTemplate.update(sql, int.class, petId, imageName, imagePath);
+            jdbcTemplate.update(sql, petId, imageName, imagePath);
         } catch(CannotGetJdbcConnectionException e) {
             throw new DaoException("Could not connect to data source");
         } catch(BadSqlGrammarException e) {
@@ -62,7 +59,6 @@ public class JdbcPetImageDao implements PetImageDao {
         } catch(DataIntegrityViolationException e) {
             throw new DaoException("Invalid operation - Data integrity error");
         }
-        // return imageId;
     }
 
     private PetImage mapRowToPetImage(SqlRowSet rs) {
