@@ -184,7 +184,7 @@ button:hover {
 }
 
 #volunteerPhoto {
-  height: 450px;
+  height: 400px;
   border-radius: 5px;
   margin-bottom: 200px;
 }

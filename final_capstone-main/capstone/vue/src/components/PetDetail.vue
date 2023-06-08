@@ -116,5 +116,6 @@ export default {
 }
 #nameHeader {
     color: black;
+    text-align: center;
 }
 </style>
