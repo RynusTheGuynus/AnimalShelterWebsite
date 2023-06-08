@@ -125,13 +125,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  height: 50%;
   gap: 10px;
   text-align: center;
   justify-items: center;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 3%;
+  margin-left: auto; /* Centers the container horizontally */
+  margin-right: auto; 
 }
 
 h1 {
@@ -148,9 +146,10 @@ h1 {
 .available-pet {
   border-radius: 25px;
   background-color: tan;
-  width: 400px;
+
   padding: 5px 5px;
   margin: 5px;
+
 }
 
 .available-pet-name {
