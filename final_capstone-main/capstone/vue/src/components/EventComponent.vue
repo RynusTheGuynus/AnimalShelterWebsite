@@ -24,7 +24,7 @@ export default {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 35vh;
+  height: 90%;
   border: 3px solid #a36c2c;
   border-radius: 25px;
   margin-top: 20px;
@@ -43,9 +43,7 @@ h3 {
   margin-left: 20px;
   margin-right: 20px;
   padding-left: 10px;
-  overflow: auto;
   text-align: left;
-
 }
 
 

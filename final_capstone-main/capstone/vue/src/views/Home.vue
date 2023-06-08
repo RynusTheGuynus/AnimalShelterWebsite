@@ -6,13 +6,15 @@
       <div id="shelterHeader">
         <shelter-header />
       </div>
-        <navigation-bar id="navigationBar"/>
-      <div class="content">
-        <pet-showcase />
+      <navigation-bar id="navigationBar"/>
+     
+        <div class="pet-container">
+          <pet-showcase />
+        </div>
         <div id='events' class="events-box">
           <event-component />
         </div>
-      </div>
+      
       <div id="shelterFooter">
         <shelter-footer />
       </div>
@@ -39,10 +41,11 @@ export default {
 }
 </script>
 
+
 <style>
 .home {
   /* background-color: #dc9d4e; */
-  max-width: 100%;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,14 +58,14 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto auto auto;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
     "shelterHead shelterHead"
     "navigationBar navigationBar"
-    "content content"
+    "pet-container events-box"
     "shelterFoot shelterFoot";
   width: 100%;
-  
+  flex-grow: 1;
 }
 
 #shelterHeader {
@@ -74,13 +77,9 @@ export default {
   width: 100%;
 }
 
-.content {
-  grid-area: content;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
-  margin: 30px 0;
-  justify-items: center;
+.pet-container {
+  display: flex;
+  justify-content: center;
 }
 
 #shelterFooter {
@@ -93,12 +92,12 @@ export default {
 
 .events-box {
   max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  overflow: auto; 
+  white-space: normal;
   padding: 0.5em;
   box-sizing: border-box;
 }
+
 
 
 </style>

@@ -21,6 +21,7 @@
   justify-content: center;
   padding: 20px;
   width: 100%;
+  margin-top:100px;
   bottom: 0; 
 }
 
