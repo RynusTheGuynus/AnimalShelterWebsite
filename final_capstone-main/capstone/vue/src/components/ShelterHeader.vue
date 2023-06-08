@@ -35,7 +35,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 19.5vh;
-  width: 97vw;
+  width: 100%;
   border: 3px solid #a36c2c;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

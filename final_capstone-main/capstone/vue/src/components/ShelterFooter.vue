@@ -2,7 +2,7 @@
   <div id="wholeFooter">
     <div id="shelter-location-info">
       <div id="shelter-location-info-items">
-        <img src="@/images/shelterlogo.png" />
+        <img src="@/images/shelterlogo.png" alt="shelter logo" />
         <p>123 Front St.<br>Cleveland, OH 44101</p>
         <i class="fa fa-phone"></i>    <span>216-252-7700</span><br>
         <i class="fa fa-envelope"></i>    <a href="mailto:rsanimalshelter@gmail.com">Email Us</a><br>
@@ -68,7 +68,7 @@ div {
   border: 3px solid #a36c2c;
   justify-content: center;
   padding: 20px;
-  width: 100%;
+  width: 100vw;
   bottom: 0; 
 }
 

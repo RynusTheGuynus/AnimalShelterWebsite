@@ -4,9 +4,6 @@
       <div class="available-pet" v-if="currentPet" :key="currentPetIndex">
         <div class="available-pet-text-box">
           <h2 class="available-pet-name">{{ currentPet.pet_name }}</h2>
-          <!-- <p class="available-pet-species">Species: {{ currentPet.species }}</p>
-          <p class="available-pet-breed">Breed: {{ currentPet.breed }}</p>
-          <p class="available-pet-age">Age: {{ currentPet.age }}</p> -->
         </div>
         <img class="available-pet-image" :src="currentPet.image_path" alt="Pet Image" />
       </div>
