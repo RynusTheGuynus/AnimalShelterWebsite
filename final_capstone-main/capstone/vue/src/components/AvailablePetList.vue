@@ -64,7 +64,7 @@ export default {
       } else {
         const query = this.searchQuery.toLowerCase();
         return this.availablePets.filter(pet =>
-          pet.pet_name.toLowerCase().includes(query)
+          pet.species.toLowerCase().includes(query)
         );
       }
     },
