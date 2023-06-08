@@ -1,7 +1,7 @@
 <template>
   <div class="adopted-pet-list-container">
     <div class="adopted-pet-list-heading">
-      <img src="@/images/availablepetsbanner1.jpg" alt="banner" />
+      <img src="@/images/second-chance-2.png" alt="banner" />
       <h1>ADOPTED PETS</h1>
     </div>
     <div class="adopted-pet-list-item-container">

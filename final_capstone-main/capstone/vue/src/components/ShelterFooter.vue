@@ -19,7 +19,7 @@
             </tr>
             <tr>
               <td class="day">Monday</td>
-              <td class="hours">11 AM - 7 PM EST</td>
+              <td class="hours">Closed</td>
             </tr>
             <tr>
               <td class="day">Tuesday</td>
@@ -75,7 +75,7 @@ div {
   height: 100%;
   text-align: center;
   color: antiquewhite;
-  margin: 0px;
+  margin-top: 1%;
 }
 
 #shelter-location-info-items {
@@ -105,6 +105,7 @@ div {
 }
 
 .social-container {
+  margin-top: 2%;
   display: flex;
   justify-content: center;
 }

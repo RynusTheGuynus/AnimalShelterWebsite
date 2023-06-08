@@ -40,7 +40,7 @@ img {
     flex-direction: column;
     width: 50vw;
     justify-items: center;
-    margin-top: 5vh;
+    margin-top: -5vh;
     margin-left: 5vw;
     font-size: 24px;
     color: antiquewhite;
