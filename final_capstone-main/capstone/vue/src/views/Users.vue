@@ -2,7 +2,7 @@
   <div>
     <shelter-header />
     <navigation-bar id='navigationBar' />
-    <users-list/>
+    <users-list class="users-list" />
     <shelter-footer id="footer" />
   </div>
 </template>

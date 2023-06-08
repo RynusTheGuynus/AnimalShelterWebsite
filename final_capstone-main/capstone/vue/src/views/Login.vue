@@ -102,7 +102,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 
 #login {
   background-color: tan;

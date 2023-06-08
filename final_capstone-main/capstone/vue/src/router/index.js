@@ -7,7 +7,7 @@ import Register from '../views/Register.vue'
 import Users from '../views/Users.vue'
 import store from '../store/index'
 import Pets from '../views/Pets.vue'
-import ChangePassword from '../components/ChangePassword.vue'
+import PasswordChange from '../views/PasswordChange.vue'
 import Admin from '../views/Admin.vue'
 import Celebrate from '../views/Celebrate.vue'
 import About from '../views/About.vue'
@@ -48,8 +48,8 @@ const router = new Router({
     },
     {
       path: "/change-password",
-      name: "changePassword",
-      component: ChangePassword,
+      name: "PasswordChange",
+      component: PasswordChange,
       meta: {
         requiresAuth: false
       }

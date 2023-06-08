@@ -72,8 +72,8 @@ export default {
 
 <style scoped>
 .user-list-container {
-  margin: 20px;
-  font-family: "Verdana", "Helvetica", sans-serif;
+  margin: 40px 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .user-table {
