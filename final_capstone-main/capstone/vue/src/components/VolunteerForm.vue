@@ -160,7 +160,7 @@ export default {
   box-shadow: none;
 }
 
-button {
+.btn-primary {
   margin-top: 10px;
   margin-left: 10px;
   margin-bottom: 25px;
@@ -172,7 +172,7 @@ button {
   padding: 10px 20px;
 }
 
-button:hover {
+.btn-primary:hover {
   background-color: #444444;
 }
 

@@ -106,6 +106,11 @@ tbody tr:nth-child(even) {
 
 button {
     margin: 0px;
+    border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: white;
 }
 
 #volunteerContainer > h2 {

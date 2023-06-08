@@ -4,7 +4,7 @@
       <div id="photoAndDetails">
       <div id="imageContainer">
       <img :src="images[this.currentIndex].image_path" alt="Available Pet Image" id="detailImage"> <br>
-      <button v-on:click="changePhoto">Next Photo</button>
+      <button id="nextPhotoBtn" v-on:click="changePhoto">Next Photo</button>
       </div>
       <table id="detailsTable" style="width:35%">
   <tr class="detailsRow">
@@ -117,6 +117,19 @@ export default {
 #nameHeader {
     color: black;
     text-align: center;
-    
+}
+
+#nextPhotoBtn {
+  margin: 0px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  color: white;
+  background-color: #747474;
+}
+
+#nextPhotoBtn:hover {
+    background-color: #444444;
 }
 </style>

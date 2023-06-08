@@ -81,9 +81,9 @@ export default {
   background-color: #3a4143;
   color: antiquewhite;
   grid-area: shelterFoot;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   max-width: 100%;
 }
 

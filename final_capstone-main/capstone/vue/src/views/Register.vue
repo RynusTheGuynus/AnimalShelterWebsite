@@ -22,10 +22,10 @@ export default {
 </script>
 
 <style scoped>
-
 #footer {
-  background-color: #3a4143;
-  color: antiquewhite;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
+
 
 </style>
