@@ -1,6 +1,6 @@
 <template>
   <div class="user-list-container">
-    <h1 class="center-text">User List:</h1>
+    <h1 class="center-text">Volunteer Directory</h1>
     <table class="user-table">
       <thead>
         <tr>
@@ -73,6 +73,7 @@ export default {
 <style scoped>
 .user-list-container {
   margin: 20px;
+  font-family: "Verdana", "Helvetica", sans-serif;
 }
 
 .user-table {

@@ -2,16 +2,22 @@
   <div>
       <shelter-header/>
       <navigation-bar id="navigationBar" />
-      <search-user :search-query="searchQuery" @search="handleSearch" v-if="isAuthorized"/>
+      <div id="adminContent">
+      <search-user id="userSearch" :search-query="searchQuery" @search="handleSearch" v-if="isAuthorized"/>
       <ul>
         <li v-for="user in filteredUsers" :key="user.id">{{ user.first_name }}</li>
       </ul>
       <approve-pending id="approvePending" v-if="isAuthorized"/>
       
-      <add-admin v-if="isAuthorized"/>
+      <add-admin id="addAdmin" v-if="isAuthorized"/>
       <p v-else>You are not authorized to view this page.</p>
+<<<<<<< HEAD
       
+      <shelter-footer id="footer" />
+=======
+      </div>
       <shelter-footer/>
+>>>>>>> main
   </div>
 </template>
 
@@ -58,13 +64,30 @@ export default {
 </script>
     
 
-<style>
+<style scoped>
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
 #approvePending {
   margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  
 }
 
 #approvePending > h2 {
   color: black;
+}
+
+<<<<<<< HEAD
+#footer {
+  background-color: #3a4143;
+  color: antiquewhite;
+=======
+#adminContent {
+  font-family: "Verdana", "Helvetica", sans-serif;
+>>>>>>> main
 }
 
 </style>

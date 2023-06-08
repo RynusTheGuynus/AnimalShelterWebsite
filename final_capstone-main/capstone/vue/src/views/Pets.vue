@@ -37,7 +37,7 @@ export default {
 .pet-container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: auto auto 70% 350px;
+  grid-template-rows: auto auto 1fr auto;
   grid-template-areas:
     "shelter-header"
     "navigation"
@@ -52,6 +52,7 @@ export default {
 
 .pet-list {
   grid-area: pet-list;
+  
   /* height: calc(100% - 300px); */
   /* max-height: calc(100vh - 200px);
   max-width: 120vh;
@@ -61,8 +62,11 @@ export default {
 }
 
 .shelter-footer {
+  background-color: #3a4143;
+  color: antiquewhite;
   grid-area: shelter-footer;
   /* height: 300px; */
+  
 } 
 
 #navigation-bar {

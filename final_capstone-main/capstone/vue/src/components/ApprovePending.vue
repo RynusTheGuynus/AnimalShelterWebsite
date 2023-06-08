@@ -28,8 +28,8 @@
                   <td>{{ user.emerg_first_name }}</td>
                   <td>{{ user.emerg_last_name }}</td>
                   <td>{{ user.emerg_phone }}</td>
-                  <td><button v-on:click="approveUser(user.user_id)">Approve</button></td>
-                  <td><button v-on:click="declineApplication(user.user_id)">Decline</button></td>
+                  <td><button id="approveBtn" v-on:click="approveUser(user.user_id)">Approve</button></td>
+                  <td><button id="declineBtn" v-on:click="declineApplication(user.user_id)">Decline</button></td>
               </tr>
           </tbody>
       </table>
@@ -124,12 +124,16 @@ export default {
 }
 
 #applicationTable {
-    width: 100%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
+    color: black;
 }
 
 #applicationTable th, #applicationTable td {
     padding: 10px;
+    
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
@@ -143,6 +147,22 @@ button {
 }
 
 #applicationContainer > h2 {
-    color: black;
+    color: #3A4143;  
+}
+
+#approveBtn {
+    background-color:limegreen;
+}
+
+#approveBtn:hover {
+    background-color: darkgreen;
+}
+
+#declineBtn {
+    background-color:#ff4500;
+}
+
+#declineBtn:hover {
+    background-color: #b22222;
 }
 </style>

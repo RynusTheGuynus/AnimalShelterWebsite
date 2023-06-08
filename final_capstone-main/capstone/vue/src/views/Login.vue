@@ -129,6 +129,13 @@ export default {
 }
 
 #footer {
+<<<<<<< HEAD
+=======
+  display: flex;
+  justify-content: space-evenly;
+>>>>>>> main
+  background-color: #3a4143;
+  color: antiquewhite;
   margin-left: -2px;
   margin-right: -5px;
   margin-bottom: -3px;
