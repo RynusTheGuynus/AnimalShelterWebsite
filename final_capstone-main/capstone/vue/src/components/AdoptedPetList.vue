@@ -8,19 +8,15 @@
         v-bind:key="pet.id"
         >
         <div class="adopted-pet-text-box">
-            <h2 class="adopted-pet-name">
-                Adoptee: {{ pet.pet_name }}
-            </h2>
-            <p class="adopted-pet-adopter">
-                Adopter: {{ pet.owner_name }}
+            <p class="adopted-pet-name">
+                {{ pet.pet_name }}
             </p>
             <p class="adopted-pet-gotcha-day">
-                "Gotcha" day: {{ pet.adoption_date }}
+                {{ formatDate(pet.adoption_date) }}
             </p>
         </div>
             <img class="adopted-pet-image" :src="pet.image_path" alt="Pet Image" /> 
         </div>
-        <!-- <router-link v-bind:to="{name: 'PetDetail', params: {id: pet.id}}">Details</router-link> -->
       </div>
   </div>
 </template>
@@ -52,6 +48,13 @@ export default {
                     console.log(error);
                 });
         }, 
+        formatDate(date) {
+            const newDate = new Date(date);
+            const month = String(newDate.getMonth() + 1)
+            const day = String(newDate.getDate())
+            const year = newDate.getFullYear();
+            return `${month}-${day}-${year}`;
+        },
     },
     computed: {
 
@@ -77,13 +80,9 @@ export default {
 .adopted-pet-list-item-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-areas:
-        "adopted-pet adopted-pet adopted-pet"
-    ; */
     height: 100%;
     width: 80%;
     gap: 10px;
-    /* margin: 20px 1px; */
     text-align: center;
     margin-left: 11%;
 }
@@ -96,12 +95,10 @@ h1 {
 .adopted-pet-list-heading {
     text-align: center;
     height: 35vh;
-    /* grid-area: header; */
     background-image: url("../images/second-chance-2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: transparent;
-    /* height: 10vh; */
 }
 
 .adopted-pet {
@@ -111,7 +108,6 @@ h1 {
   padding: 10px 5px;
   margin: 0px;
   justify-items: center;
-  /* grid-area: adopted-pet; */
 }
 
 .adopted-pet-name {
@@ -133,7 +129,8 @@ h1 {
 }
 
 .adopted-pet-text-box {
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 </style>
