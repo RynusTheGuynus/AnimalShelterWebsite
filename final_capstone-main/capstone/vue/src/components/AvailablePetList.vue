@@ -116,7 +116,7 @@ export default {
 .available-pet-search {
   text-align: left;
   margin-bottom: 1%;
-  margin-left: 10.5%;
+  margin-left: 13.5%;
   justify-self: left;
 }
 
@@ -125,13 +125,11 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  height: 50%;
   gap: 10px;
   text-align: center;
   justify-items: center;
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 3%;
+  margin-left: auto; /* Centers the container horizontally */
+  margin-right: auto; 
 }
 
 h1 {
@@ -139,18 +137,13 @@ h1 {
   background-color: transparent;
 }
 
-/* .available-pet-list-heading {
-  text-align: center;
-  margin: 20px;
-  height: 2vh;
-} */
-
 .available-pet {
   border-radius: 25px;
   background-color: tan;
-  width: 400px;
+
   padding: 5px 5px;
   margin: 5px;
+
 }
 
 .available-pet-name {
@@ -187,10 +180,6 @@ h1 {
   font-weight: bolder;
   margin: 5%;
 }
-
-/* .available-pet-text-box {
-  display: inline-block;
-} */
 
 #detailLink:hover {
   color: blue;

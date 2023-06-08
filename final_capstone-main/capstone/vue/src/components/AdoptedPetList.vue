@@ -1,12 +1,11 @@
 <template>
   <div class="adopted-pet-list-container">
-      <h1 class="adopted-pet-list-heading"></h1>
-      <div class="adopted-pet-list-item-container">
-        <div 
-        class="adopted-pet"
-        v-for="pet in adoptedPets"
-        v-bind:key="pet.id"
-        >
+    <div class="adopted-pet-list-heading">
+      <img src="@/images/second-chance-2.png" alt="banner" />
+      <h1>ADOPTED PETS</h1>
+    </div>
+    <div class="adopted-pet-list-item-container">
+      <div class="adopted-pet" v-for="pet in adoptedPets" :key="pet.id">
         <div class="adopted-pet-text-box">
             <p class="adopted-pet-name">
                 {{ pet.pet_name }}
@@ -18,7 +17,7 @@
             <img class="adopted-pet-image" :src="pet.image_path" alt="Pet Image" /> 
         </div>
       </div>
-  </div>
+    </div>
 </template>
 
 <script>
@@ -62,75 +61,99 @@ export default {
     watch: {
 
     },
-    created() {
-        this.getAdoptedPets();
-    }
-
+  created() {
+    this.getAdoptedPets();
+  },
 }
 </script>
 
 <style scoped>
-
 .adopted-pet-list-container {
-    background-color: tan;
-    width: 100%;
-    height: 100%;
-}
-
-.adopted-pet-list-item-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    height: 100%;
-    width: 80%;
-    gap: 10px;
-    text-align: center;
-    margin-left: 11%;
-}
-
-h1 {
-  background-image: none;
-  background-color: transparent;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    'header'
+    'pet-items';
+  background-color: tan;
+  width: 100%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .adopted-pet-list-heading {
-    text-align: center;
-    height: 35vh;
-    background-image: url("../images/second-chance-2.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: transparent;
+  grid-area: header;
+  width: 100%;
+  height: 100%;
+}
+
+.adopted-pet-list-heading h1 {
+  font-size: 50px;
+  color: red;
+}
+
+.adopted-pet-list-heading img {
+  border-radius: 25px;
+}
+
+.adopted-pet-list-item-container {
+  grid-area: pet-items;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  text-align: center;
+  justify-items: center;
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 .adopted-pet {
   border-radius: 25px;
   background-color: tan;
-  width: 400px;
-  padding: 10px 5px;
-  margin: 0px;
-  justify-items: center;
+  padding: 5px 5px;
+  margin: 5px;
 }
 
 .adopted-pet-name {
-    text-align: left;
+  text-align: left;
 }
 
 .adopted-pet-adopter {
-    text-align: left;
+  text-align: left;
 }
 
 .adopted-pet-gotcha-day {
-    text-align: left;
+  text-align: left;
 }
 
 .adopted-pet img {
-    height: 240px;
-    width: 360px;
-    border-radius: 5%;
+  height: 240px;
+  width: 360px;
+  border-radius: 5%;
 }
 
 .adopted-pet-text-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.adopted-pet-text-box p {
+  font-size: 12px;
+  font-weight: bolder;
+  margin: 5%;
+}
+
+.adopted-pet-gotcha-day {
+    justify-self: right;
+}
+
+#detailLink:hover {
+  color: blue;
+}
+
+#detailLink {
+  color: antiquewhite;
+  font-weight: bolder;
 }
 
 </style>

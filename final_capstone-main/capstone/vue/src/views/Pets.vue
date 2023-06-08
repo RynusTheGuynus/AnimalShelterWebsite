@@ -57,8 +57,6 @@ export default {
 
 .pet-list {
   grid-area: pet-list;
-  overflow-y: wrap;
-  padding-right: 0;
   max-width: 100%;
 }
 
