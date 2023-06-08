@@ -7,7 +7,7 @@
         </figure>
         <div class="about-photo-text-paragraph-container">
             <div id="aboutText">
-                <h1 class="about-photo-text-paragraph-header">About Rising Sun</h1>
+                <h1 class="about-photo-text-paragraph-header">ABOUT RISING SUN</h1>
 
                 <p>Welcome to Rising Sun Animal Shelter! We are a compassionate haven dedicated to 
                 providing shelter, veterinary care, and enrichment to animals in need. Our mission 

@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <h3 id="eventHeader">Upcoming Events!</h3>
+    <h3 id="eventHeader">UPCOMING EVENTS</h3>
     <ul id="eventList">
      <p>Friday, June 9th, 2023: Graduation ceremony for Tech Elevator's NLR-13 Cohort!</p>
      <p>Sunday, June 11th, 2023: Shelter closed to the general public.</p>
@@ -34,10 +34,24 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 32px;
+  color: #EEE6DB;
+  text-align: center;
+  font-weight: bold;
 }
 
 #eventList {
   display: flex;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  color: #EEE6DB;
+  text-align: center;
+  font-weight: bold;
   flex-direction: column;
   justify-content: left;
   margin-left: 20px;

@@ -102,7 +102,7 @@ export default {
 
 .available-pet-list-heading h1 {
   font-size: 50px;
-  color: red;
+  color: antiquewhite;
 }
 
 .available-pet-list-heading h3 {
@@ -116,7 +116,7 @@ export default {
 .available-pet-search {
   text-align: left;
   margin-bottom: 1%;
-  margin-left: 13.5%;
+  margin-left: 15%;
   justify-self: left;
 }
 

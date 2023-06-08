@@ -41,8 +41,8 @@ img {
     width: 50vw;
     justify-items: center;
     margin-top: -5vh;
-    margin-left: 5vw;
-    font-size: 24px;
+    margin-left: -20vw;
+    font-size: 50px;
     color: antiquewhite;
     text-shadow: -1px -1px 0 #dc9d4e, 1px -1px 0 #dc9d4e, -1px 1px 0 #dc9d4e, 1px 1px 0 #898686;
 

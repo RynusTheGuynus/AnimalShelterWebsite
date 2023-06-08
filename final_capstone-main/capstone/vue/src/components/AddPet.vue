@@ -117,7 +117,7 @@
             placeholder="bob1, charley2, etc."
             v-model="addPetDTO.petImageDTOOne.imageName"
         /> <image-upload v-model="addPetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
-        <br>
+        <br><br><br>
         <label for="add-pet-image-2-name" class="add-pet-input-label">Second image name: </label>
         <br>
         <input
@@ -127,7 +127,7 @@
             placeholder="bob1, charley2, etc."
             v-model="addPetDTO.petImageDTOTwo.imageName"
         /> <image-upload v-model="addPetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
-        <br>
+        <br><br><br>
         <label for="add-pet-image-3-name" class="add-pet-input-label">Third image name: </label>
         <br>
         <input
@@ -137,7 +137,7 @@
             placeholder="bob1, charley2, etc."
             v-model="addPetDTO.petImageDTOThree.imageName"
         /> <image-upload v-model="addPetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
-        <br>
+        <br><br><br>
         <button id="submit-button" class="button" type="submit">
             Submit
         </button>
@@ -229,6 +229,7 @@ export default {
     background-color: #f1f1f1;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
   }
 
   .add-pet-heading {
@@ -252,7 +253,7 @@ export default {
     display: block;
     width: 80%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     border-radius: 4px;
     border: 1px solid #ccc;
   }

@@ -1,36 +1,45 @@
 <template>
-  <div id="login" class="text-center">
+  <div id="login-container" class="text-center">
     <shelter-header class="shelter-header" />
     <navigation-bar id='navigationBar' />
-    <form class="form-signin" @submit.prevent="login">
-      <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
-      <div
-        class="alert alert-danger"
-        role="alert"
-        v-if="invalidCredentials"
-      >Invalid username and password!</div>
-      <label for="username" class="sr-only">Username</label>
-      <input
-        type="text"
-        id="username"
-        class="form-control"
-        placeholder="Username"
-        v-model="user.username"
-        required
-        autofocus
-      />
-      <label for="password" class="sr-only">Password</label>
-      <input
-        type="password"
-        id="password"
-        class="form-control"
-        placeholder="Password"
-        v-model="user.password"
-        required
-      />
-      <router-link :to="{ name: 'register' }">Interested in becoming a volunteer? Apply here!</router-link>
-      <button class="loginBtn" type="submit">Sign in</button>
-    </form>
+    <div class="login-item-container">
+      <form class="form-signin" @submit.prevent="login">
+        <h1 class="login-header h3 mb-3 font-weight-normal">Please Sign In</h1>
+        <div
+          class="alert alert-danger"
+          role="alert"
+          v-if="invalidCredentials"
+        >Invalid username and password!</div>
+        <div>
+          <label for="username" class="sr-only">Username</label>
+          <input
+            type="text"
+            id="username"
+            class="form-control"
+            placeholder="Username"
+            v-model="user.username"
+            required
+            autofocus
+          />
+        </div>
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            placeholder="Password"
+            v-model="user.password"
+            required
+          />
+        </div>
+        <button class="login-button" type="submit">Sign in</button>
+        <br>
+        <br>
+        <router-link class="application-link" :to="{ name: 'register' }">Interested in becoming a volunteer? Apply here!</router-link>
+      </form>
+      <img src="@/images/login2.jpg" alt="login image" />
+    </div>
     <shelter-footer id="footer" />
   </div>
 </template>
@@ -104,14 +113,24 @@ export default {
 
 <style>
 
-#login {
+#login-container {
   background-color: tan;
-  max-width: 100vw;
+  max-width: 97.3vw;
   padding-right: -8px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 #shelterHeader {
  grid-area: shelterHead;
+}
+
+.login-item-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.login-item-container img {
+  width: 100%;
 }
 
 .form-control {
@@ -119,6 +138,24 @@ export default {
   margin-right: 10px;
   margin-bottom: 50px;
   background-color: lightgrey;
+}
+
+.login-header {
+  margin-left: .7%;
+}
+
+.form-signin {
+  margin-left: 30%;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.login-button {
+  margin-left: 1.6%;
+}
+
+.application-link {
+  margin-left: 1.6%;
 }
 
 .sr-only {
@@ -130,7 +167,7 @@ export default {
   justify-content: space-evenly;
   background-color: #3a4143;
   color: antiquewhite;
-  max-width: 100vw;
+  max-width: 100%;
   border: 3px solid #a36c2c;
 }
 

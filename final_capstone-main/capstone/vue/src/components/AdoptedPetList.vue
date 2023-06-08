@@ -8,7 +8,7 @@
       <div class="adopted-pet" v-for="pet in adoptedPets" :key="pet.id">
         <div class="adopted-pet-text-box">
             <p class="adopted-pet-name">
-                {{ pet.pet_name }}
+                {{ pet.pet_name.toUpperCase() }}
             </p>
             <p class="adopted-pet-gotcha-day">
                 {{ formatDate(pet.adoption_date) }}
@@ -88,7 +88,7 @@ export default {
 
 .adopted-pet-list-heading h1 {
   font-size: 50px;
-  color: red;
+  color: antiquewhite;
 }
 
 .adopted-pet-list-heading img {
