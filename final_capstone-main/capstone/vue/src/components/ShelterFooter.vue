@@ -68,7 +68,12 @@ div {
   border: 3px solid #a36c2c;
   justify-content: center;
   padding: 20px;
+<<<<<<< HEAD
   width: 100vw;
+=======
+  width: 100%;
+  margin-top:100px;
+>>>>>>> main
   bottom: 0; 
 }
 
