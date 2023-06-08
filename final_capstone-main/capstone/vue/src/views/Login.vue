@@ -1,6 +1,6 @@
 <template>
   <div id="login" class="text-center">
-    <shelter-header id="header" />
+    <shelter-header class="shelter-header" />
     <navigation-bar id='navigationBar' />
     <form class="form-signin" @submit.prevent="login">
       <h1 class="h3 mb-3 font-weight-normal">Please Sign In</h1>
@@ -111,10 +111,8 @@ export default {
   padding-right: -8px;
 }
 
-#header {
-  margin-top: -3px;
-  margin-left: -2px;
-  margin-right: 1px;
+#shelterHeader {
+ grid-area: shelterHead;
 }
 
 .form-control {
@@ -133,9 +131,8 @@ export default {
   justify-content: space-evenly;
   background-color: #3a4143;
   color: antiquewhite;
-  margin-left: -2px;
-  margin-right: -5px;
-  margin-bottom: -3px;
+  max-width: 100%;
+
 }
 
 
