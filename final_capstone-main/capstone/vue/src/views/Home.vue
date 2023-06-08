@@ -4,7 +4,7 @@
     <p class="alert alert-failure" role="alert" v-if="$route.query.loggedIn">You have not yet been approved by an Admin.</p>     
     <div class="grid">         
       <div id="shelterHeader">
-        <shelter-header />
+        <shelter-header class="shelter-header" />
       </div>
       <navigation-bar id="navigationBar"/>
      
@@ -70,11 +70,6 @@ export default {
 
 #shelterHeader {
   grid-area: shelterHead;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: antiquewhite;
-  width: 100%;
 }
 
 .pet-container {
