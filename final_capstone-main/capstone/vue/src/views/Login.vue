@@ -115,7 +115,7 @@ export default {
 
 #login-container {
   background-color: tan;
-  max-width: 97.3vw;
+  max-width: 100vw;
   padding-right: -8px;
   font-family: Arial, Helvetica, sans-serif;
 }

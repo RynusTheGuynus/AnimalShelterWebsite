@@ -1,5 +1,6 @@
 <template>
   <div class="change-password">
+    <div id="change-password-container">
     <h1 class="password-header">Change Password</h1>
     <form id="changePasswordForm" @submit.prevent="changePassword">
       <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
@@ -18,6 +19,8 @@
       <br>
       <button type="submit">Change Password</button>
     </form>
+    </div>
+    <img id="password-dog" src="@/images/password-dog.png" alt="change password image" />
   </div>
 </template>
 
@@ -72,16 +75,31 @@ export default {
 <style scoped>
 
 .change-password {
-  width: 100vw;
+  width: 100%;
   max-width: 100vw;
   font-family: Helvetica, Arial, sans-serif;
   margin: 0 auto;
-  padding: 20px;
   background-image: linear-gradient(to right, tan, #F1ECE4);
   border: 1px solid #ccc;
   border-radius: 4px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: 
+  "passwordContainer passwordDog";
+  overflow-x:hidden;
+}
+#change-password-container {
+  width: 100%;
+  grid-area: passwordContainer;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#password-dog {
+  grid-area: passwordDog;
+  height: 100%;
   
 }
 
@@ -142,7 +160,4 @@ button[type="submit"]:hover {
   border: 1px solid #c3e6cb;
 }
 
-#changePasswordForm {
-  margin-left: 30px;
-}
 </style>
