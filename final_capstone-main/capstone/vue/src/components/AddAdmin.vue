@@ -19,7 +19,7 @@
           <td>{{ user.last_name }}</td>
           <td>{{ user.email_address }}</td>
           <td>{{ user.phone_number }}</td>
-          <td><button v-on:click="addAdmin(user.user_id)">Promote to Admin</button></td>
+          <td><button id="approveAdminBtn" v-on:click="addAdmin(user.user_id)">Promote to Admin</button></td>
         </tr>
       </tbody>
     </table>
@@ -92,8 +92,10 @@ tbody tr:nth-child(even) {
 }
 
 #volunteerTable {
-    width: 100%;
+    width: 98%;
     border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #volunteerTable th, #volunteerTable td {
@@ -108,5 +110,13 @@ button {
 
 #volunteerContainer > h2 {
     color: black;
+}
+
+#approveAdminBtn {
+    background-color:limegreen;
+}
+
+#approveAdminBtn:hover {
+    background-color: darkgreen;
 }
 </style>

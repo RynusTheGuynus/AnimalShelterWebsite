@@ -24,7 +24,9 @@ export default {
   
 };
 </script>
+<style scoped>
 
+<<<<<<< HEAD
 <style scoped>
 
 #footer {
@@ -34,3 +36,6 @@ export default {
 
 </style>
 
+=======
+</style>
+>>>>>>> main

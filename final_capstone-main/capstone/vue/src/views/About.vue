@@ -1,16 +1,16 @@
 <template>
-  <div class="layout">
-    <shelter-header id='shelterHeader' />
-    <navigation-bar id='navigationBar' />
-    <about-component id="about" />
-    <shelter-footer id='shelterFooter'/>
+  <div class="about-container">
+    <shelter-header class='shelter-header' />
+    <navigation-bar class='navigation-bar' />
+    <about-shelter class='about-shelter' />
+    <shelter-footer class='shelter-footer'/>
   </div>
 </template>
 
 <script>
 
 import ShelterHeader from '../components/ShelterHeader.vue'
-import AboutComponent from '../components/AboutComponent.vue'
+import AboutShelter from '../components/AboutShelter.vue'
 import ShelterFooter from '../components/ShelterFooter.vue'
 import NavigationBar from '../components/NavigationBar.vue'
 
@@ -18,13 +18,14 @@ export default {
   name: "about",
   components: { 
     ShelterHeader,
-    AboutComponent,
+    AboutShelter,
     NavigationBar,
     ShelterFooter,
   }
 }
 </script>
 
+<<<<<<< HEAD
 <style scoped>
 
 #layout {
@@ -77,5 +78,8 @@ img {
   grid-area: shelterFoot;
   
 }
+=======
+<style>
+>>>>>>> main
 
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input type="text" placeholder="Search pets..." v-model="searchQuery" @input="searchPets" />
+    <input type="text" placeholder="Filter pets by 'cat' or 'dog'" v-model="searchQuery" @input="searchPets" />
   </div>
 </template>
 
@@ -20,5 +20,13 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+
+input {
+  margin-left: 12%;
+  padding: 10px;
+  border-radius: .25em;
+  margin-top: 1%;
+}
+
 </style>
