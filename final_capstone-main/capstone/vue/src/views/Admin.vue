@@ -11,13 +11,8 @@
       
       <add-admin id="addAdmin" v-if="isAuthorized"/>
       <p v-else>You are not authorized to view this page.</p>
-<<<<<<< HEAD
-      
-      <shelter-footer id="footer" />
-=======
       </div>
       <shelter-footer/>
->>>>>>> main
   </div>
 </template>
 
@@ -65,10 +60,6 @@ export default {
     
 
 <style scoped>
-<<<<<<< HEAD
-
-=======
->>>>>>> main
 #approvePending {
   margin-top: 100px;
   margin-left: auto;
@@ -80,14 +71,8 @@ export default {
   color: black;
 }
 
-<<<<<<< HEAD
-#footer {
-  background-color: #3a4143;
-  color: antiquewhite;
-=======
 #adminContent {
   font-family: "Verdana", "Helvetica", sans-serif;
->>>>>>> main
 }
 
 </style>

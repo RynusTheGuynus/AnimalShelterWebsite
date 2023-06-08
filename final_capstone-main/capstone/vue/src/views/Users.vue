@@ -26,16 +26,4 @@ export default {
 </script>
 <style scoped>
 
-<<<<<<< HEAD
-<style scoped>
-
-#footer {
-  background-color: #3a4143;
-  color: antiquewhite;
-}
-
 </style>
-
-=======
-</style>
->>>>>>> main

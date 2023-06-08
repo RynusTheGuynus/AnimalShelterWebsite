@@ -102,10 +102,10 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 
 #login {
-  background-color: #dc9d4e;
+  background-color: tan;
   border: 3px solid #a36c2c;
   max-width: 97.3vw;
   padding-right: -8px;
@@ -129,11 +129,8 @@ export default {
 }
 
 #footer {
-<<<<<<< HEAD
-=======
   display: flex;
   justify-content: space-evenly;
->>>>>>> main
   background-color: #3a4143;
   color: antiquewhite;
   margin-left: -2px;

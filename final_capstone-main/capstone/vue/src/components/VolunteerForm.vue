@@ -114,7 +114,7 @@ export default {
         lastName: '',
         emailAddress: '',
         phoneNumber: '',
-        age: 0,
+        age: undefined,
         emergencyFirstName: '',
         emergencyLastName: '',
         emergencyPhone: '',
