@@ -131,6 +131,7 @@ export default {
   justify-items: center;
   width: 80%;
   margin-left: 10%;
+  margin-bottom: 3%;
 }
 
 h1 {

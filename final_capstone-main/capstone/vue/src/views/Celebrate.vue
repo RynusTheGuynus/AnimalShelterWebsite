@@ -26,21 +26,7 @@ export default {
 </script>
 
 <style scoped>
-/* #celebrate {
-  display: flex;
-  flex-direction: column;
-}
 
-.adopted {
-  margin-top: -118px;
-  margin-bottom: 2px;
-  max-width: 97vw;
-  border: 3px solid #a36c2c;
-} */
-
-.shelterFooter {
-  /* max-width: 98vw; */
-}
 
 h1 {
   color: black;

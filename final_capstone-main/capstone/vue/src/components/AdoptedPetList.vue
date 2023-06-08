@@ -1,7 +1,6 @@
 <template>
   <div class="adopted-pet-list-container">
-      <h1 class="adopted-pet-list-heading">
-      </h1>
+      <h1 class="adopted-pet-list-heading"></h1>
       <div class="adopted-pet-list-item-container">
         <div 
         class="adopted-pet"
@@ -72,6 +71,7 @@ export default {
 .adopted-pet-list-container {
     background-color: tan;
     width: 100%;
+    height: 100%;
 }
 
 .adopted-pet-list-item-container {
@@ -83,9 +83,9 @@ export default {
     height: 100%;
     width: 80%;
     gap: 10px;
-    margin: 20px 1px;
+    /* margin: 20px 1px; */
     text-align: center;
-    margin-left: 7%;
+    margin-left: 11%;
 }
 
 h1 {
@@ -95,14 +95,12 @@ h1 {
 
 .adopted-pet-list-heading {
     text-align: center;
-    margin: 20px;
     height: 35vh;
     /* grid-area: header; */
     background-image: url("../images/second-chance-2.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-color: transparent;
-    border-radius: 25px;
     /* height: 10vh; */
 }
 
@@ -111,7 +109,7 @@ h1 {
   background-color: tan;
   width: 400px;
   padding: 10px 5px;
-  margin: 20px;
+  margin: 0px;
   justify-items: center;
   /* grid-area: adopted-pet; */
 }
