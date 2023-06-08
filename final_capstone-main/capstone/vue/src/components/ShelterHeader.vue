@@ -16,7 +16,7 @@ export default {
 <style>
 
 #shelterHead {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+ font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 19.5vh;
@@ -26,7 +26,7 @@ export default {
   align-items: center;
   background-image: url('../images/shelterbanner3.png');
   background-repeat: no-repeat;
-  background-size: 138%;
+  background-size: cover;
   background-clip: content-box;
 }
 
