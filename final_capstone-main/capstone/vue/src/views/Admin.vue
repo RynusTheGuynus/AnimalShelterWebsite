@@ -60,6 +60,7 @@ export default {
     
 
 <style scoped>
+
 #approvePending {
   margin-top: 100px;
   margin-left: auto;
@@ -72,7 +73,14 @@ export default {
 }
 
 #adminContent {
-  font-family: "Verdana", "Helvetica", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+#addAdmin {
+  margin-top: 8%;
+  margin-bottom: 6%;
 }
 
 </style>

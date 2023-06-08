@@ -13,11 +13,11 @@
   </tr>
   <tr class="detailsRow">
     <th>Species</th>
-    <td>{{this.pet.species}}</td>
+    <td>{{this.pet.species.toUpperCase()}}</td>
   </tr>
   <tr class="detailsRow">
     <th>Breed</th>
-    <td>{{this.pet.breed}}</td>
+    <td>{{this.pet.breed.toUpperCase()}}</td>
   </tr>
   <tr class="detailsRow">
     <th>Weight</th>
@@ -25,7 +25,7 @@
   </tr>
   <tr class="detailsRow">
     <th>Gender</th>
-    <td>{{this.pet.gender}}</td>
+    <td>{{this.pet.gender.toUpperCase()}}</td>
   </tr>
 </table>
 </div>

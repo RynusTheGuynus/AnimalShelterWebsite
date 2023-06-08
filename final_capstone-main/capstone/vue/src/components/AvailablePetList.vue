@@ -5,19 +5,19 @@
       <h1>PETS</h1>
       <h3>CURRENTLY AVAILABLE FOR ADOPTION</h3>
     </div>
-    <div class="search">
-      <SearchPet :availablePets="availablePets" @search="handleSearch" />
+    <div class="available-pet-search">
+      <SearchPet id="available-pet-search-bar" :availablePets="availablePets" @search="handleSearch" />
     </div>
     <div class="available-pet-list-item-container">
       <div class="available-pet" v-for="pet in filteredPets" :key="pet.id">
         <div class="available-pet-text-box">
-          <h2 class="available-pet-name">{{ pet.pet_name }}</h2>
-          <p class="available-pet-species">Species: {{ pet.species }}</p>
-          <p class="available-pet-breed">Breed: {{ pet.breed }}</p>
-          <p class="available-pet-age">Age: {{ pet.age }}</p>
+          <p class="available-pet-name">{{ pet.pet_name }}</p>
+          <p class="available-pet-species">SPECIES: {{ pet.species }}</p>
+          <p class="available-pet-breed">{{ pet.breed }}</p>
+          <p class="available-pet-age">AGE: {{ pet.age }}</p>
+          <!-- <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link> -->
         </div>
-        <img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /> <br>
-        <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link>
+        <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }"><img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /></router-link> <br>
       </div>
     </div>
   </div>
@@ -45,9 +45,9 @@ export default {
           this.availablePets = response.data.map((pet) => {
             return {
               pet_id: pet.petId,
-              pet_name: pet.petName,
-              species: pet.species,
-              breed: pet.breed,
+              pet_name: pet.petName.toUpperCase(),
+              species: pet.species.toUpperCase(),
+              breed: pet.breed.toUpperCase(),
               age: pet.age,
               image_path: pet.imagePath
             };
@@ -113,8 +113,10 @@ export default {
   border-radius: 25px;
 }
 
-.search {
+.available-pet-search {
   text-align: left;
+  margin-bottom: 1%;
+  margin-left: 10.5%;
   justify-self: left;
 }
 
@@ -125,8 +127,10 @@ export default {
   grid-template-rows: auto;
   height: 50%;
   gap: 10px;
-  justify-items: center;
   text-align: center;
+  justify-items: center;
+  width: 80%;
+  margin-left: 10%;
 }
 
 h1 {
@@ -171,15 +175,29 @@ h1 {
 }
 
 .available-pet-text-box {
-  display: inline-block;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 3%;
+  width: 100%;;
 }
 
+.available-pet-text-box p {
+  font-size: 12px;
+  font-weight: bolder;
+  margin: 5%;
+}
+
+/* .available-pet-text-box {
+  display: inline-block;
+} */
+
 #detailLink:hover {
-  color: white;
+  color: blue;
 }
 
 #detailLink {
-  color: blue;
+  color: antiquewhite;
+  font-weight: bolder;
 }
 
 </style>

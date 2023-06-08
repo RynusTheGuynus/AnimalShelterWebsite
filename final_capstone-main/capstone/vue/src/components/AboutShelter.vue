@@ -75,16 +75,16 @@
             <img id="adam-headshot" src="@/images/adamheadshot.jpg" alt="member photo" />
         </div>
         <div class="about-shelter-meet-team-member-photo-container-left">
-            <img src="@/images/placeholder-image.jpg" alt="member photo" />
+            <img id="riley-headshot" src="@/images/rileyheadshot.jpg" alt="member photo" />
         </div>
         <div class="about-shelter-meet-team-member-text-container-right">
             <h3>MEET RILEY - VOLUNTEER</h3>
             <div class="about-shelter-meet-team-member-text-container">
                 <p>
-                    placeholder
+                    They are a resilient animal shelter volunteer who defied the odds after surviving a skydiving accident, finding solace and purpose in caring for shelter animals. In their free time, they selflessly devote themselves to looking after their beloved grandma, providing her with unwavering love and support. Inspired by their own journey of resilience, they channel their passion for animals into creating a positive impact at the shelter.
                 </p>
                 <p>
-                    placeholder
+                    Whether it's feeding, exercising, or simply showering them with affection, they are committed to ensuring the well-being and happiness of every furry friend they encounter. Through their experiences, they have come to appreciate the healing power of animals and the importance of compassionate care. Join them in this meaningful endeavor as together, we give these innocent creatures a second chance at a joyful life.
                 </p>
             </div>
         </div>
@@ -224,6 +224,10 @@ figcaption {
 
 #john-headshot {
     height: 25vh;
+}
+
+#riley-headshot {
+    height: 30vh;
 }
 
 </style>
