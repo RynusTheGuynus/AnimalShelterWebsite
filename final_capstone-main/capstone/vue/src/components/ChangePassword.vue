@@ -77,7 +77,7 @@ export default {
   font-family: Helvetica, Arial, sans-serif;
   margin: 0 auto;
   padding: 20px;
-  background-color: #C4AC95;
+  background-image: linear-gradient(to right, tan, #F1ECE4);
   border: 1px solid #ccc;
   border-radius: 4px;
   display: flex;
