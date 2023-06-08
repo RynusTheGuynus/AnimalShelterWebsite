@@ -11,7 +11,7 @@
         <li v-if="$store.state.token !== ''" class="admin-link"><router-link :to="{ name: 'update' }" class="router-link">Add/Update Pets</router-link></li>
         <li v-if="$store.state.token !== ''" class="admin-link"><router-link :to="{ name: 'users' }" class="router-link">Volunteer Directory</router-link></li>
         <li v-if="$store.state.token === ''"><router-link :to="{ name: 'login' }" class="router-link">Volunteer Login</router-link></li>
-        <li v-if="$store.state.token !== ''"><router-link :to="{ name: 'logout' }" class="router-link">Volunteer Logout</router-link></li>
+        <li v-if="$store.state.token !== ''"><router-link :to="{ name: 'logout' }" class="router-link">Logout</router-link></li>
       </ul>
     </nav>
   </div>

@@ -7,48 +7,64 @@
     <div class="adopted-pet-list-item-container">
       <div class="adopted-pet" v-for="pet in adoptedPets" :key="pet.id">
         <div class="adopted-pet-text-box">
-          <p class="adopted-pet-name">{{ pet.pet_name }}</p>
-          <p class="adopted-pet-adopter">Adopter: {{ pet.owner_name }}</p>
-          <p class="adopted-pet-gotcha-day">"Gotcha" day: {{ pet.adoption_date }}</p>
+            <p class="adopted-pet-name">
+                {{ pet.pet_name }}
+            </p>
+            <p class="adopted-pet-gotcha-day">
+                {{ formatDate(pet.adoption_date) }}
+            </p>
         </div>
-        <img class="adopted-pet-image" :src="pet.image_path" alt="Pet Image" />
+            <img class="adopted-pet-image" :src="pet.image_path" alt="Pet Image" /> 
+        </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
 import PetService from '../services/PetService.js';
 
 export default {
-  name: 'AdoptedPetList',
-  data() {
-    return {
-      adoptedPets: [],
-    };
-  },
-  methods: {
-    getAdoptedPets() {
-      PetService.getAdoptedPets()
-        .then((response) => {
-          this.adoptedPets = response.data.map((pet) => {
-            return {
-              pet_name: pet.petName.toUpperCase(),
-              owner_name: pet.ownerName,
-              adoption_date: pet.adoptionDate,
-              image_path: pet.imagePath
-            };
-          });
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+    name: 'AdoptedPetList',
+    data() {
+        return {
+            adoptedPets: [],
+
+        }
     },
-  },
+    methods: {
+        getAdoptedPets() {
+            PetService.getAdoptedPets()
+                .then((response) => {
+                    this.adoptedPets = response.data.map((pet) => {
+                        return {
+                            pet_name: pet.petName,
+                            owner_name: pet.ownerName,
+                            adoption_date: pet.adoptionDate,
+                            image_path: pet.imagePath
+                        };
+                    });
+                }).catch((error) => {
+                    console.log(error);
+                });
+        }, 
+        formatDate(date) {
+            const newDate = new Date(date);
+            const month = String(newDate.getMonth() + 1)
+            const day = String(newDate.getDate())
+            const year = newDate.getFullYear();
+            return `${month}-${day}-${year}`;
+        },
+    },
+    computed: {
+
+    },
+    watch: {
+
+    },
   created() {
     this.getAdoptedPets();
   },
-};
+}
 </script>
 
 <style scoped>
@@ -118,7 +134,6 @@ export default {
 .adopted-pet-text-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-left: 3%;
   width: 100%;
 }
 
@@ -126,6 +141,10 @@ export default {
   font-size: 12px;
   font-weight: bolder;
   margin: 5%;
+}
+
+.adopted-pet-gotcha-day {
+    justify-self: right;
 }
 
 #detailLink:hover {
@@ -136,4 +155,5 @@ export default {
   color: antiquewhite;
   font-weight: bolder;
 }
+
 </style>

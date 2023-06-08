@@ -116,7 +116,7 @@ export default {
 .available-pet-search {
   text-align: left;
   margin-bottom: 1%;
-  margin-left: 10.5%;
+  margin-left: 13.5%;
   justify-self: left;
 }
 
@@ -136,12 +136,6 @@ h1 {
   background-image: none;
   background-color: transparent;
 }
-
-/* .available-pet-list-heading {
-  text-align: center;
-  margin: 20px;
-  height: 2vh;
-} */
 
 .available-pet {
   border-radius: 25px;
@@ -186,10 +180,6 @@ h1 {
   font-weight: bolder;
   margin: 5%;
 }
-
-/* .available-pet-text-box {
-  display: inline-block;
-} */
 
 #detailLink:hover {
   color: blue;
