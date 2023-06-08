@@ -1,6 +1,5 @@
 <template>
-  <div class="layout">
-    <!-- <h1 id="about-us-header">About Rising Sun</h1> -->
+  <div class="about-shelter-container">
     <div class="about-photo-text-container">
         <figure id="aerialPhoto">
             <img id="overhead" src="../images/risingsunaerial.png" alt="aerial photo"/>
@@ -35,6 +34,61 @@
         </div>
     </div>
     </div>
+    <div class="about-shelter-meet-team-container">
+        <div class="about-shelter-meet-team-member-text-container-left">
+            <h3>MEET JOHN - SHELTER MANAGER</h3>
+            <div class="about-shelter-meet-team-member-text-container">
+                <p>
+                    John emerged from the dark heart of the forest to volunteer at Rising Sun. He has logged considerable time in our Kitten Pen, and from there plots world domination by crushing any who would oppose him. He spends his off days creating CSS code professionally, and Java unprofessionally.
+                </p>
+            </div>
+        </div>
+        <div class="about-shelter-meet-team-member-photo-container-right">
+            <img id="john-headshot" src="@/images/johnheadshot.png" alt="member photo" />
+        </div>
+        <div class="about-shelter-meet-team-member-photo-container-left">
+            <img id="jarrod-headshot" src="@/images/jarrodheadshot.png" alt="member photo" />
+        </div>
+        <div class="about-shelter-meet-team-member-text-container-right">
+            <h3>MEET JARROD - VOLUNTEER</h3>
+            <div class="about-shelter-meet-team-member-text-container">
+                <p>
+                    They are a passionate animal shelter volunteer dedicated to making a difference, promoting animal welfare, and providing lov and care to furry friends. They happen to be an incredible, absolutely gifted Software Developer in their spare time. As the proud owner of a lovable German Shepherd companion, their commitment to ensuring the well-being and happiness of animals in need is fueled by a heart full of compassion. From diligently walking shelter dogs to organizing adoption events, their goal is to establish a nurturing environment where every pet feels safe and cherished.
+                </p>
+                <p>
+                    Their German Shepherd has taught them invaluable lessons about loyalty and unconditional love, serving as an inspiration to extend kindness to other animals in need. Together, they tirelessly work to advocate for animal rights and raise awareness about responsible pet ownership. Join them on this meaningful journey and together, let's make a lasting difference, one wagging tail at a time.
+                </p>
+            </div>
+        </div>
+        <div class="about-shelter-meet-team-member-text-container-left">
+            <h3>MEET ADAM - VOLUNTEER</h3>
+            <div class="about-shelter-meet-team-member-text-container">
+                <p>
+                    Intrepid animal shelter volunteer who embarks on unforgettable journeys throughout the Amazon, accompanied by his beloved pet panda, Paul. Driven by a deep love for animals and a thirst for exploration, I find solace in the enchanting rainforests of the Amazon while advocating for the welfare of its diverse wildlife.
+                </p>
+                <p>
+                    Together with Paul, we venture into remote areas, lending a helping hand to local animal shelters and fostering a greater understanding of the unique challenges faced by the region's inhabitants. Through our travels, we aim to promote conservation efforts and shed light on the incredible beauty and fragility of this precious ecosystem. Join us as we navigate the lush jungles, protect endangered species, and make a lasting impact on the lives of Amazonian animals.
+                </p>
+            </div>
+        </div>
+        <div class="about-shelter-meet-team-member-photo-container-right">
+            <img id="adam-headshot" src="@/images/adamheadshot.jpg" alt="member photo" />
+        </div>
+        <div class="about-shelter-meet-team-member-photo-container-left">
+            <img src="@/images/placeholder-image.jpg" alt="member photo" />
+        </div>
+        <div class="about-shelter-meet-team-member-text-container-right">
+            <h3>MEET RILEY - VOLUNTEER</h3>
+            <div class="about-shelter-meet-team-member-text-container">
+                <p>
+                    placeholder
+                </p>
+                <p>
+                    placeholder
+                </p>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 
@@ -47,7 +101,9 @@ export default {
 
 <style>
 
-.layout {
+.about-shelter-container {
+    display: grid;
+    grid-template-columns: 1fr;
     background-color: tan;
     justify-content: center; 
     text-align: center;
@@ -112,9 +168,62 @@ figcaption {
 
 #aboutText {
     justify-content: center;
-    font-size: 14px;
+    font-size: 15px;
     width: 100%;
     text-align: left;
+}
+
+.about-shelter-meet-team-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2%;
+}
+
+.about-shelter-meet-team-member-photo-container-left img {
+    width: 30vw;
+    margin-left: -8%;
+    border-radius: 50%;
+}
+
+.about-shelter-meet-team-member-photo-container-right img {
+    width: 30vw;
+    margin-right: -8%; 
+    border-radius: 50%;
+    margin-bottom: 3%;
+}
+
+.about-shelter-meet-team-member-text-container-left {
+    text-align: center;
+    padding-top: 4%;
+    margin-left: 15%;
+}
+
+.about-shelter-meet-team-member-text-container-left h3{
+    text-align: left;
+}
+
+.about-shelter-meet-team-member-text-container-right {
+    text-align: center;
+    padding-top: 3%;
+    margin-right: 15%;
+    margin-bottom: 5%;
+}
+
+.about-shelter-meet-team-member-text-container-right h3 {
+    text-align: left;
+
+}
+
+.about-shelter-meet-team-member-text-container {
+    display: inline-block;
+}
+
+.about-shelter-meet-team-member-text-container p {
+    text-align: left;
+}
+
+#john-headshot {
+    height: 25vh;
 }
 
 </style>
