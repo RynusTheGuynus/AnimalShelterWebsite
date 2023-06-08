@@ -124,12 +124,15 @@ export default {
 }
 
 #applicationTable {
-    width: 100%;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
 }
 
 #applicationTable th, #applicationTable td {
     padding: 10px;
+    
   text-align: left;
   border-bottom: 1px solid #ccc;
 }
@@ -143,6 +146,7 @@ button {
 }
 
 #applicationContainer > h2 {
-    color: black;
+    color: #3A4143;
+    
 }
 </style>
