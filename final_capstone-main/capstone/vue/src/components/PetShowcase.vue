@@ -3,7 +3,7 @@
     <div class="pet-showcase">
       <div class="available-pet" v-if="currentPet" :key="currentPetIndex">
         <div class="available-pet-text-box">
-          <h2 class="available-pet-name">{{ currentPet.pet_name }}</h2>
+          <h2 class="available-pet-name">{{ currentPet.pet_name.toUpperCase() }}</h2>
         </div>
         <img class="available-pet-image" :src="currentPet.image_path" alt="Pet Image" />
       </div>

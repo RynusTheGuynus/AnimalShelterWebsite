@@ -159,37 +159,36 @@
         </div>
         <br>
         <div class="update-pet-image-container">
-          <!-- <h2 class="update-pet-image-container-heading">Image Upload</h2> -->
           <label for="update-pet-image-1-name" class="update-pet-input-label">First image name: </label>
           <br>
           <input
               type="text"
               id="update-pet-image-1-name"
-              class="update-pet-input"
+              class="update-pet-input update-pet-input-image-name"
               placeholder="bob1, charley2, etc."
               v-model="updatePetDTO.petImageDTOOne.imageName"
-          /> <image-upload v-model="updatePetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
-          <br>
+          /> <image-upload class="update-pet-input-image-upload-button" v-model="updatePetDTO.petImageDTOOne.imagePath" @image-uploaded="updatePetImageOne" />
+          <br><br><br>
           <label for="update-pet-image-2-name" class="update-pet-input-label">Second image name: </label>
           <br>
           <input
               type="text"
               id="update-pet-image-2-name"
-              class="update-pet-input"
+              class="update-pet-input update-pet-input-image-name"
               placeholder="bob1, charley2, etc."
               v-model="updatePetDTO.petImageDTOTwo.imageName"
-          /> <image-upload v-model="updatePetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
-          <br>
+          /> <image-upload class="update-pet-input-image-upload-button" v-model="updatePetDTO.petImageDTOTwo.imagePath" @image-uploaded="updatePetImageTwo" />
+          <br><br><br>
           <label for="update-pet-image-3-name" class="update-pet-input-label">Third image name: </label>
           <br>
           <input
               type="text"
               id="update-pet-image-3-name"
-              class="update-pet-input"
+              class="update-pet-input update-pet-input-image-name"
               placeholder="bob1, charley2, etc."
               v-model="updatePetDTO.petImageDTOThree.imageName"
-          /> <image-upload v-model="updatePetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
-          <br>
+          /> <image-upload class="update-pet-input-image-upload-button" v-model="updatePetDTO.petImageDTOThree.imagePath" @image-uploaded="updatePetImageThree" />
+          <br><br><br>
         </div>
         <button id="submit-button" class="button" type="submit">
             Submit
@@ -344,18 +343,13 @@ export default {
   background-color: #f1f1f1;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .update-pet-heading {
   font-size: 24px;
   text-align: center;
   margin-bottom: 20px;
-  /* background-image: url("../images/update3.png");
-  background-position-y: 40px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: transparent;
-  border-radius: 25px; */
 }
 
 .update-pet-select-pet {
@@ -376,6 +370,10 @@ export default {
   margin-top: 25px;
   border-radius: 4px;
   border: 1px solid #ccc;
+}
+
+.update-pet-input-image-name {
+  margin-bottom: 3%;
 }
 
 .button {

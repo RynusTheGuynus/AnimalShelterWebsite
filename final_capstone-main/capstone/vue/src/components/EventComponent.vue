@@ -1,6 +1,6 @@
 <template>
   <div id="events">
-    <h3 id="eventHeader">Upcoming Events!</h3>
+    <h3 id="eventHeader">UPCOMING EVENTS</h3>
     <ul id="eventList">
      <p>Friday, June 9th, 2023: Graduation ceremony for Tech Elevator's NLR-13 Cohort!</p>
      <p>Sunday, June 11th, 2023: Shelter closed to the general public.</p>

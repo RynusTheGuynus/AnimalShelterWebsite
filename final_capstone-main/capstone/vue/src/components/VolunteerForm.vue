@@ -88,7 +88,7 @@
         v-model="user.emergencyPhone"
         required        
       /> <br>
-      <router-link :to="{ name: 'login' }">Already a volunteer?</router-link> <br>
+      <router-link class="volunteer-login-link" :to="{ name: 'login' }">Already a volunteer?</router-link> <br>
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Submit Application
       </button>
@@ -152,6 +152,7 @@ export default {
 </script>
 
 <style>
+
 .form-control {
   margin-bottom: 10px;
   padding: 10px;
@@ -192,6 +193,12 @@ export default {
 .form-register {
   display: flex;
   flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+.volunteer-login-link {
+  margin-left: 3.2%;
 }
 
 label {
