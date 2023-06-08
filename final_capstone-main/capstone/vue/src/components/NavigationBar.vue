@@ -23,7 +23,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background-color: rgb(92, 59, 10);
+  background-color: #CC7700;
   padding: 5px 0;
   white-space: nowrap;
 }
@@ -44,6 +44,7 @@ li {
   -moz-osx-font-smoothing: grayscale;
   font-size: 16px;
   text-align: center;
+  font-weight: bold;
 }
 
 .router-link {
@@ -57,7 +58,7 @@ li {
 }
 
 .router-link:hover {
-  background-color: rgb(85, 85, 85);
+  background-color: #3a4143;
 }
 
 #navigationBar {
