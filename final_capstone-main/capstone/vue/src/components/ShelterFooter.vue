@@ -67,9 +67,6 @@ div {
   background-color: #3a4143;
   border: 3px solid #a36c2c;
   justify-content: center;
-  padding: 20px;
-  width: 100%;
-  /* margin-top:100px; */
   bottom: 0; 
 }
 

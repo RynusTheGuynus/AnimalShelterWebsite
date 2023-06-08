@@ -42,7 +42,6 @@ export default {
     getAvailablePets() {
       PetService.getAvailablePets()
         .then((response) => {
-          console.log('API Response:', response.data);
           this.availablePets = response.data.map((pet) => {
             return {
               pet_id: pet.petId,
@@ -53,7 +52,6 @@ export default {
               image_path: pet.imagePath
             };
           });
-          console.log('Available Pets:', this.availablePets);
         })
         .catch((error) => {
           console.log(error);
@@ -77,7 +75,6 @@ export default {
   },
   created() {
     this.getAvailablePets();
-    console.log('Available Pets (AvailablePetList): ', this.availablePets);
   },
 };
 </script>
@@ -126,11 +123,9 @@ export default {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
   height: 50%;
-  width: 80%;
   gap: 10px;
-  margin: 30px;
+
   text-align: center;
-  margin-left: 10%;
 }
 
 h1 {

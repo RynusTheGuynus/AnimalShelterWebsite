@@ -85,19 +85,19 @@ export default {
 .pet-showcase {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
-  height: 40vh;
+  overflow: hidden;
 }
 
 .available-pet {
   border-radius: 25px;
   background-color: tan;
-  width: 600px;
-  height: 90%;
+  max-width: 600px;
   padding: 5px 5px;
   margin: 5px;
   text-align: center;
+  
 }
 
 .available-pet-name {
@@ -112,8 +112,8 @@ export default {
 }
 
 .available-pet img {
-  height: 360px;
-  width: 540px;
+  height: auto;
+  width: 100%;
   border-radius: 5%;
   margin-top: 0px;
 }
