@@ -29,7 +29,7 @@
         required
       />
       <router-link :to="{ name: 'register' }">Interested in becoming a volunteer? Apply here!</router-link>
-      <button type="submit">Sign in</button>
+      <button class="loginBtn" type="submit">Sign in</button>
     </form>
     <shelter-footer id="footer" />
   </div>
@@ -138,6 +138,17 @@ export default {
   margin-bottom: -3px;
 }
 
-
+.loginBtn {
+  color: #fff;
+  background-color: #747474;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-left: 15px;
+}
+.loginBtn:hover {
+  background-color: #444444;
+}
 
 </style>
