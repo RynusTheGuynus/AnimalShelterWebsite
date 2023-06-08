@@ -3,7 +3,7 @@
     <shelter-header />
     <navigation-bar id='navigationBar' />
     <h1>Logout</h1>
-    <shelter-footer />
+    <shelter-footer id="footer" />
   </div>
 </template>
 
@@ -19,4 +19,14 @@ export default {
     this.$router.push("/");
   }
 };
+
 </script>
+
+<style scoped>
+
+#footer {
+  background-color: #3a4143;
+  color: antiquewhite;
+}
+
+</style>

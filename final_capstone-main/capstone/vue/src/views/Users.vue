@@ -3,7 +3,7 @@
     <shelter-header />
     <navigation-bar id='navigationBar' />
     <users-list/>
-    <shelter-footer />
+    <shelter-footer id="footer" />
   </div>
 </template>
 
@@ -24,4 +24,6 @@ export default {
   
 };
 </script>
+<style scoped>
 
+</style>

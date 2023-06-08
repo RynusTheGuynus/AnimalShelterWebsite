@@ -1,7 +1,7 @@
 <template>
   <div class="user-list-container">
       <input type="text" v-model="searchQuery" placeholder="Search users" @input="searchUsers" />
-    <h1 class="center-text">View All Users:</h1>
+    <h2 class="center-text">View All Users</h2>
     <table class="user-table">
       <thead>
         <tr>
@@ -72,12 +72,14 @@ export default {
 
 <style scoped>
 .user-list-container {
-  margin: 20px;
+  margin: 5px;
 }
 
 .user-table {
-  width: 100%;
+  width: 98%;
   border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .user-table th, .user-table td {

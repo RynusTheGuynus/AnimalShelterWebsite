@@ -114,7 +114,7 @@ export default {
         lastName: '',
         emailAddress: '',
         phoneNumber: '',
-        age: 0,
+        age: undefined,
         emergencyFirstName: '',
         emergencyLastName: '',
         emergencyPhone: '',
@@ -177,14 +177,14 @@ button:hover {
 }
 
 #register {
-  background-color: tan;
+  background-image: linear-gradient(to bottom, #DDCAB2, tan, #DDCAB2);
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
 
 #volunteerPhoto {
-  height: 450px;
+  height: 375px;
   border-radius: 5px;
   margin-bottom: 200px;
 }

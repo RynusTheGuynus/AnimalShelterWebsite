@@ -3,7 +3,7 @@
     <shelter-header />
     <navigation-bar id='navigationBar' />
     <volunteer-form/>
-    <shelter-footer/>
+    <shelter-footer id="footer" />
   </div>
 </template>
 
@@ -21,7 +21,11 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
+/* #footer {
+  background-color: #3a4143;
+  color: antiquewhite;
+} */
 
 </style>

@@ -24,7 +24,7 @@
           />
         </div>
       </div>
-      <shelter-footer />
+      <shelter-footer id="footer" />
   </div>
 </template>
 
@@ -109,6 +109,11 @@ export default {
   margin: 50px;
   border-radius: 5px;
   padding: 20px 38px;
+}
+
+#footer {
+  background-color: #3a4143;
+  color: antiquewhite;
 }
 
 </style>
