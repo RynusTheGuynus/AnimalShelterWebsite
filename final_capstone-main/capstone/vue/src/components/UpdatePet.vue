@@ -1,7 +1,7 @@
 <template>
   <div class="update-pet-container">
     <h1 class="update-pet-heading">
-          <!-- Update Current Shelter Pet's Information -->
+          Update Current Shelter Pet's Information
       </h1>
       <div class="update-pet-select-pet">
         <label for="update-pet-select-pet-menu" class="update-pet-input-label">Select a pet: </label>
@@ -339,7 +339,7 @@ export default {
 
 .update-pet-container {
   max-width: 40%;
-  margin: 0 auto;
+  margin: 80px auto 0px;
   padding: 20px;
   background-color: #f1f1f1;
   border-radius: 5px;
@@ -379,7 +379,7 @@ export default {
 }
 
 .button {
-  background-color: #4caf50;
+  background-color: #747474;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -391,7 +391,7 @@ export default {
 }
 
 .button:hover {
-  background-color: #45a049;
+  background-color: #444444;
 }
 
 .image-upload-container {

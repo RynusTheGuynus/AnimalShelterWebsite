@@ -177,7 +177,7 @@ button:hover {
 }
 
 #register {
-  background-color: #dc9d4e;
+  background-color: tan;
   display: flex;
   justify-content: space-around;
   align-items: center;

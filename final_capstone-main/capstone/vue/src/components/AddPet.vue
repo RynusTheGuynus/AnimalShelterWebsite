@@ -224,7 +224,7 @@ export default {
 
 .add-pet-container {
     max-width: 40%;
-    margin: 0 auto;
+    margin: 80px auto 0px;
     padding: 20px;
     background-color: #f1f1f1;
     border-radius: 5px;
@@ -262,7 +262,7 @@ export default {
     width: 50%;
     margin-bottom: 10px;
     border-radius: 4px;
-    background-color: #4caf50;
+    background-color: #747474;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -272,7 +272,7 @@ export default {
   }
 
   .button:hover {
-    background-color: #45a049;
+    background-color: #444444;
   }
 
 </style>
