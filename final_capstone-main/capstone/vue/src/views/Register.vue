@@ -22,7 +22,10 @@ export default {
 </script>
 
 <style scoped>
-
+#footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 
 </style>

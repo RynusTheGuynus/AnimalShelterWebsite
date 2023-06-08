@@ -115,6 +115,7 @@ export default {
 
 .search {
   text-align: left;
+  justify-self: left;
 }
 
 .available-pet-list-item-container {
@@ -124,7 +125,7 @@ export default {
   grid-template-rows: auto;
   height: 50%;
   gap: 10px;
-
+  justify-items: center;
   text-align: center;
 }
 
