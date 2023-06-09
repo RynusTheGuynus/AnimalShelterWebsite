@@ -1,6 +1,6 @@
 <template>
   <div id="pet-detail-container">
-      <h1 id="nameHeader">{{this.pet.pet_name}}</h1>
+      <h1 id="nameHeader">{{this.pet.pet_name.toUpperCase()}}</h1>
       <div id="photoAndDetails">
       <div id="imageContainer">
       <img :src="images[this.currentIndex].image_path" alt="Available Pet Image" id="detailImage"> <br>
