@@ -11,11 +11,14 @@
     <div class="available-pet-list-item-container">
       <div class="available-pet" v-for="pet in filteredPets" :key="pet.id">
         <div class="available-pet-text-box">
-          <p class="available-pet-name">{{ pet.pet_name }}</p>
-          <p class="available-pet-species">SPECIES: {{ pet.species }}</p>
-          <p class="available-pet-breed">{{ pet.breed }}</p>
-          <p class="available-pet-age">AGE: {{ pet.age }}</p>
-          <!-- <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }">Learn More</router-link> -->
+          <div class="available-pet-text-box-name">
+            <p class="available-pet-name">{{ pet.pet_name }}</p>
+          </div>
+          <div class="available-pet-text-box-else">
+            <p class="available-pet-species">SPECIES: {{ pet.species }}</p>
+            <p class="available-pet-breed">{{ pet.breed }}</p>
+            <p class="available-pet-age">AGE: {{ pet.age }}</p>
+          </div>
         </div>
         <router-link id="detailLink" v-bind:to="{name: 'detail', params: {id: pet.pet_id} }"><img class="available-pet-image" :src="pet.image_path" alt="Pet Image" /></router-link> <br>
       </div>
@@ -125,10 +128,10 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  gap: 10px;
+  gap: 20px;
   text-align: center;
   justify-items: center;
-  margin-left: auto; /* Centers the container horizontally */
+  margin-left: auto;
   margin-right: auto; 
 }
 
@@ -168,17 +171,27 @@ h1 {
   border-radius: 5%;
 }
 
+.available-pet img:hover {
+  opacity: 0.5;
+}
+
 .available-pet-text-box {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin-left: 3%;
-  width: 100%;;
+  width: 100%;
 }
 
-.available-pet-text-box p {
+.available-pet-text-box-name p {
+  text-align: left;
+  font-size: 30px;
+  font-weight: bolder;
+}
+
+.available-pet-text-box-else p {
   font-size: 12px;
   font-weight: bolder;
   margin: 5%;
+  text-align: right;
 }
 
 #detailLink:hover {

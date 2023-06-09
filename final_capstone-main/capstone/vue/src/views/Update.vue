@@ -74,14 +74,6 @@ export default {
     
 <style>
 
-.update-container {
-  background-color: tan;
-}
-
-.add-update-container {
-  /* background-color: tan; */
-}
-
 .button-container {
   text-align: center;
   display: flex;

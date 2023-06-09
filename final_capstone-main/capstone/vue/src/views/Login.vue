@@ -4,7 +4,7 @@
     <navigation-bar id='navigationBar' />
     <div class="login-item-container">
       <form class="form-signin" @submit.prevent="login">
-        <h1 class="login-header h3 mb-3 font-weight-normal">Please Sign In</h1>
+        <h1 class="login-header h3 mb-3 font-weight-normal">Login</h1>
         <div
           class="alert alert-danger"
           role="alert"
@@ -114,7 +114,7 @@ export default {
 <style>
 
 #login-container {
-  background-color: tan;
+  background-image: linear-gradient(to right, tan, #F1ECE4);
   max-width: 100vw;
   padding-right: -8px;
   font-family: Arial, Helvetica, sans-serif;
@@ -151,7 +151,19 @@ export default {
 }
 
 .login-button {
+  display: block;
+  padding: 10px;
   margin-left: 1.6%;
+  background-color: #747474;
+  color: white;
+  border-radius: 4px;
+  border: none;
+
+}
+
+.login-button:hover {
+  cursor: pointer;
+  background-color: #444444;
 }
 
 .application-link {
@@ -169,19 +181,6 @@ export default {
   color: antiquewhite;
   max-width: 100%;
   border: 3px solid #a36c2c;
-}
-
-.loginBtn {
-  color: #fff;
-  background-color: #747474;
-  border-radius: 5px;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  margin-left: 15px;
-}
-.loginBtn:hover {
-  background-color: #444444;
 }
 
 .h3 {

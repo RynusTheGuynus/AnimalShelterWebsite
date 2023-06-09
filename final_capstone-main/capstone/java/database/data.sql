@@ -4,6 +4,10 @@ INSERT INTO users (username,password_hash,role,first_name,last_name,email_addres
 VALUES ('user','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'Ron', 'Dudley', 'rdudley@email.com', '440-123-5467', 28, 'Ronda', 'Dudley', '440-123-5468', false);
 INSERT INTO users (username,password_hash,role,first_name,last_name,email_address, phone_number, age, emerg_first_name, emerg_last_name, emerg_phone, first_login)
 VALUES ('admin','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_ADMIN', 'Don', 'Dudley', 'ddudley@email.com', '440-123-5469', 54, 'Ronda', 'Dudley', '440-123-5468', false);
+INSERT INTO users (username,password_hash,role,first_name,last_name,email_address, phone_number, age, emerg_first_name, emerg_last_name, emerg_phone, first_login)
+VALUES ('msmith12','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_USER', 'Mike', 'Smith', 'msmith@example.com', '4401250000', 37, 'Jessica', 'Smith', '4401250001', true);
+INSERT INTO users (username,password_hash,role,first_name,last_name,email_address, phone_number, age, emerg_first_name, emerg_last_name, emerg_phone, first_login)
+VALUES ('msmith123','$2a$08$UkVvwpULis18S19S5pZFn.YHPZt3oaqHZnDwqbCW9pft6uFtkXKDC','ROLE_PENDING', 'Mike', 'Smith', 'msmith@example.com', '4401250000', 37, 'Jessica', 'Smith', '4401250001', true);
 
 INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopted_status, description)
 	VALUES ('Sparky', 1, 'dog', 'Terrier mix', 6, 'female', false, false, 'Sparky: An energetic Terrier mix bursting with love and a zest for life. Adopt this playful companion and fill your days with happiness!');
@@ -31,11 +35,11 @@ INSERT INTO pet (pet_name, age, species, breed, weight, gender, red_flag, adopte
 	VALUES ('Ginger', 1, 'dog', 'Chow/Golden mix', 5, 'female', false, true, 'placeholder');
 
 INSERT INTO adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)
-	VALUES ('Debra Nichols', '1313 Mockingbird Ln, Halloween Town', 'dln@fakedomain.com', '111-222-333', '1994-03-12');
+	VALUES ('Debra Nichols', '1313 Mockingbird Ln, Halloween Town', 'dln@fakedomain.com', '111-222-333', '2023-03-12');
 INSERT INTO adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)
-	VALUES ('Dudley Sauve', '45 High St, Farmville', 'dns@fakedomain.com', '111-222-333', '2020-05-24');
+	VALUES ('Dudley Sauve', '45 High St, Farmville', 'dns@fakedomain.com', '111-222-333', '2023-05-24');
 INSERT INTO adoption (owner_name, owner_address, owner_email, owner_phone_number, adoption_date)
-	VALUES ('Ann Lee', '351 Cherry Rd, Franklin', 'all@fakedomain.com', '111-222-333', '1997-01-07');
+	VALUES ('Ann Lee', '351 Cherry Rd, Franklin', 'all@fakedomain.com', '111-222-333', '2023-01-07');
 
 INSERT INTO pet_adoption (pet_id, adoption_id)
 	VALUES (2, 1);
@@ -46,13 +50,10 @@ INSERT INTO pet_adoption (pet_id, adoption_id)
 
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (2, 'gina1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/gina1.jpg');
---	VALUES (2, 'gina1', pg_read_binary_file('/static/images/gina1.jpg'));
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (8, 'oliver1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/oliver1.jpg');
---	VALUES (8, 'oliver1', pg_read_binary_file('static/images/oliver1.jpg'));
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (12, 'ginger1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685925954/Animal%20Shelter/ginger1.jpg');
---	VALUES (12, 'ginger1', pg_read_binary_file('static/images/ginger1.jpg'));
 INSERT INTO pet_image (pet_id, image_name, image_path)
     VALUES (1, 'sparky1', 'https://res.cloudinary.com/doliuuvrv/image/upload/v1685954148/Animal%20Shelter/sparky1_qa6pua.jpg');
 INSERT INTO pet_image (pet_id, image_name, image_path)

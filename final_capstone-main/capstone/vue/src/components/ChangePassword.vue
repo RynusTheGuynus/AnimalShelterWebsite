@@ -17,7 +17,7 @@
       <label for="confirm-password">Confirm Password</label>
       <input type="password" id="confirm-password" placeholder="Confirm Password" v-model="confirmPassword" required />
       <br>
-      <button type="submit">Change Password</button>
+      <button class="change-password-submit-button" type="submit">Submit</button>
     </form>
     </div>
     <img id="password-dog" src="@/images/password-dog.png" alt="change password image" />
@@ -88,18 +88,21 @@ export default {
   "passwordContainer passwordDog";
   overflow-x:hidden;
 }
+
 #change-password-container {
   width: 100%;
   grid-area: passwordContainer;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  margin-left: 30%; 
+
 }
 
 #password-dog {
   grid-area: passwordDog;
-  height: 100%;
+  width: 100%;
   
 }
 
@@ -124,6 +127,7 @@ input[type="password"] {
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  background-color: lightgray;
 }
 
 button[type="submit"] {
@@ -134,7 +138,6 @@ button[type="submit"] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: 25px;
   margin-top: 5px;
 }
 
