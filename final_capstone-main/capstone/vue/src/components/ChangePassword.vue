@@ -1,7 +1,7 @@
 <template>
   <div class="change-password">
     <div id="change-password-container">
-    <h1 class="password-header">Change Password</h1>
+    <h1 class="password-header">CHANGE PASSWORD</h1>
     <form id="changePasswordForm" @submit.prevent="changePassword">
       <div v-if="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
       <div v-if="successMessage" class="alert alert-success">{{ successMessage }}</div>

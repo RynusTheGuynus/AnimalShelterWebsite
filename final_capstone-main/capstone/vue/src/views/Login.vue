@@ -4,7 +4,7 @@
     <navigation-bar id='navigationBar' />
     <div class="login-item-container">
       <form class="form-signin" @submit.prevent="login">
-        <h1 class="login-header h3 mb-3 font-weight-normal">Login</h1>
+        <h1 class="login-header h3 mb-3 font-weight-normal">LOGIN</h1>
         <div
           class="alert alert-danger"
           role="alert"

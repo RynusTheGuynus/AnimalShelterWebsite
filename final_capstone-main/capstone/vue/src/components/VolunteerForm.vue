@@ -1,7 +1,8 @@
 <template>
   <div id="register" class="text-center">
+    <div>
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Volunteer Application</h1>
+      <h1 class="h3 mb-3 font-weight-normal">VOLUNTEER APPLICATION</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
@@ -60,7 +61,7 @@
         v-model="user.age"
         required        
       /> <br>
-      <h3>Emergency Contact Information</h3>
+      <h3>EMERGENCY CONTACT INFO</h3>
       <label for="emergFirstName" class="sr-only">First Name </label>
       <input
         type="text"
@@ -93,7 +94,10 @@
         Submit Application
       </button>
     </form>
-    <img id="volunteerPhoto" :src="'https://cdn.pixabay.com/photo/2017/03/24/09/10/dog-2170565_1280.jpg'" alt="Heart-shaped hot air balloon"/>
+    </div>
+    <div>
+    <img id="volunteerPhoto" :src="'https://cdn.pixabay.com/photo/2017/03/24/09/10/dog-2170565_1280.jpg'" alt="image"/>
+    </div>
   </div>
   
 </template>
@@ -163,8 +167,10 @@ export default {
 
 .btn-primary {
   margin-top: 10px;
-  margin-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 25px;
+  width: 100%;
   color: #fff;
   background-color: #747474;
   border-radius: 5px;
@@ -179,13 +185,16 @@ export default {
 
 #register {
   background-image: linear-gradient(to bottom, #DDCAB2, tan, #DDCAB2);
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: center; */
 }
 
 #volunteerPhoto {
-  height: 375px;
+  height: 100%;
+  width: 50vw;
   border-radius: 5px;
   margin-bottom: 200px;
 }
@@ -193,8 +202,10 @@ export default {
 .form-register {
   display: flex;
   flex-direction: column;
+  width: 50%;
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
+  margin-left: 23%;
 }
 
 .volunteer-login-link {
