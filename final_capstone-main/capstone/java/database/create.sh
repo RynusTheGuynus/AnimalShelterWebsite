@@ -1,8 +1,9 @@
 #!/bin/bash
-export PGPASSWORD='F2tuI0EHZAlQO8bqISDQ'
+export PGPASSWORD='postgres1'
 BASEDIR=$(dirname $0)
-DATABASE=railway
-/Applications/Postgres.app/Contents/Versions/15/bin/psql -h containers-us-west-166.railway.app -U postgres -p 6811 -d railway -f "$BASEDIR/dropdb.sql" &&
-/Applications/Postgres.app/Contents/Versions/15/bin/psql -h containers-us-west-166.railway.app -U postgres -p 6811 -d railway -f "$BASEDIR/schema.sql" &&
-/Applications/Postgres.app/Contents/Versions/15/bin/psql -h containers-us-west-166.railway.app -U postgres -p 6811 -d railway -f "$BASEDIR/data.sql" &&
-/Applications/Postgres.app/Contents/Versions/15/bin/psql -h containers-us-west-166.railway.app -U postgres -p 6811 -d railway -f "$BASEDIR/user.sql"
+DATABASE=animal_shelter_capstone
+psql -U postgres -f "$BASEDIR/dropdb.sql" &&
+createdb -U postgres $DATABASE &&
+psql -U postgres -d $DATABASE -f "$BASEDIR/schema.sql" &&
+psql -U postgres -d $DATABASE -f "$BASEDIR/data.sql" &&
+psql -U postgres -d $DATABASE -f "$BASEDIR/user.sql"
